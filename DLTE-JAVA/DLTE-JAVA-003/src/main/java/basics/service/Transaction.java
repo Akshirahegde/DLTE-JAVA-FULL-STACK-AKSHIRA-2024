@@ -28,38 +28,10 @@ public class Transaction {
     private  String transactionReciever;
     private String Remarks;
 
-    public Transaction() {
-    }
-
-    public Date getDateOfTransaction() {
-        return dateOfTransaction;
-    }
-
-    public void setDateOfTransaction(Date dateOfTransaction) {
-        this.dateOfTransaction = dateOfTransaction;
-    }
-
-    public Double getAmountInTransaction() {
-        return amountInTransaction;
-    }
-
-    public void setAmountInTransaction(Double amountInTransaction) {
-        this.amountInTransaction = amountInTransaction;
-    }
-
-    public String getTransactionReciever() {
-        return transactionReciever;
-    }
-
-    public void setTransactionReciever(String transactionReciever) {
-        this.transactionReciever = transactionReciever;
-    }
-
-    public String getRemarks() {
-        return Remarks;
-    }
-
-    public void setRemarks(String remarks) {
-        Remarks = remarks;
-    }
+//    public Transaction(Date dateOfTransaction, double amountInTransaction, String transactionReciever, String remarks) {
+//        this.dateOfTransaction = dateOfTransaction;
+//        this.amountInTransaction = amountInTransaction;
+//        this.transactionReciever = transactionReciever;
+//        Remarks = remarks;
+//    }
 }
