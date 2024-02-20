@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class DataValidation {
+public class Datavalidation {
     public static void main(String args[]){
         String borrowerName="",borrowerPan="",borrowerAddress="",borrowerEmail="",aadhaar,mobileNumber;
 
@@ -32,7 +32,7 @@ public class DataValidation {
             System.out.println("invalid Aadhaar");
         System.out.println("Enter your MobileNumber");
         mobileNumber=scanner.next();
-        String mobileExpression="^";
+        String mobileExpression="[6-9]{1}[0-9]{9}";
         Pattern patternmobile= Pattern.compile(mobileExpression);
         Matcher matchermobile=patternmobile.matcher(mobileNumber);
         if(matchermobile.matches()){
@@ -70,3 +70,4 @@ public class DataValidation {
 
     }
 }
+

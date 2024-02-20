@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ceb4334-ab35-4b5b-af83-2b5a947d68c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-AKSHIRA/src/main/java/basics/service/FDCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-AKSHIRA/src/main/java/basics/service/IncomeTax.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-AKSHIRA/src/main/java/basics/service/internetBanking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-AKSHIRA/src/main/java/basics/service/mobileBanking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-AKSHIRA/src/main/java/basics/service/personalLoan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-003/DLTE-JAVA-003.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-003/src/main/java/basics/service/CreditCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-003/src/main/java/basics/service/CustomerSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLTE-JAVA-002/src/main/java/basics/service/DataValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/DLTE-JAVA-002/src/main/java/basics/service/DataValidation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +27,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -51,6 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708362912771</updated>
       <workItem from="1708362916243" duration="389000" />
+      <workItem from="1708427674853" duration="1270000" />
     </task>
     <servers />
   </component>
@@ -58,6 +64,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="421" y="82" key="FileChooserDialogImpl" timestamp="1708428748970">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="421" y="82" key="FileChooserDialogImpl/0.0.1280.672@0.0.1280.672" timestamp="1708428748970" />
     <state width="1237" height="161" key="GridCell.Tab.0.bottom" timestamp="1708363307592">
       <screen x="0" y="0" width="1280" height="672" />
     </state>
@@ -74,5 +84,9 @@
       <screen x="0" y="0" width="1280" height="672" />
     </state>
     <state width="1237" height="161" key="GridCell.Tab.0.right/0.0.1280.672@0.0.1280.672" timestamp="1708363307592" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1708428822659">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.672@0.0.1280.672" timestamp="1708428822659" />
   </component>
 </project>
