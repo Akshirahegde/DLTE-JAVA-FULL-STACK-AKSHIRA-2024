@@ -1,0 +1,23 @@
+create table Transaction(transaction_id number primary key,transaction_date date not null,transaction_reciever varchar(255) not null,transaction_amount number not null,transaction_remarks varchar(255) not null);
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+insert into Transaction values(1,'11Feb2024','Akshira',10000,'Family');
+insert into Transaction values(2,'1Feb2024','Raksha',9000,'Friend');
+insert into Transaction values(3,'1Jan2024','Rakshitha',900,'Family');
+insert into Transaction values(4,'13Jan2024','Swasthi',5600,'Emergency');
+insert into Transaction values(5,'13Feb2024','Rashmi',560,'Medical');
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.create view Transaction_detail as select * from Transaction where transaction_date between '2Jan2024' and '2Feb2024';
+ select * from Transaction_detail;
+----------
+2.create view transaction_min as select min(transaction_amount) as minimum from Transaction;
+  select * from transaction_min;
+----------
+3.create view transaction_max as select max(transaction_amount) as maximum from Transaction;
+ select * from transaction_max;
+----------
+4.create view transaction_count as select count(transaction_reciever) as count from Transaction where transaction_reciever='Akshira';
+  select * from transaction_count;
+----------
+5.create view Transaction_holder_name as select transaction_reciever from Transaction where transaction_remarks='Friend';
+  select * from Transaction_holder_name;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
