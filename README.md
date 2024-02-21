@@ -1,6 +1,6 @@
 <p><br>DLTE-JAVA-AKSHIRA Contents:</br>
 Programs for Command line interaction like:
-<br>Internet Banking</br><br> Mobile Banking</br><br> FD Calculator</br><br> Personal Information</br></p>
+Internet Banking</br> Mobile Banking</br>< FD Calculator</br> Personal Information</br></p>
 <p><br>DLTE-JAVA-002 Contents:</br>
 Basic programs related to
 <br>Data Validation using Regex expression</br><br>SIP Calculator</br><br>Debit Transactions</br><br> Finding Minimum Balance and applying charges based on the balance</br><br>Using command line argument selecting the insurance provider</br></p>
