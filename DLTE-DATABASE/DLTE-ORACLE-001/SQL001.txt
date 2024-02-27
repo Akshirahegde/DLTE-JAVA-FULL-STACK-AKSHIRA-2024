@@ -1,0 +1,52 @@
+1.create or replace procedure new_transaction(trans_date DATE,trans_amount NUMBER,trans_reciever VARCHAR2,trans_remarks VARCHAR2,trans_info OUT VARCHAR2)
+as
+BEGIN
+      INSERT into Transaction(transaction_id,transaction_date,transaction_reciever,transaction_amount,transaction_remarks)
+      VALUES(TRANSACTION_SEQ.nextval,trans_date,trans_reciever,trans_amount,trans_remarks);
+      trans_info:='Transaction_inserted';
+EXCEPTION
+      when others then
+      trans_info:='Error due to' || SQLERRM;
+end;
+/
+
+variable info_insert VARCHAR2;
+execute new_transaction('12Feb2024',4500,'Raksha','Family',:info_insert);
+print info_insert;
+--------------------------
+2.create or replace procedure delete_transaction(trans_id NUMBER,trans_info out VARCHAR2)
+as
+BEGIN
+     delete from Transaction where transaction_id=trans_id;
+     trans_info:='Transaction Deleted';
+EXCEPTION
+     when no_data_found THEN 
+     trans_info:='No such Transaction available';
+     when others then 
+     trans_info:='Error due to' || SQLERRM;
+end;
+/
+variable info_delete VARCHAR2;
+execute delete_transaction(202402,:info_delete);
+------------------------------------
+3.
+create or replace procedure select_transaction(trans_remarks VARCHAR2,trans_reciever out VARCHAR2,trans_amount out VARCHAR2, trans_info out VARCHAR2)
+as
+BEGIN
+    select transaction_reciever,transaction_amount into trans_reciever,trans_amount from Transaction where transaction_remarks=trans_remarks; 
+     trans_info:='Transaction Selected';
+EXCEPTION
+     when no_data_found THEN 
+     trans_info:='No such Transaction available';
+     when others then 
+     trans_info:='Error due to' || SQLERRM;
+end;
+/
+variable found_reciever VARCHAR2;
+variable found_amount VARCHAR2;
+variable info_error VARCHAR2;
+execute select_transaction('Education',:found_reciever,:found_amount,:info_error);
+print found_num;
+print found_amount;
+print info_error;
+----------------------------------

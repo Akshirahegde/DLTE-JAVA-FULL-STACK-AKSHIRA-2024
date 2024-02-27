@@ -1,0 +1,9 @@
+create or replace trigger check_insert
+before insert on Transaction
+for each row
+begin
+if :new.transaction_remarks is null then :new.transaction_remarks:='Friend';
+end if;
+end;
+/
+insert into Transaction values(transaction_seq.nextval,'12Feb2024','Raksha',4500,null);

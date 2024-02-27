@@ -1,0 +1,19 @@
+create user Akshira identified BY akshira1;
+grant select on Transaction to Akshira;
+select * from Transaction;
+
+create user Rakshitha identified BY rakshitha1;
+grant delete on Transaction to Rakshitha;
+delete  from Transaction where transaction_id=5;
+
+create user Raksha identified BY raksha1;
+grant select on Transaction to Raksha;
+select * from Transaction;
+
+create user Swasthi identified BY swasthi1;
+grant insert on Transaction to Swasthi;
+insert into Transaction(transaction_id,transaction_reciever,transaction_remarks,transaction_amount,transaction_date) values(5,'Rashmitha','Medical',1000,'20Feb2024');
+
+create user Rashmitha identified BY rashmitha1;
+grant update on Transaction to Rashmitha;
+Update Transaction set transaction_remarks='Family' where transaction_id=5;
