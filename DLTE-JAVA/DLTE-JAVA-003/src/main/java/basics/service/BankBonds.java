@@ -11,20 +11,23 @@ import lombok.NoArgsConstructor;
 //        Create at least 5 funds in array
 //        sort and view bonds with high rate of interest
 public class BankBonds {
+    private String BondName;
     private Integer maturity;
     private Double interestRate;
     private String taxstatus;
     private  Integer period;
     private String bondHolder;
     public static void main (String[] args){
-        BankBonds Mortgage=new BankBonds(5,5.3,"Tax Levied",7,"Amith");
-        BankBonds Muncipal=new BankBonds(6,7.3,"No Tax",6,"anu");
-        BankBonds Corporate=new BankBonds(5,8.6,"No Tax",4,"ram");
-        BankBonds Callable=new BankBonds(7,3.2,"No Tax",8,"Sam");
-        BankBonds Perpetual=new BankBonds(10,5.2,"No Tax",7,"Avi");
+        BankBonds Mortgage=new BankBonds("Avi",5,5.3,"Tax Levied",7,"Amith");
+        BankBonds Muncipal=new BankBonds("Anu",6,7.3,"No Tax",6,"anu");
+        BankBonds Corporate=new BankBonds("Ram",5,8.6,"No Tax",4,"ram");
+        BankBonds Callable=new BankBonds("Sam",7,3.2,"No Tax",8,"Sam");
+        BankBonds Perpetual=new BankBonds("Avin",10,5.2,"No Tax",7,"Avi");
         BankBonds bankBonds[]={Mortgage,Muncipal,Corporate,Callable,Perpetual};
         int position=MaximumRate(bankBonds);
+        
     }
+
     public static int MaximumRate(BankBonds[] bankBonds){
         double maximumInterest=0;
         int position=0,count=0;
