@@ -32,7 +32,7 @@ public static void main(String args[]){
                 limit=scanner.nextInt() ;
                 creditCardException.limitFilter(myBank,limit);
             }
-            catch (Exception exception){
+            catch (MyBankCreditCardException exception){
                 System.out.println(resourceBundle.getString("limit.user"));
                 logger.log(Level.INFO,exception.getMessage());
             }
@@ -43,7 +43,7 @@ public static void main(String args[]){
                 Date=scanner.next();
                 creditCardException.dateFilter(myBank,Date);
             }
-            catch (Exception exception){
+            catch (MyBankCreditCardException exception){
                 System.out.println(resourceBundle.getString("limit.user"));
                 logger.log(Level.INFO,exception.getMessage());
             }
@@ -51,21 +51,21 @@ public static void main(String args[]){
     }
     scanner.close();
 }
-public void limitFilter(CreditCard[] customers,Integer amountLimit) throws Exception {
-    int flag=0;
-    for (CreditCard each:customers) {
-        if(each.getCreditcardLimit()>=amountLimit){
-            System.out.println("user"+each.getCreditcardLimit()+"has limit greater than"+amountLimit);
+public void limitFilter(CreditCard[] customers,Integer amountLimit) {
+        int flag = 0;
+        for (CreditCard each : customers) {
+            if (each.getCreditcardLimit() >= amountLimit) {
+                System.out.println("user" + each.getCreditcardLimit() + "has limit greater than" + amountLimit);
+                flag=1;
+            } else {
+                System.out.println("user" + each.getCreditcardLimit() + "has limit lesser than" + amountLimit);
+                flag = 1;
+            }
 
         }
-        else{
-            System.out.println("user"+each.getCreditcardLimit()+"has limit lesser than"+amountLimit);
-            flag=1;
-        }
+        if (flag == 0) {
+            throw new MyBankCreditCardException();
 
-    }
-    if (flag==0){
-        throw new Exception();
     }
 }
 public void dateFilter(CreditCard[] customers, String filterDate){
@@ -75,7 +75,12 @@ public void dateFilter(CreditCard[] customers, String filterDate){
         if(Integer.parseInt(splitDate[0])==each.getBillPayment().getYear() && Integer.parseInt(splitDate[1])==each.getBillPayment().getMonth()&& Integer.parseInt(splitDate[2])==each.getBillPayment().getDate())
         {
             System.out.println(each.getCreditcardHolder()+" "+each.getCreditcardNumber());
+            flag=1;
         }
+    }
+    if (flag == 0) {
+        throw new MyBankCreditCardException();
+
     }
 
 
