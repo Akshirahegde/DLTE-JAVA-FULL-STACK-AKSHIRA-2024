@@ -2,18 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5676d33-b3f3-4bb1-afbd-b1953370eed9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-003/src/main/java/basics/service/CLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-003/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-005/src/main/java/exception/org/account/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-005/src/main/java/exception/org/account/CreditCardException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-005/src/main/java/exception/org/account/Gpay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-005/src/main/java/exception/org/account/MyBankException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-005/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-CONSOLE-APP/ConsoleApp/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-CONSOLE-APP/ConsoleApp/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-CONSOLE-APP/ConsoleApp/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-CONSOLE-APP/ConsoleApp/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-CONSOLE-APP/ConsoleApp/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-CONSOLE-APP/ConsoleApp/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-CONSOLE-APP/ConsoleApp/ConsoleApp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-CONSOLE-APP/ConsoleApp/src/main/java/basics/service/entity/Accounts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-CONSOLE-APP/ConsoleApp/src/main/java/basics/service/middleware/FileStorageTarget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-CONSOLE-APP/ConsoleApp/src/main/java/basics/service/middleware/UserFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-CONSOLE-APP/ConsoleApp/src/main/java/basics/service/services/AccountServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-CONSOLE-APP/ConsoleApp/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TASK/Task-684/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TASK/Task-684/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TASK/Task-684/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TASK/Task-684/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TASK/Task-684/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TASK/Task-684/Task-684.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TASK/Task-684/src/main/java/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TASK/Task-684/src/main/java/org/example/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TASK/Task-684/src/main/java/org/example/TransactionAnalysis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TASK/Task-684/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW1/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW1/REVIEW1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW1/src/main/java/org/example/EmployeeContact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW1/target/classes/META-INF/REVIEW1.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/basics/service/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/basics/service/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DLTE-JAVA-003/src/main/java/basics/service/BankBonds.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-JAVA-003/src/main/java/basics/service/BankBonds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DLTE-JAVA-003/target/classes/basics/service/BankBonds.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-JAVA-003/target/classes/basics/service/BankBonds.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/basics/service/Insurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/basics/service/Insurance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW1/src/main/java/org/example/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW1/src/main/java/org/example/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW1/src/main/java/org/example/EmployeeAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW1/src/main/java/org/example/EmployeeAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW1/src/main/java/org/example/EmployeeDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW1/src/main/java/org/example/EmployeeDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW1/src/main/java/org/example/EmployeeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW1/src/main/java/org/example/EmployeeMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +75,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Application.Datavalidation">
+  <component name="RunManager" selected="Application.Insurance">
     <configuration name="Datavalidation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="basics.service.Datavalidation" />
       <module name="DLTE-JAVA-002" />
@@ -72,6 +92,7 @@
     <configuration name="Insurance" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="basics.service.Insurance" />
       <module name="DLTE-JAVA-002" />
+      <option name="PROGRAM_PARAMETERS" value="accidentcover Instantsuport" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,6 +142,7 @@
       <workItem from="1708666235401" duration="705000" />
       <workItem from="1708785321593" duration="85000" />
       <workItem from="1708918200227" duration="5373000" />
+      <workItem from="1709604746901" duration="598000" />
     </task>
     <servers />
   </component>
@@ -128,34 +150,34 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1708919016525">
+    <state x="54" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1709605350513">
       <screen x="0" y="0" width="1280" height="672" />
     </state>
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.672@0.0.1280.672" timestamp="1708919016525" />
-    <state x="371" y="127" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1708919015019">
+    <state x="54" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.672@0.0.1280.672" timestamp="1709605350513" />
+    <state x="371" y="127" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1709604937378">
       <screen x="0" y="0" width="1280" height="672" />
     </state>
-    <state x="371" y="127" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.672@0.0.1280.672" timestamp="1708919015019" />
+    <state x="371" y="127" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.672@0.0.1280.672" timestamp="1709604937378" />
     <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1708785405558">
       <screen x="0" y="0" width="1280" height="672" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.672@0.0.1280.672" timestamp="1708785405558" />
-    <state width="1237" height="161" key="GridCell.Tab.0.bottom" timestamp="1708429367431">
+    <state width="1237" height="161" key="GridCell.Tab.0.bottom" timestamp="1709605416695">
       <screen x="0" y="0" width="1280" height="672" />
     </state>
-    <state width="1237" height="161" key="GridCell.Tab.0.bottom/0.0.1280.672@0.0.1280.672" timestamp="1708429367431" />
-    <state width="1237" height="161" key="GridCell.Tab.0.center" timestamp="1708429367431">
+    <state width="1237" height="161" key="GridCell.Tab.0.bottom/0.0.1280.672@0.0.1280.672" timestamp="1709605416695" />
+    <state width="1237" height="161" key="GridCell.Tab.0.center" timestamp="1709605416695">
       <screen x="0" y="0" width="1280" height="672" />
     </state>
-    <state width="1237" height="161" key="GridCell.Tab.0.center/0.0.1280.672@0.0.1280.672" timestamp="1708429367431" />
-    <state width="1237" height="161" key="GridCell.Tab.0.left" timestamp="1708429367431">
+    <state width="1237" height="161" key="GridCell.Tab.0.center/0.0.1280.672@0.0.1280.672" timestamp="1709605416695" />
+    <state width="1237" height="161" key="GridCell.Tab.0.left" timestamp="1709605416695">
       <screen x="0" y="0" width="1280" height="672" />
     </state>
-    <state width="1237" height="161" key="GridCell.Tab.0.left/0.0.1280.672@0.0.1280.672" timestamp="1708429367431" />
-    <state width="1237" height="161" key="GridCell.Tab.0.right" timestamp="1708429367431">
+    <state width="1237" height="161" key="GridCell.Tab.0.left/0.0.1280.672@0.0.1280.672" timestamp="1709605416695" />
+    <state width="1237" height="161" key="GridCell.Tab.0.right" timestamp="1709605416695">
       <screen x="0" y="0" width="1280" height="672" />
     </state>
-    <state width="1237" height="161" key="GridCell.Tab.0.right/0.0.1280.672@0.0.1280.672" timestamp="1708429367431" />
+    <state width="1237" height="161" key="GridCell.Tab.0.right/0.0.1280.672@0.0.1280.672" timestamp="1709605416695" />
     <state x="144" y="0" key="SettingsEditor" timestamp="1708785355912">
       <screen x="0" y="0" width="1280" height="672" />
     </state>
