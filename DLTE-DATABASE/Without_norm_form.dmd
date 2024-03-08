@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Without_norm_form" id="E80F2EA0-DD1B-861D-C50F-6D8446D75252" version="3.5">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-08 12:04:02 UTC</createdTime>
+<ownerDesignName>Without_norm_form</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>E80F2EA0-DD1B-861D-C50F-6D8446D75252</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="D48C040F-F76E-9D2D-D3A7-34047EF46D53">
+<designStoragePath>C:\</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

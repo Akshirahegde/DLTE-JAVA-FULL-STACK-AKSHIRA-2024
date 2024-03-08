@@ -1,0 +1,156 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CFC650FA-98EA-67AB-40D2-CF7AAF1DEEA9" schemaObject="791D76EA-1551-4DC7-522E-07AD90F1F479" name="BEFORE_NORM">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>BEFORE_NORM</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-08 12:17:20 UTC</createdTime>
+<ownerDesignName>Without_norm_form</ownerDesignName>
+<importedID>F253451D-F06B-2ABB-90E2-F6E4425777E0</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="USERNAME" id="9D5BFBE5-EACE-AEF2-620D-6BA116F830EB">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>BEFORE_NORM</sourceObjSchema>
+<sourceObjName>USERNAME</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-08 12:17:20 UTC</createdTime>
+<ownerDesignName>Without_norm_form</ownerDesignName>
+<importedID>0194919D-6789-4206-9A72-62D25466E4F9</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPI" id="0302B041-EE4C-B002-8599-74B8B0D3ADF7">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>BEFORE_NORM</sourceObjSchema>
+<sourceObjName>UPI</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-08 12:17:20 UTC</createdTime>
+<ownerDesignName>Without_norm_form</ownerDesignName>
+<importedID>C3FEA151-336D-DE0D-516F-675B6B495B02</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MOBILENUMBER" id="D93C8E57-44F8-A232-5C2B-86FD7976EAE8">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>BEFORE_NORM</sourceObjSchema>
+<sourceObjName>MOBILENUMBER</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-08 12:17:20 UTC</createdTime>
+<ownerDesignName>Without_norm_form</ownerDesignName>
+<importedID>B0CC5C40-F262-9446-339A-93C710CA411C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="8A539E63-7764-7B43-E042-02A46AE72C58">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>BEFORE_NORM</sourceObjSchema>
+<sourceObjName>EMAIL</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-08 12:17:20 UTC</createdTime>
+<ownerDesignName>Without_norm_form</ownerDesignName>
+<importedID>9ABEA748-8A23-A878-588B-C98E92165B86</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WALLET_TYPE" id="795923BD-89FB-E58B-67A6-3A3933861E11">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>BEFORE_NORM</sourceObjSchema>
+<sourceObjName>WALLET_TYPE</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-08 12:17:20 UTC</createdTime>
+<ownerDesignName>Without_norm_form</ownerDesignName>
+<importedID>DFB8E033-E32D-8A8E-D03B-16C7545BC704</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECHARGED_DATE" id="C001F29A-9209-C967-3347-74FD72A55406">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>BEFORE_NORM</sourceObjSchema>
+<sourceObjName>RECHARGED_DATE</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-08 12:17:20 UTC</createdTime>
+<ownerDesignName>Without_norm_form</ownerDesignName>
+<importedID>A2034E8D-26FA-6A97-452D-9D58107F5313</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECHARGED_PROVIDER" id="CC83B670-103F-ADF8-8A70-CDA4417A8166">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>BEFORE_NORM</sourceObjSchema>
+<sourceObjName>RECHARGED_PROVIDER</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-08 12:17:20 UTC</createdTime>
+<ownerDesignName>Without_norm_form</ownerDesignName>
+<importedID>7265EAD8-124E-AC87-D0A1-5EEE500BF7B1</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECHARGED_TO" id="D96557BC-DFE6-23EB-FF49-DC2C963FB320">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>BEFORE_NORM</sourceObjSchema>
+<sourceObjName>RECHARGED_TO</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-08 12:17:20 UTC</createdTime>
+<ownerDesignName>Without_norm_form</ownerDesignName>
+<importedID>DF86E5DD-4894-12C0-280E-758B8F49237B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECHARGED_AMOUNT" id="8EA6EE5A-EF49-4F5A-4BF1-6900A222AF99">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>BEFORE_NORM</sourceObjSchema>
+<sourceObjName>RECHARGED_AMOUNT</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-08 12:17:20 UTC</createdTime>
+<ownerDesignName>Without_norm_form</ownerDesignName>
+<importedID>9C7BF3C2-4E67-AC37-0DCE-7C3B1C60D699</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>
