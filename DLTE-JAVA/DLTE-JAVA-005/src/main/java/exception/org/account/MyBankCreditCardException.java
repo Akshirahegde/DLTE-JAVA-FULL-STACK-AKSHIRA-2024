@@ -4,6 +4,6 @@ import java.util.ResourceBundle;
 
 public class MyBankCreditCardException extends RuntimeException {
     public MyBankCreditCardException() {
-        System.out.println("Exception");
+        super(ResourceBundle.getBundle("application").getString("limit.user"));
     }
 }
