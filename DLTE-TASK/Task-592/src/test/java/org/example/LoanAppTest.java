@@ -39,5 +39,15 @@ public class LoanAppTest {
         assertFalse(loanList.isEmpty());
 
     }
+    @Test
+    public void checkNull(){
+     //test case will pass
+        assertNotNull(loanList);
+    }
+    @Test
+    public void checkSame(){
+        //test case will pass
+        assertNotSame(loanList.get(0),loanList.get(1));
+    }
 
 }
