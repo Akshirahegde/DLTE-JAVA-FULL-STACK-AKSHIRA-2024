@@ -14,7 +14,7 @@ public class LoanApp implements MyBank{
         System.out.println("Enter the loan amount");
         loan.setLoanAmount(scanner.nextDouble());
         System.out.println("Enter the Loan date");
-        loan.setLoanDate(new Date(scanner.next()));//----------------
+        loan.setLoanDate(scanner.next());//----------------
         System.out.println("Enter the loan status");
         loan.setLoanStatus(scanner.next());
         System.out.println("Enter the Borrower Name");

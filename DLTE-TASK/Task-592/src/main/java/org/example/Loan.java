@@ -1,17 +1,16 @@
 package org.example;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Loan implements Serializable {
     private Integer loanNumber;
     private Double loanAmount;
-    private Date loanDate;
+    private String loanDate;
     private String loanStatus;
     private String borrowerName;
     private Long borrowerContact;
 
-    public Loan(Integer loanNumber, Double loanAmount, Date loanDate, String loanStatus, String borrowerName, Long borrowerContact) {
+    public Loan(Integer loanNumber, Double loanAmount, String loanDate, String loanStatus, String borrowerName, Long borrowerContact) {
         this.loanNumber = loanNumber;
         this.loanAmount = loanAmount;
         this.loanDate = loanDate;
@@ -40,11 +39,11 @@ public class Loan implements Serializable {
         this.loanAmount = loanAmount;
     }
 
-    public Date getLoanDate() {
+    public String getLoanDate() {
         return loanDate;
     }
 
-    public void setLoanDate(Date loanDate) {
+    public void setLoanDate(String loanDate) {
         this.loanDate = loanDate;
     }
 
