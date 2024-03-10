@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2C8D496C-392A-160C-22FA-4C664ACE815F" schemaObject="CE6D4093-76BA-B00B-4FEF-CAC5E1D264A6" name="RECHARGE_INFO">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>RECHARGE_INFO</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>2B10E4D8-A813-955E-F797-AD3BFA6B3D2F</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="RECHARGE_ID" id="57C3E582-D5FF-0343-3122-6AD3D430598F">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>RECHARGE_INFO</sourceObjSchema>
+<sourceObjName>RECHARGE_ID</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>C95BCE90-434D-4E00-25CA-3BE50392C01A</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECHARGED_PROVIDER" id="EDF6481C-86D8-7592-97B7-DFE3041DFF8F">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>RECHARGE_INFO</sourceObjSchema>
+<sourceObjName>RECHARGED_PROVIDER</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>A2860DEE-69ED-EC79-3338-484C881C7839</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECHARGED_TO" id="7CBCBCFD-5931-5B7C-E855-912B697DE240">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>RECHARGE_INFO</sourceObjSchema>
+<sourceObjName>RECHARGED_TO</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>E1B6566A-F6FE-0324-803A-4942DAB39727</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECHARGED_AMOUNT" id="DCC52699-13EA-50CB-D58B-580D1FF95BB1">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>RECHARGE_INFO</sourceObjSchema>
+<sourceObjName>RECHARGED_AMOUNT</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>C98AAF66-E13E-71AB-CE83-CF4DF1F3C8A6</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MOBILE_NUMBER" id="7A5278E4-8740-C178-08CA-B6CDE5F8AFC8">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>RECHARGE_INFO</sourceObjSchema>
+<sourceObjName>MOBILE_NUMBER</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>9DEA2AB6-59E4-4A6C-AE6D-80612042C86D</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPI" id="BB0A36E1-6F86-5F05-49A3-C892941D7633">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>RECHARGE_INFO</sourceObjSchema>
+<sourceObjName>UPI</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>27105338-6A19-FE26-7404-01FC5A554244</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D30B438-520A-E567-2509-A98EC691CA12" referredColumn="676B9AAC-7FF6-8C43-2FB2-4D074B646D39"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AC0CF8B2-0839-CCFC-4FC9-DF7F6783BA9F" schemaObject="CE6D4093-76BA-B00B-4FEF-CAC5E1D264A6" name="RECHARGE_INFO_PK">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>SYS_C007258</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>F14B4956-1100-43D0-592C-4C8AB1156CE8</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="57C3E582-D5FF-0343-3122-6AD3D430598F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="168D0E0D-9245-5080-3286-63A0194F9FD6" name="SYS_C007259">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BB0A36E1-6F86-5F05-49A3-C892941D7633"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

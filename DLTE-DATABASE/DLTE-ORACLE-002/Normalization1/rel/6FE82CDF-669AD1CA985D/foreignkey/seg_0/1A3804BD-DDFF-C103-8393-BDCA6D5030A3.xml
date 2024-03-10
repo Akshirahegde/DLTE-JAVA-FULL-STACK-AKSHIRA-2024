@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1A3804BD-DDFF-C103-8393-BDCA6D5030A3" containerWithKeyObject="18F78BDD-C482-CEA2-C218-5ABC817BDB56" localFKIndex="E6578113-3511-FF8D-9C70-B80EFCD3F8DA" name="SYS_C007253">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>SYS_C007253</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>5481D9F8-F0F5-7C6F-B505-B805D9E14326</importedID>
+<referredTableLongName>SYSTEM.USERDETAIL</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>55588371-39CE-0815-1419-FB556080137C</referredTableID>
+<keyObject>71258CAD-AA0E-1218-EA0D-58DBAD548292</keyObject>
+<referredKeyID>71258CAD-AA0E-1218-EA0D-58DBAD548292</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>UPI</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

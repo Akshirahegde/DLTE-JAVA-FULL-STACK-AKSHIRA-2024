@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="USERDETAIL" directorySegmentName="seg_0" id="55588371-39CE-0815-1419-FB556080137C">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<schemaObject>CE6D4093-76BA-B00B-4FEF-CAC5E1D264A6</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>418F64FF-69F0-AAD0-7DE0-282E6F8317BF</segment>
+<tableSpace>08836F65-80D3-4DDD-72E4-094C9793AA02</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="EAMIL" id="5780B3B1-2058-144F-02A3-6CC76A26EF49">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UPI" id="676B9AAC-7FF6-8C43-2FB2-4D074B646D39">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USERNAME" id="A29027B8-DF29-D6F6-8511-ADCB0D07BAEB">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MOBILE_NUMBER" id="ABA75D6F-7AF2-E1D5-5111-B8DB0F8D1680">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="USERDETAIL_PK" id="71258CAD-AA0E-1218-EA0D-58DBAD548292">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<schemaObject>CE6D4093-76BA-B00B-4FEF-CAC5E1D264A6</schemaObject>
+<segment>68AEDDE7-C34E-C471-F359-9B0E823D90FA</segment>
+<tableSpace>08836F65-80D3-4DDD-72E4-094C9793AA02</tableSpace>
+<indexSegment>68AEDDE7-C34E-C471-F359-9B0E823D90FA</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

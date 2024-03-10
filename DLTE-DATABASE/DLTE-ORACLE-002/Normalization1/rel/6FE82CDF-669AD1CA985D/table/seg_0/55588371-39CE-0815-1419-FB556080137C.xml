@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="55588371-39CE-0815-1419-FB556080137C" schemaObject="CE6D4093-76BA-B00B-4FEF-CAC5E1D264A6" name="USERDETAIL">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>USERDETAIL</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>D4E21CE7-66AF-4914-0285-68796151B6AC</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="USERNAME" id="A29027B8-DF29-D6F6-8511-ADCB0D07BAEB">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>USERDETAIL</sourceObjSchema>
+<sourceObjName>USERNAME</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>34F6D3B9-3D88-8822-0372-A54979A80654</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPI" id="676B9AAC-7FF6-8C43-2FB2-4D074B646D39">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>USERDETAIL</sourceObjSchema>
+<sourceObjName>UPI</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>45B55D43-7041-7FCD-7319-F296B4A04DEE</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MOBILE_NUMBER" id="ABA75D6F-7AF2-E1D5-5111-B8DB0F8D1680">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>USERDETAIL</sourceObjSchema>
+<sourceObjName>MOBILE_NUMBER</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>E33361E8-EDFD-26B2-3B38-AA1C3E8D2753</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EAMIL" id="5780B3B1-2058-144F-02A3-6CC76A26EF49">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>USERDETAIL</sourceObjSchema>
+<sourceObjName>EAMIL</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>63082C3E-4F0A-EB59-0BAA-7AB23A2C56A9</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="71258CAD-AA0E-1218-EA0D-58DBAD548292" schemaObject="CE6D4093-76BA-B00B-4FEF-CAC5E1D264A6" name="USERDETAIL_PK">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>SYS_C007248</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>DC9CEDEE-8049-FB4C-060E-60B3B13D62C8</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="676B9AAC-7FF6-8C43-2FB2-4D074B646D39"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

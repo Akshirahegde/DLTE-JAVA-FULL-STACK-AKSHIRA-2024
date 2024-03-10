@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B59740C5-9F2F-916D-0AFA-236114370DC0" schemaObject="CE6D4093-76BA-B00B-4FEF-CAC5E1D264A6" name="WALLET_DETAILS">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>WALLET_DETAILS</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>A679A1F6-BE12-65F7-46A5-C26F6B1A765A</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="WALLET_ID" id="5F5F2887-33B4-5B7A-250A-B17F2D161787">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>WALLET_DETAILS</sourceObjSchema>
+<sourceObjName>WALLET_ID</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>459F8D96-653F-7C1B-96E0-7C71A24CCC8C</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WALLET_TYPE" id="F104E803-BDED-CA68-7DDC-46A047612023">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>WALLET_DETAILS</sourceObjSchema>
+<sourceObjName>WALLET_TYPE</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>CB931874-DB60-AE98-5732-EB10F0359219</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DBD4A851-2091-86AB-6015-CDACCDE56ABE" schemaObject="CE6D4093-76BA-B00B-4FEF-CAC5E1D264A6" name="WALLET_DETAILS_PK">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>SYS_C007251</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:21:24 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<importedID>4BAB7929-B11D-285E-0E0C-778EC3739339</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5F5F2887-33B4-5B7A-250A-B17F2D161787"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

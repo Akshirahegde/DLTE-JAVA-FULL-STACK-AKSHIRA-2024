@@ -1,0 +1,142 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="33BE54A5-3556-AF3B-3451-FCBF6308F3AE" schemaObject="CE6D4093-76BA-B00B-4FEF-CAC5E1D264A6" name="USERINFO_BEFORE_NORM">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>USERINFO_BEFORE_NORM</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:15:08 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="USERNAME" id="D35583F9-0B9F-52DE-EA37-C067E9F4602B">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>USERINFO_BEFORE_NORM</sourceObjSchema>
+<sourceObjName>USERNAME</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:15:08 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPI" id="8D9D7BA6-CBFF-0E74-BE95-F2712714B468">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>USERINFO_BEFORE_NORM</sourceObjSchema>
+<sourceObjName>UPI</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:15:08 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MOBILE_NUMBER" id="E0D24847-D122-CB66-0126-440045BE95C6">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>USERINFO_BEFORE_NORM</sourceObjSchema>
+<sourceObjName>MOBILE_NUMBER</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:15:08 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EAMIL" id="DFDF8906-9117-5A6D-6425-6E49BF4CC906">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>USERINFO_BEFORE_NORM</sourceObjSchema>
+<sourceObjName>EAMIL</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:15:08 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WALLET_TYPE" id="A2C4BDF4-772B-5471-72CE-2947C6A782AE">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>USERINFO_BEFORE_NORM</sourceObjSchema>
+<sourceObjName>WALLET_TYPE</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:15:08 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECHARGED_DATE" id="8F8FB729-47AB-3CD8-E09C-5191A1110DE8">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>USERINFO_BEFORE_NORM</sourceObjSchema>
+<sourceObjName>RECHARGED_DATE</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:15:08 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECHARGED_PROVIDER" id="3BAF1D3C-B394-16BA-65F0-B210B987CAB7">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>USERINFO_BEFORE_NORM</sourceObjSchema>
+<sourceObjName>RECHARGED_PROVIDER</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:15:08 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECHARGED_TO" id="8C344FE5-F1C3-7C04-FA23-E02D3F325580">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>USERINFO_BEFORE_NORM</sourceObjSchema>
+<sourceObjName>RECHARGED_TO</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:15:08 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RECHARGED_AMOUNT" id="EAAC6988-E332-E563-592C-B7C4AB4122D4">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>USERINFO_BEFORE_NORM</sourceObjSchema>
+<sourceObjName>RECHARGED_AMOUNT</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-10 09:15:08 UTC</createdTime>
+<ownerDesignName>Normalization1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>
