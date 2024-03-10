@@ -5,17 +5,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
-  <artifactId>Task-592</artifactId>
+  <artifactId>Task-681</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>Task-592</name>
+  <name>Task-681</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -24,6 +24,13 @@
       <artifactId>junit</artifactId>
       <version>4.11</version>
 
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+    <!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 -->
+    <dependency>
+      <groupId>com.oracle.database.jdbc</groupId>
+      <artifactId>ojdbc6</artifactId>
+      <version>11.2.0.4</version>
     </dependency>
   </dependencies>
 
