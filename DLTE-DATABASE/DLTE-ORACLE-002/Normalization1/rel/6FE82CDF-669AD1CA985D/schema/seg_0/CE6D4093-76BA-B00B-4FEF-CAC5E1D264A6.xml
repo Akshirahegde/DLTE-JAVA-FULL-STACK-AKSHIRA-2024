@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<SchemaObject class="oracle.dbtools.crest.model.design.relational.SchemaObject" name="SYSTEM" directorySegmentName="seg_0" id="CE6D4093-76BA-B00B-4FEF-CAC5E1D264A6">
-<createdBy>xxnlnnqa</createdBy>
-<createdTime>2024-03-10 09:15:08 UTC</createdTime>
-<ownerDesignName>Normalization1</ownerDesignName>
-<importedID>2461B05F-2BBA-DE58-F857-B665D2AA15CC</importedID>
-</SchemaObject>
