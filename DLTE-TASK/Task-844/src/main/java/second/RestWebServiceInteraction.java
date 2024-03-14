@@ -50,11 +50,10 @@ public class RestWebServiceInteraction extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       // super.doPut(req, resp);
         Gson gson=new Gson();
         Transaction transactions1=gson.fromJson(req.getReader(),Transaction.class);
         transactions.add(transactions1);
         resp.setStatus(HttpServletResponse.SC_OK);
-        resp.getWriter().println( transactions1.getTransactionReciever()+ "has recieved");
+        resp.getWriter().println( transactions1.getAmountInTransaction()+" "+transactions1.getTransactionReciever()+" "+transactions1.getRemarks());
     }
 }
