@@ -1,5 +1,8 @@
 package exception.org.account;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -8,6 +11,7 @@ public class CreditCardException {
 
     static ResourceBundle resourceBundle=ResourceBundle.getBundle("application");
     //static Logger logger=Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    static Logger logger= LoggerFactory.getLogger(CreditCardException.class);
     public static void main(String[] args) throws IOException {
         System.out.println(resourceBundle.getString("welcome.message"));
         Scanner scanner=new Scanner(System.in);
@@ -15,6 +19,7 @@ public class CreditCardException {
         int option,currPIN,wrongLogin=1;
         Integer lowerLimit,upperLimit;
         Long creditCardNumber;
+        logger.info("Enter Data");
         CreditCard[] myBank={
                 new CreditCard("Akshira",2345678,1234,80000,new Date(2024,02,01),new Date(2024,02,06),12345678L),
                 new CreditCard("Raksha",234578,7896,89000,new Date(2024,01,01),new Date(2024,04,06),12305678L),

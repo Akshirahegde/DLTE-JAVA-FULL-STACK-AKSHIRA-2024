@@ -1,6 +1,6 @@
 package org.example;
 
-public class EmployeeName {
+public class Employee {
     private String employeeFirstName;
     private String employeeMiddlename;
     private String employeeLastName;
@@ -8,7 +8,7 @@ public class EmployeeName {
     private EmployeeContact employeeContact;
 
 
-    public EmployeeName(String employeeFirstName, String employeeMiddlename, String employeeLastName, EmployeeAddress address, EmployeeContact employeeContact) {
+    public Employee(String employeeFirstName, String employeeMiddlename, String employeeLastName, EmployeeAddress address, EmployeeContact employeeContact) {
         this.employeeFirstName = employeeFirstName;
         this.employeeMiddlename = employeeMiddlename;
         this.employeeLastName = employeeLastName;
@@ -16,7 +16,7 @@ public class EmployeeName {
         this.employeeContact = employeeContact;
     }
 
-    public EmployeeName() {
+    public Employee() {
 
     }
 
@@ -27,7 +27,7 @@ public class EmployeeName {
                 ", employeeMiddlename='" + employeeMiddlename + '\'' +
                 ", employeeLastName='" + employeeLastName + '\'' +
                 ", address=" + address +
-                ", employeeContact=" + employeeContact +
+               ", employeeContact=" + employeeContact +
                 '}';
     }
 

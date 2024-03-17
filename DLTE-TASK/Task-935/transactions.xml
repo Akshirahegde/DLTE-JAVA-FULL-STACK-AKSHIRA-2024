@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<transactionsWrapper>
+    <transaction>
+        <amount>3456.0</amount>
+        <date>2024-03-15T06:51:31.241+05:30</date>
+        <user>Raksha</user>
+    </transaction>
+    <transaction>
+        <amount>2340.0</amount>
+        <date>2024-03-15T06:51:31.241+05:30</date>
+        <user>Rakshitha</user>
+    </transaction>
+    <transaction>
+        <amount>150324.0</amount>
+        <date>2024-03-15T06:51:31.241+05:30</date>
+        <user>Rashmitha</user>
+    </transaction>
+</transactionsWrapper>

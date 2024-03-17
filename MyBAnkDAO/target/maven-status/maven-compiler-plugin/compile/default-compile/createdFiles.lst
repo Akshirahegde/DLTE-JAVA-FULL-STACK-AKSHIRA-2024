@@ -1,0 +1,8 @@
+org\example\Remotes\StorageTarget.class
+org\example\Service\UserInfoServices.class
+org\example\Middleware\UserInfoDatabaseRepository.class
+org\example\Middleware\DatabaseTarget.class
+org\example\App.class
+org\example\Remotes\UserInfoRepository.class
+org\example\Entities\Account.class
+org\example\Entities\Transaction.class

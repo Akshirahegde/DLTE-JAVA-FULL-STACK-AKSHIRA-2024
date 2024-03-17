@@ -1,0 +1,6 @@
+org\middleware\App.class
+org\middleware\EmployeeInformation.class
+org\middleware\EmployeeAddress.class
+org\middleware\EmployeeContact.class
+org\middleware\Employee.class
+org\middleware\EmployeeDetails.class

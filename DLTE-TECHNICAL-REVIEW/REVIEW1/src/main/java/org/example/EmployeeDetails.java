@@ -1,17 +1,23 @@
 package org.example;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class EmployeeDetails {
+public class EmployeeDetails implements EmployeeInformation {
     private static EmployeeAddress employeeAddress;
-
-    private  static  Employee employee;
-    private static EmployeeContact employeeInformation;
-
+    private  static Employee employee;
+    private static EmployeeContact employeeContact;
 
 
-    public static Employee inputDetail() {
+    @Override
+    public void display() {
+
+    }
+
+    public  Employee inputDetail() {
         Scanner scanner=new Scanner(System.in);
         System.out.println("Enter First name :");
         String employeeFirstName = scanner.nextLine();
@@ -39,19 +45,19 @@ public class EmployeeDetails {
         System.out.println("Enter the PinCode :");
         int temporaryPinCode = scanner.nextInt();
         employeeAddress = new EmployeeAddress( permanentHouseName, permanentCity, permanentState, permanentPinCode, temporaryHouseName, temporaryCity, temporaryState, temporaryPinCode);
-
+        String emailExpression="^[a-z0-9]";
         System.out.println("Enter the Email Id :");
         String emailId = scanner.next();
         System.out.println("Enter the Phone Number :");
         long phoneNumber = scanner.nextLong();
-        employeeInformation = new EmployeeContact(emailId, phoneNumber);
-        Employee employee = new Employee(employeeFirstName,employeeMiddleName,employeeLastName, employeeAddress, employeeInformation);
+        employeeContact = new EmployeeContact(emailId, phoneNumber);
+        Employee employee = new Employee(employeeFirstName,employeeMiddleName,employeeLastName, employeeAddress, employeeContact);
         System.out.println("Employee added successfuly");
+
         return employee;
     }
 
-
-    public static void displayInput(List<Employee> employees) {
+    public static void display(List<Employee> employees) {
         if (employees.isEmpty()){
             System.out.println("No Data Found");
         }
