@@ -106,6 +106,29 @@ public class UserInfoDatabaseRepository implements UserInfoRepository {
     }
 
     @Override
+    public Customer addAllUserName(String username) {
+            Customer customer = new Customer();
+            try {
+                String query = "select * from user_info where username=?";
+                preparedStatement = connection.prepareStatement(query);
+                preparedStatement.setString(1, username);
+                resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()) {
+                    customer.setUsername(resultSet.getString(1));
+                    customer.setPassword(resultSet.getString(2));
+                    customer.setAddress(resultSet.getString(3));
+                    customer.setEmail(resultSet.getString(4));
+                    customer.setContact(resultSet.getLong(5));
+                    customer.setInitialBalace(resultSet.getLong(6));
+                }
+            } catch (SQLException sqlException) {
+                System.out.println(sqlException);
+            }
+            return customer;
+        }
+
+
+    @Override
     public void addInformation(Customer customer) {
         try{
           //  String splitTransaction=customer.getTransactionDetails();
@@ -205,27 +228,9 @@ public class UserInfoDatabaseRepository implements UserInfoRepository {
         return transactionArrayList;
     }
 
-    @Override
-    public List findByUsername(String username) {
-        ArrayList<List> transactionArrayList=new ArrayList<>();
-        try{
-            String query="select * from transaction_user where username=?";
-            preparedStatement=connection.prepareStatement(query);
-            preparedStatement.setString(1,username);
-            resultSet = preparedStatement.executeQuery();
-            while(resultSet.next()){
-                //transactionArrayList.add(resultSet.getString(1),resultSet.getString(2),resultSet.getInt(3),resultSet.getString(4));
-                StringBuilder builder = new StringBuilder(resultSet.getString(1)+","+resultSet.getString(2)+","+resultSet.getString(3)+","+resultSet.getString(4));
-                transactionArrayList.add(Collections.singletonList(builder));
-//        builder.append("," + new Date());
-//        ArrayList<StringBuilder> transactionOne = new ArrayList<>();
-            }
-        }
-        catch (SQLException sqlException){
-            System.out.println(sqlException);
-        }
-        return transactionArrayList;
-    }
+
+
+
 
     @Override
     public List findByDateAndUsername(String username, String date) {
@@ -249,4 +254,27 @@ public class UserInfoDatabaseRepository implements UserInfoRepository {
         }
         return transactionArrayList;
     }
-}
+
+    @Override
+    public List findByUsername(String username) {
+            ArrayList<List> transactionArrayList=new ArrayList<>();
+            try{
+                String query="select * from transaction_user where username=?";
+                preparedStatement=connection.prepareStatement(query);
+                preparedStatement.setString(1,username);
+                resultSet = preparedStatement.executeQuery();
+                while(resultSet.next()){
+                    //transactionArrayList.add(resultSet.getString(1),resultSet.getString(2),resultSet.getInt(3),resultSet.getString(4));
+                    StringBuilder builder = new StringBuilder(resultSet.getString(1)+","+resultSet.getString(2)+","+resultSet.getString(3)+","+resultSet.getString(4));
+                    transactionArrayList.add(Collections.singletonList(builder));
+//        builder.append("," + new Date());
+//        ArrayList<StringBuilder> transactionOne = new ArrayList<>();
+                }
+            }
+            catch (SQLException sqlException){
+                System.out.println(sqlException);
+            }
+            return transactionArrayList;
+        }
+    }
+

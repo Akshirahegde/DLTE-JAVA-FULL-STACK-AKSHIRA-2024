@@ -14,6 +14,6 @@ public interface UserInfoRepository {
     public List findAll();
     public List findByUsername(String username);
     public List findByDateAndUsername(String username,String date);
-
+    public Customer addAllUserName(String Username);
 
 }

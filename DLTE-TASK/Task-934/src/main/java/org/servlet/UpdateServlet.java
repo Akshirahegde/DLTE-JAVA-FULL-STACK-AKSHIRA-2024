@@ -30,6 +30,7 @@ public class UpdateServlet extends HttpServlet {
                     try(PreparedStatement preparedStatement=connection.prepareStatement(sql)){
                         preparedStatement.setInt(1,transaction_id);
                         preparedStatement.setInt(4,transaction_amount);
+                        resp.getWriter().println("Updated");
                     }
                 }else{
                     throw new ServletException("Parameter passed is null");
