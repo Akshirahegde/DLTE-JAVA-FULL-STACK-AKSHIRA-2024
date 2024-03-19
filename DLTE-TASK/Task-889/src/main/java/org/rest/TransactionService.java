@@ -17,14 +17,16 @@ import java.util.List;
 
 @WebServlet("/transaction/service/*")
 public class TransactionService extends HttpServlet {
+   public UserInfoServices userInfoServices;
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("application/json");
         try {
             StorageTarget storageTarget=new DatabaseTarget();
             UserInfoServices userInfoServices=new UserInfoServices(storageTarget);
             if (req.getParameter("username")!=null){
                 List<List> transaction=new ArrayList<>();
-                transaction=userInfoServices.callOneUserTransact(String.valueOf(req.getParameter("username")));
+                transaction= (List<List>) userInfoServices.callFindusername((req.getParameter("username")));
                 for (int index=0;index<transaction.size();index++){
                     resp.getWriter().println(transaction.get(index));
                 }

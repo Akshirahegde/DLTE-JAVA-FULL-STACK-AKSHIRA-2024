@@ -20,7 +20,7 @@ import java.util.List;
 @WebService
     @SOAPBinding(style = SOAPBinding.Style.RPC)
     public class AccountSoap {
-        private UserInfoServices userInfoServices;
+        public UserInfoServices userInfoServices;
         public AccountSoap() throws SQLException, IOException {
             StorageTarget storageTarget = new DatabaseTarget();
             userInfoServices =  new UserInfoServices(storageTarget);
@@ -53,5 +53,6 @@ import java.util.List;
         public void transactionUpdate(@WebParam(name = "String") String username,@WebParam(name = "Long") Long Amount){
             userInfoServices.callDepositAmountInto(username,Amount);
         }
-    }
+
+}
 

@@ -1,0 +1,8 @@
+Mar 18, 2024 2:07:09 PM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: User inserted successfully
+Mar 18, 2024 2:07:09 PM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: transaction Details inserted Suceesfully
+Mar 19, 2024 9:42:51 AM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: User inserted successfully
+Mar 19, 2024 9:42:51 AM application.db.Middlewares.UserInfoDatabaseRepository addInformation
+INFO: transaction Details inserted Suceesfully

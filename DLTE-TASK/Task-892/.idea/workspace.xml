@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4cc86b30-2cb2-4556-a65e-c9e1af5de6a2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../DLTE-SPRING/DLTE-Spring-001/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-SPRING/DLTE-Spring-001/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-SPRING/DLTE-Spring-001/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-SPRING/DLTE-Spring-001/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-SPRING/DLTE-Spring-001/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-SPRING/DLTE-Spring-001/DLTE-Spring-001.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-SPRING/DLTE-Spring-001/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-SPRING/DLTE-Spring-001/springDispatcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-SPRING/DLTE-Spring-001/src/main/java/org/example/Branch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-SPRING/DLTE-Spring-001/src/main/java/org/example/MyBankContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-SPRING/DLTE-Spring-001/src/main/resources/mybank-branches.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task-889/src/test/java/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/src/main/java/org/example/ConsoleApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/src/main/java/org/example/Validation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/target/ConsoleApplication-2.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/target/classes/org/example/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/target/classes/org/example/ConsoleApp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/target/classes/org/example/Validation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/target/surefire-reports/TEST-org.example.AppTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/target/surefire-reports/org.example.AppTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/ConsoleApplication/target/test-classes/org/example/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/DatabaseRepository.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/src/main/java/org/example/DatabaseRepositoryImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/src/main/java/org/example/Details/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/src/main/java/org/example/Details/EmployeeAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/src/main/java/org/example/Details/EmployeeBasicDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/src/main/java/org/example/Details/InputEmployeeDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/src/main/java/org/example/exception/EmployeeNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/src/main/resources/Database.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5/DatabaseRepository/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/DatabaseRepository1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/src/main/java/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/src/main/java/org/example/employee/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/src/main/java/org/example/employee/EmployeeAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/src/main/java/org/example/employee/EmployeeDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/src/main/java/org/example/exception/EmployeeNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/target/DatabaseRepository1-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/target/classes/org/example/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/target/surefire-reports/TEST-org.example.AppTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/target/surefire-reports/org.example.AppTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5TRIAL/DatabaseRepository1/target/test-classes/org/example/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-JAVAEE/DLTE-Demo-001/target/DLTE-Demo-001.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-JAVAEE/DLTE-Demo-001/target/DLTE-Demo-001.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-JAVAEE/DLTE_JAVAEE_003/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-JAVAEE/DLTE_JAVAEE_003/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyBankDAO/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyBankDAO/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task-889/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task-889/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task-889/src/main/java/org/rest/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task-889/src/main/java/org/rest/TransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task-889/target/Task-889.war" beforeDir="false" afterPath="$PROJECT_DIR$/../Task-889/target/Task-889.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task-889/target/Task-889/WEB-INF/classes/org/rest/TransactionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task-889/target/Task-889/WEB-INF/classes/org/rest/TransactionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task-889/target/Task-889/WEB-INF/lib/DLTE-Java-Tasks-DAO-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task-889/target/classes/org/rest/TransactionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task-889/target/classes/org/rest/TransactionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task-889/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task-892-Soap/credit-card-logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Task-892-Soap/credit-card-logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task-934/src/main/java/org/servlet/UpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task-934/src/main/java/org/servlet/UpdateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task-934/target/Task-934.war" beforeDir="false" afterPath="$PROJECT_DIR$/../Task-934/target/Task-934.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task-934/target/Task-934/WEB-INF/classes/org/servlet/UpdateServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task-934/target/Task-934/WEB-INF/classes/org/servlet/UpdateServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task-934/target/classes/org/servlet/UpdateServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task-934/target/classes/org/servlet/UpdateServlet.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2dtIl5CljolA7ScwAuW28wH5Ajh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4cc86b30-2cb2-4556-a65e-c9e1af5de6a2" name="Default Changelist" comment="" />
+      <created>1710821095512</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710821095512</updated>
+      <workItem from="1710821096881" duration="9000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

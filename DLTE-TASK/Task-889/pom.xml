@@ -57,10 +57,15 @@
       <version>2.0.7</version>
     </dependency>
     <dependency>
-
       <groupId>application.db</groupId>
-      <artifactId>DLTE-Java-Tasks-DAO</artifactId>
+      <artifactId>MyBankDAO</artifactId>
       <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>4.5.1</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 

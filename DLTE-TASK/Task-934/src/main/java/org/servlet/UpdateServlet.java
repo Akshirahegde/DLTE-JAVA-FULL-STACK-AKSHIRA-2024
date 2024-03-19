@@ -26,10 +26,10 @@ public class UpdateServlet extends HttpServlet {
                 if (transactionIDRequest!=null && amountRequest!=null ){
                     int transaction_id=Integer.parseInt(transactionIDRequest);
                     int transaction_amount=Integer.parseInt(amountRequest);
-                    String sql="UPDATE Transaction SET transaction_amount=transaction_amount+? WHERE transaction_id=?";
+                    String sql="UPDATE Transaction SET transaction_amount=? WHERE transaction_id=?";
                     try(PreparedStatement preparedStatement=connection.prepareStatement(sql)){
-                        preparedStatement.setInt(1,transaction_id);
-                        preparedStatement.setInt(4,transaction_amount);
+                        preparedStatement.setInt(2,transaction_id);
+                        preparedStatement.setInt(1,transaction_amount);
                         resp.getWriter().println("Updated");
                     }
                 }else{
