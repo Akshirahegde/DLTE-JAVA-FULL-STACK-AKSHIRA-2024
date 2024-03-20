@@ -21,29 +21,29 @@ public class FindByUsername extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            if (req.getParameter("username") != null) {
-                String username=req.getParameter("username");
-                List customer= (List) new Customer();
-                customer=userInfoServices.callFindAll();
-                //customer = userInfoServices.(String.valueOf(req.getParameter("username")));
-                Gson gson=new Gson();
-                String details = gson.toJson(customer);
-                resp.setStatus(HttpServletResponse.SC_OK);
-                resp.getWriter().println(customer.get(1));
-            }
+        if (req.getParameter("username") != null) {
+            String username = req.getParameter("username");
+            List customer = (List) new Customer();
+            customer = userInfoServices.callFindAll();
+            //customer = userInfoServices.(String.valueOf(req.getParameter("username")));
+            Gson gson = new Gson();
+            String details = gson.toJson(customer);
+            resp.setStatus(HttpServletResponse.SC_OK);
+            resp.getWriter().println(customer.get(1));
+        }
 
 
     }
 
     @Override
     public void init() throws ServletException {
-        StorageTarget storageTarget= null;
+        StorageTarget storageTarget = null;
         try {
             storageTarget = new DatabaseTarget();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        userInfoServices=new UserInfoServices(storageTarget);
+        userInfoServices = new UserInfoServices(storageTarget);
 
     }
 }

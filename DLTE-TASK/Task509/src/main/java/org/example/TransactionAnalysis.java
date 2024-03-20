@@ -50,9 +50,7 @@ public class TransactionAnalysis implements Runnable {
         dateInput = scanner.next();
         String splitDate[] = dateInput.split("/");
         for (Transaction each : transaction) {
-            if ((Integer.parseInt(splitDate[0]) == (each.getDate().getYear())) && (Integer.parseInt(splitDate[1]) == (each.getDate().getMonth())) && (Integer.parseInt(splitDate[2]) == (each.getDate().getDate())))
-
-            {
+            if ((Integer.parseInt(splitDate[0]) == (each.getDate().getYear())) && (Integer.parseInt(splitDate[1]) == (each.getDate().getMonth())) && (Integer.parseInt(splitDate[2]) == (each.getDate().getDate()))) {
                 System.out.println("Transaction was made to" + each.getTransactionReciever());
             }
 
@@ -61,11 +59,11 @@ public class TransactionAnalysis implements Runnable {
     }
 
     public void leastAmountTransferred(Transaction[] transaction) {
-int leastAmount = 0;
+        int leastAmount = 0;
         for (Transaction each : transaction) {
-             leastAmount = each.getAmountTransferred();
-            if (leastAmount > each.getAmountTransferred()){
-                leastAmount=each.getAmountTransferred();
+            leastAmount = each.getAmountTransferred();
+            if (leastAmount > each.getAmountTransferred()) {
+                leastAmount = each.getAmountTransferred();
             }
 
         }
@@ -74,11 +72,11 @@ int leastAmount = 0;
     }
 
     public void maxAmountTransferred(Transaction[] transaction) {
-        int maxAmount =0;
+        int maxAmount = 0;
         for (Transaction each : transaction) {
-            maxAmount =each.getAmountTransferred();
-            if (maxAmount < each.getAmountTransferred()){
-                maxAmount=each.getAmountTransferred();
+            maxAmount = each.getAmountTransferred();
+            if (maxAmount < each.getAmountTransferred()) {
+                maxAmount = each.getAmountTransferred();
             }
 
         }
@@ -113,16 +111,18 @@ int leastAmount = 0;
 
     }
 
-    public void displayBeneficiary(){
-        for(Transaction each:transaction)
-            System.out.println("The Beneficiaries are"+each.getTransactionReciever());
+    public void displayBeneficiary() {
+        for (Transaction each : transaction)
+            System.out.println("The Beneficiaries are" + each.getTransactionReciever());
     }
-    public void displayRemarks(){
-        for(Transaction each:transaction)
-            System.out.println("The Remarks are"+each.getRemarks());
+
+    public void displayRemarks() {
+        for (Transaction each : transaction)
+            System.out.println("The Remarks are" + each.getRemarks());
     }
+
     public void displayAmount() {
-        for(Transaction each:transaction)
-            System.out.println("The amount transferred is"+each.getAmountTransferred());
+        for (Transaction each : transaction)
+            System.out.println("The amount transferred is" + each.getAmountTransferred());
     }
 }

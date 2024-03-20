@@ -19,7 +19,7 @@ public class MyBank {
                 }
             }
         });
-        bankApp.filterDate(new Date("4/12/2023"),new Date("6/2/2024"));
+        bankApp.filterDate(new Date("4/12/2023"), new Date("6/2/2024"));
     }
 
 }

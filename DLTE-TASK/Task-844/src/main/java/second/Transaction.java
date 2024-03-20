@@ -4,10 +4,10 @@ import java.util.Date;
 
 public class Transaction {
     private double amountInTransaction;
-    private  String transactionReciever;
+    private String transactionReciever;
     private String Remarks;
 
-    public Transaction( double amountInTransaction, String transactionReciever, String remarks) {
+    public Transaction(double amountInTransaction, String transactionReciever, String remarks) {
 
         this.amountInTransaction = amountInTransaction;
         this.transactionReciever = transactionReciever;
@@ -44,7 +44,7 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return "Transaction{" +", amountInTransaction=" + amountInTransaction +
+        return "Transaction{" + ", amountInTransaction=" + amountInTransaction +
                 ", transactionReciever='" + transactionReciever + '\'' +
                 ", Remarks='" + Remarks + '\'' +
                 '}';

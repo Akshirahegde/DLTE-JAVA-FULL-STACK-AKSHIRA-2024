@@ -5,7 +5,7 @@ import java.util.Date;
 public class Transaction {
     private Date dateOfTransaction;
     private double amountInTransaction;
-    private  String transactionReciever;
+    private String transactionReciever;
     private String Remarks;
 
     public Transaction(Date dateOfTransaction, double amountInTransaction, String transactionReciever, String remarks) {

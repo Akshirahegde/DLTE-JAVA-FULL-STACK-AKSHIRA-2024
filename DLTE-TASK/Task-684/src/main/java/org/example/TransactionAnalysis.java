@@ -32,23 +32,25 @@ public class TransactionAnalysis {
                 transactionAnalysis.maximumAmountTransferred(transactionList);
                 break;
             case 4:
-                transactionAnalysis.filterbyRemarks(transactionList,Comparator.comparing(Transaction::getRemarks));
+                transactionAnalysis.filterbyRemarks(transactionList, Comparator.comparing(Transaction::getRemarks));
                 break;
         }
     }
-//filter based on Date
-    public void filterbyDateRange(List<Transaction> transaction){
+
+    //filter based on Date
+    public void filterbyDateRange(List<Transaction> transaction) {
 
         Integer startDate = null;
-        Integer endDate=null;
-        Scanner scanner=new Scanner(System.in);
-        startDate=scanner.nextInt();
-        endDate=scanner.nextInt();
+        Integer endDate = null;
+        Scanner scanner = new Scanner(System.in);
+        startDate = scanner.nextInt();
+        endDate = scanner.nextInt();
         Integer finalStartDate = startDate;
         Integer finalEndDate = endDate;
-        List<Transaction> transaction0=transaction.stream().filter(transactions->transactions.getDateOfTransaction().getDate()>= finalStartDate && transactions.getDateOfTransaction().getDate()<= finalEndDate).collect(Collectors.toList());
-        transaction0.forEach(transaction8-> System.out.println(transaction8.getAmountInTransaction()));
+        List<Transaction> transaction0 = transaction.stream().filter(transactions -> transactions.getDateOfTransaction().getDate() >= finalStartDate && transactions.getDateOfTransaction().getDate() <= finalEndDate).collect(Collectors.toList());
+        transaction0.forEach(transaction8 -> System.out.println(transaction8.getAmountInTransaction()));
     }
+
     //    least amount transferred
     public void leastAmountTransferred(List<Transaction> transaction) {
         Transaction transaction1 = transaction.stream().min(Comparator.comparing(Transaction::getAmountInTransaction)).orElse(null);
@@ -62,9 +64,9 @@ public class TransactionAnalysis {
     }
 
 
-  //    filter based on particular remarks
-    public void filterbyRemarks(List<Transaction> transaction,Comparator<Transaction>comparator) {
-     List<Transaction> transaction3=transaction.stream().sorted(comparator).collect(Collectors.toList());
+    //    filter based on particular remarks
+    public void filterbyRemarks(List<Transaction> transaction, Comparator<Transaction> comparator) {
+        List<Transaction> transaction3 = transaction.stream().sorted(comparator).collect(Collectors.toList());
         System.out.println(transaction3);
     }
 }

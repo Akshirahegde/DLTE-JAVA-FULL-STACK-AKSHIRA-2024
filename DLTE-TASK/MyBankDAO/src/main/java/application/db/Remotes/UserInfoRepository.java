@@ -8,12 +8,19 @@ import java.util.List;
 
 public interface UserInfoRepository {
     boolean validateUser(String username);
-    void DepositAmountInto(String username,Long amount);
+
+    void DepositAmountInto(String username, Long amount);
+
     void addInformation(Customer customer);
+
     boolean passwordValidate(String username, String password);
+
     public List findAll();
+
     public List findByUsername(String username);
-    public List findByDateAndUsername(String username,String date);
+
+    public List findByDateAndUsername(String username, String date);
+
     public Customer addAllUserName(String Username);
 
 }

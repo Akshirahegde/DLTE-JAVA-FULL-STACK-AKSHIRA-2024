@@ -9,12 +9,9 @@ import java.util.Scanner;
 
 /**
  * Hello world!
- *
  */
-public class App
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         AccountSoapService soapAccountService = new AccountSoapService();
@@ -23,7 +20,7 @@ public class App
         System.out.println("1->Create a user\n2->Find By UserName\n3->TransactionUpdate");
         System.out.println("Enter your Choice");
         int choice = new Scanner(System.in).nextInt();
-        switch (choice){
+        switch (choice) {
             case 1:
                 System.out.println("Enter the Username");
                 String username = scanner.next();
@@ -35,17 +32,18 @@ public class App
                 String email = scanner.next();
                 System.out.println("Enter your Contact");
                 Long contact = scanner.nextLong();
-                Long initialBalance=0L;
-                accountSoap.createAccount(username,password,Address,email,contact,initialBalance);
+                Long initialBalance = 0L;
+                accountSoap.createAccount(username, password, Address, email, contact, initialBalance);
                 System.out.println("User Created");
                 break;
-            case 2: String user = "prash02";
+            case 2:
+                String user = "prash02";
                 List<Customer> cards = accountSoap.findUser(user).getCustomerList();
-                if(cards.get(0).getUsername()!=null){
-                    for(Customer each:cards){
-                        System.out.println("Username: "+each.getUsername()+" Password: "+each.getPassword()+" Initial Balance: "+each.getInitialBalace());
+                if (cards.get(0).getUsername() != null) {
+                    for (Customer each : cards) {
+                        System.out.println("Username: " + each.getUsername() + " Password: " + each.getPassword() + " Initial Balance: " + each.getInitialBalace());
                     }
-                }else{
+                } else {
                     System.out.println("User Not Found");
                 }
 
@@ -55,7 +53,7 @@ public class App
                 String Username = scanner.next();
                 System.out.println("Enter the amount to be Deposited");
                 Long Amount = scanner.nextLong();
-                accountSoap.transactionUpdate(Username,Amount);
+                accountSoap.transactionUpdate(Username, Amount);
                 System.out.println("Transaction Updated");
                 break;
 
@@ -64,5 +62,5 @@ public class App
                 return;
         }
 
-   }
+    }
 }

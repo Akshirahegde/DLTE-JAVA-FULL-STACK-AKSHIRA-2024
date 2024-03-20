@@ -11,9 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for customer complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="customer">
  *   &lt;complexContent>
@@ -31,18 +31,16 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "customer", propOrder = {
-    "address",
-    "contact",
-    "email",
-    "initialBalace",
-    "password",
-    "transactionDetails",
-    "username"
+        "address",
+        "contact",
+        "email",
+        "initialBalace",
+        "password",
+        "transactionDetails",
+        "username"
 })
 public class Customer {
 
@@ -57,11 +55,9 @@ public class Customer {
 
     /**
      * Gets the value of the address property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAddress() {
         return address;
@@ -69,11 +65,9 @@ public class Customer {
 
     /**
      * Sets the value of the address property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAddress(String value) {
         this.address = value;
@@ -81,11 +75,9 @@ public class Customer {
 
     /**
      * Gets the value of the contact property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getContact() {
         return contact;
@@ -93,11 +85,9 @@ public class Customer {
 
     /**
      * Sets the value of the contact property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setContact(Long value) {
         this.contact = value;
@@ -105,11 +95,9 @@ public class Customer {
 
     /**
      * Gets the value of the email property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getEmail() {
         return email;
@@ -117,11 +105,9 @@ public class Customer {
 
     /**
      * Sets the value of the email property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setEmail(String value) {
         this.email = value;
@@ -129,11 +115,9 @@ public class Customer {
 
     /**
      * Gets the value of the initialBalace property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getInitialBalace() {
         return initialBalace;
@@ -141,11 +125,9 @@ public class Customer {
 
     /**
      * Sets the value of the initialBalace property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setInitialBalace(Long value) {
         this.initialBalace = value;
@@ -153,11 +135,9 @@ public class Customer {
 
     /**
      * Gets the value of the password property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPassword() {
         return password;
@@ -165,11 +145,9 @@ public class Customer {
 
     /**
      * Sets the value of the password property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPassword(String value) {
         this.password = value;
@@ -177,25 +155,23 @@ public class Customer {
 
     /**
      * Gets the value of the transactionDetails property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the transactionDetails property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getTransactionDetails().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
-     * 
-     * 
      */
     public List<Object> getTransactionDetails() {
         if (transactionDetails == null) {
@@ -206,11 +182,9 @@ public class Customer {
 
     /**
      * Gets the value of the username property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getUsername() {
         return username;
@@ -218,11 +192,9 @@ public class Customer {
 
     /**
      * Sets the value of the username property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setUsername(String value) {
         this.username = value;

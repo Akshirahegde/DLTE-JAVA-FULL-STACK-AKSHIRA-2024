@@ -3,13 +3,16 @@
     <!-- Define appenders -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%highlight([%thread]) %highlight(%-5level) %logger{36} - %highlight(%msg) %d{dd/MM/YYYY HH:mm:ss} %n</pattern>
+            <pattern>%highlight([%thread]) %highlight(%-5level) %logger{36} - %highlight(%msg) %d{dd/MM/YYYY HH:mm:ss}
+                %n
+            </pattern>
         </encoder>
     </appender>
 
     <!-- Define file appender -->
     <appender name="myLogs" class="ch.qos.logback.core.FileAppender">
-        <file>C:/Users/xxnlnnpa/Documents/DLTE-JAVA-FULLSTACK-AKASH-2024/DLTE-Java/SL4J</file> <!-- Define log file name and path -->
+        <file>C:/Users/xxnlnnpa/Documents/DLTE-JAVA-FULLSTACK-AKASH-2024/DLTE-Java/SL4J
+        </file> <!-- Define log file name and path -->
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} %highlight([%thread]) %-5level %logger{36} - %highlight(%msg) %n</pattern>
         </encoder>
@@ -17,8 +20,8 @@
 
     <!-- Root logger settings -->
     <root level="INFO">
-        <appender-ref ref="myConsole" />
-        <appender-ref ref="myLogs" /> <!-- Attach file appender -->
+        <appender-ref ref="myConsole"/>
+        <appender-ref ref="myLogs"/> <!-- Attach file appender -->
     </root>
 
 </configuration>

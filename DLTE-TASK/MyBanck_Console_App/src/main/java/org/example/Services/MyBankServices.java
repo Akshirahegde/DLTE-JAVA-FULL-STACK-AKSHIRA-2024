@@ -33,22 +33,21 @@ MyBankServices {
 //    }
 
     public void callDeposit(String username, Long amount) {
-            userInfoRepository.DepositAmountInto(username, amount);
+        userInfoRepository.DepositAmountInto(username, amount);
 
     }
 
     public Customer callValidateUser(String username) {
         try {
-           Customer customer= userInfoRepository.validateUser(username);
-           return customer;
-        }
-        catch (UserNotFoundException exception) {
+            Customer customer = userInfoRepository.validateUser(username);
+            return customer;
+        } catch (UserNotFoundException exception) {
             System.out.println(exception);
         }
         return null;
     }
 
-    public void callCheck(){
+    public void callCheck() {
         UserInformationFileRepository userinfo = new UserInformationFileRepository();
         userinfo.check();
     }

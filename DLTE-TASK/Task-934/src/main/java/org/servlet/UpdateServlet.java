@@ -18,21 +18,21 @@ public class UpdateServlet extends HttpServlet {
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            InitialContext initialContext=new InitialContext();
-            DataSource dataSource= (DataSource)initialContext.lookup("java:/OracleDS");
-            try(Connection connection=dataSource.getConnection()) {
-                String transactionIDRequest= req.getParameter("transaction_id");
-                String amountRequest=req.getParameter("transaction_amount");
-                if (transactionIDRequest!=null && amountRequest!=null ){
-                    int transaction_id=Integer.parseInt(transactionIDRequest);
-                    int transaction_amount=Integer.parseInt(amountRequest);
-                    String sql="UPDATE Transaction SET transaction_amount=? WHERE transaction_id=?";
-                    try(PreparedStatement preparedStatement=connection.prepareStatement(sql)){
-                        preparedStatement.setInt(2,transaction_id);
-                        preparedStatement.setInt(1,transaction_amount);
+            InitialContext initialContext = new InitialContext();
+            DataSource dataSource = (DataSource) initialContext.lookup("java:/OracleDS");
+            try (Connection connection = dataSource.getConnection()) {
+                String transactionIDRequest = req.getParameter("transaction_id");
+                String amountRequest = req.getParameter("transaction_amount");
+                if (transactionIDRequest != null && amountRequest != null) {
+                    int transaction_id = Integer.parseInt(transactionIDRequest);
+                    int transaction_amount = Integer.parseInt(amountRequest);
+                    String sql = "UPDATE Transaction SET transaction_amount=? WHERE transaction_id=?";
+                    try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                        preparedStatement.setInt(2, transaction_id);
+                        preparedStatement.setInt(1, transaction_amount);
                         resp.getWriter().println("Updated");
                     }
-                }else{
+                } else {
                     throw new ServletException("Parameter passed is null");
                 }
 

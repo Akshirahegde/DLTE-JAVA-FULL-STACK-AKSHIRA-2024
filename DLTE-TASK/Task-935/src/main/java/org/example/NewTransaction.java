@@ -29,6 +29,7 @@ public class NewTransaction {
             e.printStackTrace();
         }
     }
+
     @XmlRootElement
     public static class TransactionsWrapper {
         private List<Transaction> transactions;

@@ -16,17 +16,19 @@ import java.sql.SQLException;
 
 @WebServlet("/create/account")
 public class CreateAccount extends HttpServlet {
-UserInfoServices userInfoServices;
+    UserInfoServices userInfoServices;
+
     @Override
     public void init() throws ServletException {
-        StorageTarget storageTarget= null;
+        StorageTarget storageTarget = null;
         try {
             storageTarget = new DatabaseTarget();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        userInfoServices=new UserInfoServices(storageTarget);
+        userInfoServices = new UserInfoServices(storageTarget);
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {

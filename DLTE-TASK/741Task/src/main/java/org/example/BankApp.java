@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public interface BankApp {
-    ArrayList<Loan> loan=new ArrayList<>();
+    ArrayList<Loan> loan = new ArrayList<>();
+
     void filterDate(Date startDate, Date endDate);
 }

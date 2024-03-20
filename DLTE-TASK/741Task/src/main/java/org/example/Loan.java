@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Loan {
     private int loanNumber;
-    private double  loanAmount;
+    private double loanAmount;
     private Date loanDate;
     private String loanStatus;
     private String borrowerName;

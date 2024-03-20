@@ -3,7 +3,7 @@ package org.example;
 import java.util.Date;
 
 public class Transaction {
-   // dateOfTransaction, amountInTransaction, to, remarks(Family, Education, Emergency, Bills, Friend)
+    // dateOfTransaction, amountInTransaction, to, remarks(Family, Education, Emergency, Bills, Friend)
     private Date dateofTransaction;
     private Double amountInTransaction;
     private String transactionReciever;

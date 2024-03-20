@@ -18,14 +18,15 @@ import java.util.List;
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public class AccountSoap {
     private UserInfoServices userInfoServices;
+
     public AccountSoap() throws SQLException {
         StorageTarget storageTarget = new DatabaseTarget();
         userInfoServices = new UserInfoServices(storageTarget);
     }
 
     @WebMethod
-    @WebResult(name="GroupAccount")
-    public GroupAccount findByUsername(@WebParam(name="String") String username){
+    @WebResult(name = "GroupAccount")
+    public GroupAccount findByUsername(@WebParam(name = "String") String username) {
         Customer customer = (Customer) userInfoServices.callFindusername(username);
         GroupAccount groupAccount = new GroupAccount();
         List<Customer> customerList = new ArrayList<>();

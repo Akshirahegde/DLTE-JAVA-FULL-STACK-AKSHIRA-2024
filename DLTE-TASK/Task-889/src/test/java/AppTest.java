@@ -31,12 +31,12 @@ import static org.mockito.Mockito.when;
 public class AppTest {
     @Mock
     private UserInfoServices services;
-//
-   @Mock
-   private HttpServletRequest request;
-//
+    //
     @Mock
-   private HttpServletResponse response;
+    private HttpServletRequest request;
+    //
+    @Mock
+    private HttpServletResponse response;
 
     @Mock
     private StringWriter stringWriter;
@@ -45,47 +45,48 @@ public class AppTest {
 
     @Before
     public void initiate() throws IOException {
-        stringWriter=new StringWriter();
-        printWriter=new PrintWriter(stringWriter);
+        stringWriter = new StringWriter();
+        printWriter = new PrintWriter(stringWriter);
         when(response.getWriter()).thenReturn(printWriter);
     }
+
     @Test
     public void testReadAll() throws ServletException, IOException {
-        TransactionService readAllService=new TransactionService();
+        TransactionService readAllService = new TransactionService();
         // setting mock service
-        readAllService.userInfoServices=services;
+        readAllService.userInfoServices = services;
 
         StringBuilder builder = new StringBuilder("Deposit,0");
         builder.append("," + new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
         ArrayList<StringBuilder> transactionOne = new ArrayList<>();
         transactionOne.add(builder);
-        Customer customer=new Customer("Samanyu","samanyu123","Karkala","samanyu@gmail",765429876L,100L,transactionOne);
-        Customer customer1=new Customer("Shathaayu","shathaayu123","Karkala","shathaayu@gmail",765420876L,190L,transactionOne);
+        Customer customer = new Customer("Samanyu", "samanyu123", "Karkala", "samanyu@gmail", 765429876L, 100L, transactionOne);
+        Customer customer1 = new Customer("Shathaayu", "shathaayu123", "Karkala", "shathaayu@gmail", 765420876L, 190L, transactionOne);
         //Customer customer2=new Customer("Riyaan","riyaan123","Hebri","riyaan@gmail.com",7686543245L,786L,transactionOne);
-        List<Customer> customers= Stream.of(customer,customer1).collect(Collectors.toList());
+        List<Customer> customers = Stream.of(customer, customer1).collect(Collectors.toList());
 
         when(services.callFindusername(anyString())).thenReturn(customer);
 
-        readAllService.doGet(request,response);
+        readAllService.doGet(request, response);
         when(request.getParameter("username")).thenReturn("Samanyu");
-       verify(response).setContentType("application/json");
+        verify(response).setContentType("application/json");
         verify(services).callFindusername(anyString());
 
     }
 
     @Test
     public void findUsername() throws ServletException, IOException {
-        TransactionService readByIdService=new TransactionService();
+        TransactionService readByIdService = new TransactionService();
         // setting mock service
-        readByIdService.userInfoServices=services;
+        readByIdService.userInfoServices = services;
         StringBuilder builder = new StringBuilder("Deposit,0");
         builder.append("," + new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
         ArrayList<StringBuilder> transactionOne = new ArrayList<>();
         transactionOne.add(builder);
-        Customer customer=new Customer("Samanyu","samanyu123","Karkala","samanyu@gmail",765429876L,100L,transactionOne);
-        Customer customer1=new Customer("Shathaayu","shathaayu123","Karkala","shathaayu@gmail",765420876L,190L,transactionOne);
-       // Customer customer2=new Customer("Riyaan","riyaan123","Hebri","riyaan@gmail.com",7686543245L,786L,transactionOne);
-        List<Customer> customers= Stream.of(customer,customer1).collect(Collectors.toList());
+        Customer customer = new Customer("Samanyu", "samanyu123", "Karkala", "samanyu@gmail", 765429876L, 100L, transactionOne);
+        Customer customer1 = new Customer("Shathaayu", "shathaayu123", "Karkala", "shathaayu@gmail", 765420876L, 190L, transactionOne);
+        // Customer customer2=new Customer("Riyaan","riyaan123","Hebri","riyaan@gmail.com",7686543245L,786L,transactionOne);
+        List<Customer> customers = Stream.of(customer, customer1).collect(Collectors.toList());
 
 
         when(request.getParameter("username")).thenReturn("Samanyu");
@@ -93,27 +94,27 @@ public class AppTest {
         when(services.callFindusername(anyString())).thenReturn(customer1);
 
 
-        readByIdService.doGet(request,response);
+        readByIdService.doGet(request, response);
 
         verify(response).setContentType("application/json");
 
         verify(services).callOneUserTransact(anyString());
-        assertNotEquals("expected: ","[{\"username\":\"Samanyu\",\"password\":\"samanyu123\",\"address\":\"Karkala\",\"email\":\"samanyu@gmail\",\"contact\":765429876L,\"initialBalace\":100L,\"transactionDetails\":[\"Deposit\",0,\"18-03-2024\"]},{\"username\":\"Shathaayu\",\"password\":\"shathaayu123\",\"address\":\"Karkala\",\"email\":\"shathaayu@gmail\",\"contact\":765420876L,\"initialBalace\":190L,\"transactionDetails\":[\"Deposit\",0,\"18-03-2024\"]}]",stringWriter.toString().trim());
+        assertNotEquals("expected: ", "[{\"username\":\"Samanyu\",\"password\":\"samanyu123\",\"address\":\"Karkala\",\"email\":\"samanyu@gmail\",\"contact\":765429876L,\"initialBalace\":100L,\"transactionDetails\":[\"Deposit\",0,\"18-03-2024\"]},{\"username\":\"Shathaayu\",\"password\":\"shathaayu123\",\"address\":\"Karkala\",\"email\":\"shathaayu@gmail\",\"contact\":765420876L,\"initialBalace\":190L,\"transactionDetails\":[\"Deposit\",0,\"18-03-2024\"]}]", stringWriter.toString().trim());
 
     }
 
     @Test
     public void findByDateUserName() throws ServletException, IOException {
-        TransactionService readByDateAndUserNameService=new TransactionService();
+        TransactionService readByDateAndUserNameService = new TransactionService();
         // setting mock service
-        readByDateAndUserNameService.userInfoServices=services;
+        readByDateAndUserNameService.userInfoServices = services;
         StringBuilder builder = new StringBuilder("Deposit,0");
         builder.append("," + new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
         ArrayList<StringBuilder> transactionOne = new ArrayList<>();
         transactionOne.add(builder);
-        Customer customer=new Customer("Samanyu","samanyu123","Karkala","samanyu@gmail",765429876L,100L,transactionOne);
-        Customer customer1=new Customer("Shathaayu","shathaayu123","Karkala","shathaayu@gmail",765420876L,190L,transactionOne);
-     //   Customer customer2=new Customer("Riyaan","riyaan123","Hebri","riyaan@gmail.com",7686543245L,786L,transactionOne);
+        Customer customer = new Customer("Samanyu", "samanyu123", "Karkala", "samanyu@gmail", 765429876L, 100L, transactionOne);
+        Customer customer1 = new Customer("Shathaayu", "shathaayu123", "Karkala", "shathaayu@gmail", 765420876L, 190L, transactionOne);
+        //   Customer customer2=new Customer("Riyaan","riyaan123","Hebri","riyaan@gmail.com",7686543245L,786L,transactionOne);
         String username = "Samanyu";
         String date = "18-03-2024";
 
@@ -121,10 +122,10 @@ public class AppTest {
         when(request.getParameter("date")).thenReturn(date);
 
         when(services.callTransactionByDate(username, date)).thenReturn(Collections.singletonList(username));
-      // readByDateAndUserNameService.doGet(request,response);
+        // readByDateAndUserNameService.doGet(request,response);
 //        verify(response).setContentType("application/json");
-       verify(services).callTransactionByDate(anyString(),anyString());
-        assertNotEquals("expected: ","[{\"username\":\"Samanyu\",\"password\":\"samanyu123\",\"address\":\"Karkala\",\"email\":\"samanyu@gmail\",\"contact\":765429876L,\"initialBalace\":100L,\"transactionDetails\":[\"Deposit\",0,\"18-03-2024\"]},{\"username\":\"Shathaayu\",\"password\":\"shathaayu123\",\"address\":\"Karkala\",\"email\":\"shathaayu@gmail\",\"contact\":765420876L,\"initialBalace\":190L,\"transactionDetails\":[\"Deposit\",0,\"18-03-2024\"]}]",stringWriter.toString().trim());
+        verify(services).callTransactionByDate(anyString(), anyString());
+        assertNotEquals("expected: ", "[{\"username\":\"Samanyu\",\"password\":\"samanyu123\",\"address\":\"Karkala\",\"email\":\"samanyu@gmail\",\"contact\":765429876L,\"initialBalace\":100L,\"transactionDetails\":[\"Deposit\",0,\"18-03-2024\"]},{\"username\":\"Shathaayu\",\"password\":\"shathaayu123\",\"address\":\"Karkala\",\"email\":\"shathaayu@gmail\",\"contact\":765420876L,\"initialBalace\":190L,\"transactionDetails\":[\"Deposit\",0,\"18-03-2024\"]}]", stringWriter.toString().trim());
 
     }
 
