@@ -32,7 +32,8 @@ public class DepositAmount extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("application/json");
+      //  resp.setContentType("application/json");
+        //resp.setContentType("text/html");
         try {
             String amount = req.getParameter("amount");
             String name = req.getParameter("username");
