@@ -1,0 +1,8 @@
+org\databaserepo\entity\EmployeeAddress.class
+org\databaserepo\entity\EmployeeDetails.class
+org\databaserepo\App.class
+org\databaserepo\exception\EmployeeException.class
+org\databaserepo\database\StorageTarget.class
+org\databaserepo\database\DatabaseRepositoryImplementation.class
+org\databaserepo\entity\Employee.class
+org\databaserepo\interfaces\EmployeeInputDetails.class

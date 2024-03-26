@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.consoleapp.AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.618 s <<< FAILURE! - in org.consoleapp.AppTest
+testFindById(org.consoleapp.AppTest)  Time elapsed: 0.33 s  <<< FAILURE!
+java.lang.AssertionError: expected same:<org.databaserepo.entity.Employee@7c24b813> was not:<null>
+	at org.consoleapp.AppTest.testFindById(AppTest.java:34)
+

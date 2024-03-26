@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.databaserepo.AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.5 s <<< FAILURE! - in org.databaserepo.AppTest
+testFindById(org.databaserepo.AppTest)  Time elapsed: 0.299 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.databaserepo.AppTest.testFindById(AppTest.java:35)
+
