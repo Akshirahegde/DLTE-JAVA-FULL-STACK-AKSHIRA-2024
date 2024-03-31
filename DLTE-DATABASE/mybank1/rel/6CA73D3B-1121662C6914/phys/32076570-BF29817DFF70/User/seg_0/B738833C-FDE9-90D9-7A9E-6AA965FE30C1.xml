@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="SYSTEM" directorySegmentName="seg_0" id="B738833C-FDE9-90D9-7A9E-6AA965FE30C1">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjName>SYSTEM</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>AD6363F6-FAA3-A28E-A755-BF5F451802EB</schemaObject>
+<privileges>GLOBAL QUERY REWRITE, CREATE MATERIALIZED VIEW, CREATE TABLE, SELECT ANY TABLE</privileges>
+<privilegesWithAdminOption>UNLIMITED TABLESPACE</privilegesWithAdminOption>
+<profile>DEFAULT</profile>
+</UserOraclev10g>

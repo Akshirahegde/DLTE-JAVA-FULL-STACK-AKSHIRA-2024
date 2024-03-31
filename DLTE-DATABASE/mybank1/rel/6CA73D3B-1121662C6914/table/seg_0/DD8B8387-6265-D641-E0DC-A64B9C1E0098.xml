@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DD8B8387-6265-D641-E0DC-A64B9C1E0098" schemaObject="AD6363F6-FAA3-A28E-A755-BF5F451802EB" name="MYBANK_APP_ACCOUNT">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>MYBANK_APP_ACCOUNT</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ACCOUNT_ID" id="97593BE9-BE42-3162-7C29-8431E8FFFE8E">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_ACCOUNT</sourceObjSchema>
+<sourceObjName>ACCOUNT_ID</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACCOUNT_TYPE" id="3861AF4A-E722-78BF-2A7E-C50EB97A1BA4">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_ACCOUNT</sourceObjSchema>
+<sourceObjName>ACCOUNT_TYPE</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACCOUNT_NUMBER" id="C2E9B540-F573-63A0-05B3-F24F5221C289">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_ACCOUNT</sourceObjSchema>
+<sourceObjName>ACCOUNT_NUMBER</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACCOUNT_STATUS" id="0AE9BCDD-0996-724D-8234-C95FB564DED2">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_ACCOUNT</sourceObjSchema>
+<sourceObjName>ACCOUNT_STATUS</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUSTOMER_ID" id="B6EE7148-A43E-408D-2AD8-26874999086A">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_ACCOUNT</sourceObjSchema>
+<sourceObjName>CUSTOMER_ID</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5CF8026D-2F03-1D17-8BF3-089B8AD7EB1C" referredColumn="2A951A97-925D-E8BA-C6A8-E6765E12AF80"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="77E6F3C0-65A3-DC28-55F1-2A0C0AF735EC" name="ACCOUNT_SEQ">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>ACCOUNT_SEQ</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="97593BE9-BE42-3162-7C29-8431E8FFFE8E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="936922E3-85CE-B689-DB21-FE66E041B786" schemaObject="AD6363F6-FAA3-A28E-A755-BF5F451802EB" name="MYBANK_APP_ACCOUNT_ACCOUNT_NUMBER_UN">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>SYS_C007467</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C2E9B540-F573-63A0-05B3-F24F5221C289"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DFDE4EC8-B2CA-2565-0853-6105357B4B3C" schemaObject="AD6363F6-FAA3-A28E-A755-BF5F451802EB" name="ACCOUNT_SEQ">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>ACCOUNT_SEQ</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="97593BE9-BE42-3162-7C29-8431E8FFFE8E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EA1D62E5-2442-BCD4-67CF-93903A97BC00" name="SYS_C007468">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6EE7148-A43E-408D-2AD8-26874999086A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

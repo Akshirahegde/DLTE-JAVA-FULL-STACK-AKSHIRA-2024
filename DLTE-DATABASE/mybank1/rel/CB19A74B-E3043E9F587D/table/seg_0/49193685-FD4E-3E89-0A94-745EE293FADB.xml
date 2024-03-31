@@ -1,0 +1,158 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="49193685-FD4E-3E89-0A94-745EE293FADB" schemaObject="C751294F-4A6E-33E6-AC13-F3EDE343F3A8" name="MYBANK_APP_CUSTOMER">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>MYBANK_APP_CUSTOMER</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CUSTOMER_ID" id="AE3B8DAA-7799-1E08-E440-006D015AC69F">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_CUSTOMER</sourceObjSchema>
+<sourceObjName>CUSTOMER_ID</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUSTOMER_NAME" id="7E17B688-81BE-40E6-7727-C90F139783BF">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_CUSTOMER</sourceObjSchema>
+<sourceObjName>CUSTOMER_NAME</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUSTOMER_ADDRESS" id="E3DD25C2-38BA-4619-736A-1CF831920794">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_CUSTOMER</sourceObjSchema>
+<sourceObjName>CUSTOMER_ADDRESS</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUSTOMER_STATUS" id="DA5F4EF6-4E41-5936-BE26-31F3C6139BFD">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_CUSTOMER</sourceObjSchema>
+<sourceObjName>CUSTOMER_STATUS</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUSTOMER_CONTACT" id="3841EC23-FA75-1D05-62EC-1DC3654341FC">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_CUSTOMER</sourceObjSchema>
+<sourceObjName>CUSTOMER_CONTACT</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USERNAME" id="BC528101-F745-5445-BBBC-ACF523C3FF3C">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_CUSTOMER</sourceObjSchema>
+<sourceObjName>USERNAME</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PASSWORD" id="B3135D74-BEEB-3A49-A89A-7D5E16AE2830">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_CUSTOMER</sourceObjSchema>
+<sourceObjName>PASSWORD</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D1C205EA-C95D-022D-ABED-2D8D53F3CF9E" name="MY_BANK_APP_SEQ">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>MY_BANK_APP_SEQ</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE3B8DAA-7799-1E08-E440-006D015AC69F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AD0BE69B-9037-B948-CC5E-FB895C7C1BD8" schemaObject="C751294F-4A6E-33E6-AC13-F3EDE343F3A8" name="MYBANK_APP_CUSTOMER_USERNAME_UN">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>SYS_C007458</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC528101-F745-5445-BBBC-ACF523C3FF3C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B7D7A538-709A-19A6-A676-04E8F0533C6D" schemaObject="C751294F-4A6E-33E6-AC13-F3EDE343F3A8" name="MY_BANK_APP_SEQ">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>MY_BANK_APP_SEQ</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE3B8DAA-7799-1E08-E440-006D015AC69F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

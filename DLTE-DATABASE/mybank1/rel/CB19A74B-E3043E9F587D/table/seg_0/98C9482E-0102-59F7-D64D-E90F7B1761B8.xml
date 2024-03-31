@@ -1,0 +1,197 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="98C9482E-0102-59F7-D64D-E90F7B1761B8" schemaObject="C751294F-4A6E-33E6-AC13-F3EDE343F3A8" name="MYBANK_APP_INSURANCEAVAILED">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>MYBANK_APP_INSURANCEAVAILED</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="INSURANCE_AVAIL_ID" id="2EECED90-4DE6-AE81-181A-EB54F38D0780">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_INSURANCEAVAILED</sourceObjSchema>
+<sourceObjName>INSURANCE_AVAIL_ID</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INSURANCE_TYPE" id="6DD8E706-DB4F-6585-5D88-5C6194B73647">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_INSURANCEAVAILED</sourceObjSchema>
+<sourceObjName>INSURANCE_TYPE</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INSURANCE_NAME" id="494FBA27-22B2-688F-2F5B-322E15A09C56">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_INSURANCEAVAILED</sourceObjSchema>
+<sourceObjName>INSURANCE_NAME</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INSURANCE_KEY_BENEFITS" id="6DB55120-D817-C9E9-A9DE-7D45027AB768">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_INSURANCEAVAILED</sourceObjSchema>
+<sourceObjName>INSURANCE_KEY_BENEFITS</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INSURANCE_COVERAGE" id="E45FC547-FACC-6AC6-2F30-4C9AE879BB50">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_INSURANCEAVAILED</sourceObjSchema>
+<sourceObjName>INSURANCE_COVERAGE</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INSURANCE_LIFETIME" id="FA4240F9-8118-BFE5-B50A-E4F74146A0E0">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_INSURANCEAVAILED</sourceObjSchema>
+<sourceObjName>INSURANCE_LIFETIME</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INSURANCE_PREMIUM" id="4A8674A4-605B-7B4B-FA3D-812D8045F70F">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_INSURANCEAVAILED</sourceObjSchema>
+<sourceObjName>INSURANCE_PREMIUM</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUSTOMER_ID" id="8A0F7AB7-DDC3-3E7A-783C-60EC419C0743">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_INSURANCEAVAILED</sourceObjSchema>
+<sourceObjName>CUSTOMER_ID</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="25410D15-2824-3D59-09BB-9CC8F3482D83" referredColumn="AE3B8DAA-7799-1E08-E440-006D015AC69F"/>
+</associations>
+</Column>
+<Column name="INSURANCE_ID" id="891792A0-CEE9-6ADA-9E4B-35EC94A69895">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_INSURANCEAVAILED</sourceObjSchema>
+<sourceObjName>INSURANCE_ID</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ACFF65BD-048A-D2EA-6A48-1CD538269326" referredColumn="BABC4EAC-FE20-F15B-E46A-450BFFDD24F5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0E4B81A8-D827-CB95-1138-846DE20EE68D" name="INSURANCEAVAILED_SEQ">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>INSURANCEAVAILED_SEQ</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2EECED90-4DE6-AE81-181A-EB54F38D0780"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ED873FD6-D5C5-58A2-3080-E9F12826DD43" schemaObject="C751294F-4A6E-33E6-AC13-F3EDE343F3A8" name="INSURANCEAVAILED_SEQ">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>INSURANCEAVAILED_SEQ</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2EECED90-4DE6-AE81-181A-EB54F38D0780"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D024DDA8-1710-3BA6-1FBE-BBF8C0BA8B2F" name="SYS_C007491">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8A0F7AB7-DDC3-3E7A-783C-60EC419C0743"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="90239A31-F0C3-14E8-ABCC-88102E043C56" name="SYS_C007492">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="891792A0-CEE9-6ADA-9E4B-35EC94A69895"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

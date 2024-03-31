@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="MYBANK_APP_KYC" directorySegmentName="seg_0" id="70312B46-F3E2-815D-8EC9-FEA31C6A76D8">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>C751294F-4A6E-33E6-AC13-F3EDE343F3A8</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>7E7DBE46-CE73-3501-B833-C901A2B6469D</segment>
+<tableSpace>6BC50A06-B4AB-B68C-379F-D6CE518BBF23</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="KYC_NUMBER" id="1EBDED82-8F56-9B1B-4312-34C8885CABB6">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CUSTOMER_ID" id="4B8C5F2A-C7A0-CB1D-62E7-5C05006C043A">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="KYC_STATUS" id="535DB5DF-FE61-5A69-F13C-BC57245A9A90">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="KYC_PAN" id="F191A66B-5233-C002-0E2C-76FFDFAE237F">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="KYC_AADHAAR" id="F19526BD-1D0A-A164-ECBA-996554C34222">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="KYC_SEQ" id="FCCEB16E-40F4-5627-2448-696FF8051D41">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>C751294F-4A6E-33E6-AC13-F3EDE343F3A8</schemaObject>
+<segment>54E8F275-86FF-984A-C9B4-383967B8492C</segment>
+<tableSpace>6BC50A06-B4AB-B68C-379F-D6CE518BBF23</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="SYS_C007465" id="AB0EA55A-A891-D21B-C5ED-91B6D8A17110">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="KYC_SEQ" id="E5C5E7CD-727F-A3EC-AF91-0F8CE6925BE7">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<segment>54E8F275-86FF-984A-C9B4-383967B8492C</segment>
+<tableSpace>6BC50A06-B4AB-B68C-379F-D6CE518BBF23</tableSpace>
+<existingIndex>FCCEB16E-40F4-5627-2448-696FF8051D41</existingIndex>
+<indexSegment>54E8F275-86FF-984A-C9B4-383967B8492C</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="MYBANK_APP_KYC_KYC_AADHAAR_UN" id="A4DE4F9C-1BE6-AA4D-B340-6EBCE90D43C2">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>C751294F-4A6E-33E6-AC13-F3EDE343F3A8</schemaObject>
+<segment>54E8F275-86FF-984A-C9B4-383967B8492C</segment>
+<tableSpace>6BC50A06-B4AB-B68C-379F-D6CE518BBF23</tableSpace>
+<indexSegment>54E8F275-86FF-984A-C9B4-383967B8492C</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="MYBANK_APP_KYC_KYC_PAN_UN" id="BE8B1E0F-FB4F-387B-1D56-A68D4870AA0F">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>C751294F-4A6E-33E6-AC13-F3EDE343F3A8</schemaObject>
+<segment>54E8F275-86FF-984A-C9B4-383967B8492C</segment>
+<tableSpace>6BC50A06-B4AB-B68C-379F-D6CE518BBF23</tableSpace>
+<indexSegment>54E8F275-86FF-984A-C9B4-383967B8492C</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev11g>

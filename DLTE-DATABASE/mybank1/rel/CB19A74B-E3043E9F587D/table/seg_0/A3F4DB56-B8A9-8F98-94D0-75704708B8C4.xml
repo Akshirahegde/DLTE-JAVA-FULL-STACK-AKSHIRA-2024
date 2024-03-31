@@ -1,0 +1,182 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A3F4DB56-B8A9-8F98-94D0-75704708B8C4" schemaObject="C751294F-4A6E-33E6-AC13-F3EDE343F3A8" name="MYBANK_APP_DEPOSITAVAILED">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>MYBANK_APP_DEPOSITAVAILED</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DEPOSIT_AVAIL_ID" id="AAE55DA9-EB26-4D85-AD45-0E15DFA3C687">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_DEPOSITAVAILED</sourceObjSchema>
+<sourceObjName>DEPOSIT_AVAIL_ID</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEPOSIT_NAME" id="5BF02AEF-C2C7-06FA-728E-062C6C584A05">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_DEPOSITAVAILED</sourceObjSchema>
+<sourceObjName>DEPOSIT_NAME</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEPOSIT_ROI" id="AB33D558-6169-0587-F51A-645E108A73C8">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_DEPOSITAVAILED</sourceObjSchema>
+<sourceObjName>DEPOSIT_ROI</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEPOSIT_AMOUNT" id="346FD797-8ED1-4C7F-EB8C-5AEC8B88B0F3">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_DEPOSITAVAILED</sourceObjSchema>
+<sourceObjName>DEPOSIT_AMOUNT</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEPOSIT_DURATION" id="18490D7F-9F0E-1D38-F38B-1BDF65203B0F">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_DEPOSITAVAILED</sourceObjSchema>
+<sourceObjName>DEPOSIT_DURATION</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEPOSIT_MATURITY" id="E3E6B0B7-D295-4746-CD8E-A553F057ADA7">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_DEPOSITAVAILED</sourceObjSchema>
+<sourceObjName>DEPOSIT_MATURITY</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEPOSIT_ID" id="E0225D89-5946-F957-BA67-C20BB0BB9980">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_DEPOSITAVAILED</sourceObjSchema>
+<sourceObjName>DEPOSIT_ID</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E77048B7-F1A5-A7E2-18DA-D253BA63A556" referredColumn="3A743BEB-A3B9-3CBB-3194-25DBE3AE9EDB"/>
+</associations>
+</Column>
+<Column name="CUSTOMER_ID" id="611FDACA-A81B-6DCD-3677-C7A8F376A1B7">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>MYBANK_APP_DEPOSITAVAILED</sourceObjSchema>
+<sourceObjName>CUSTOMER_ID</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BAD1C82C-81E9-D30E-3018-13475755E963" referredColumn="AE3B8DAA-7799-1E08-E440-006D015AC69F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BB759012-8A6E-6407-E137-007B0BC2E457" name="DEPOSITAVAILED_SEQ">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>DEPOSITAVAILED_SEQ</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AAE55DA9-EB26-4D85-AD45-0E15DFA3C687"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1194DF0A-2FB2-385B-9664-7BEC85B59E8D" schemaObject="C751294F-4A6E-33E6-AC13-F3EDE343F3A8" name="DEPOSITAVAILED_SEQ">
+<sourceConnName>dlte2024</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>DEPOSITAVAILED_SEQ</sourceObjName>
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AAE55DA9-EB26-4D85-AD45-0E15DFA3C687"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="473C6D46-AC8B-E69C-9C6F-830789E50EFB" name="SYS_C007488">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="611FDACA-A81B-6DCD-3677-C7A8F376A1B7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5D77C362-0EB0-6176-2CAB-5DD480FA4A4C" name="SYS_C007489">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E0225D89-5946-F957-BA67-C20BB0BB9980"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

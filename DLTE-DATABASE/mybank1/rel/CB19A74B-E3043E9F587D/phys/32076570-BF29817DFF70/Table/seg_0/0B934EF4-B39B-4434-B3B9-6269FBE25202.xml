@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="MYBANK_APP_DEPOSITAVAILABLE" directorySegmentName="seg_0" id="0B934EF4-B39B-4434-B3B9-6269FBE25202">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>C751294F-4A6E-33E6-AC13-F3EDE343F3A8</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>7E7DBE46-CE73-3501-B833-C901A2B6469D</segment>
+<tableSpace>6BC50A06-B4AB-B68C-379F-D6CE518BBF23</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="DEPOSIT_NAME" id="08BD26FC-3429-964D-DC07-7FD5BBA63E7C">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPOSIT_ID" id="3A743BEB-A3B9-3CBB-3194-25DBE3AE9EDB">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPOSIT_DESCRIPTION" id="543CD37A-7F68-C921-66EA-A9D23379E063">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPOSIT_TYPE" id="A829781B-1605-B046-FE12-36C9DFF841C8">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPOSIT_ROI" id="A8EDDD73-BD1D-ED82-FF3C-2796FCA01C00">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="DEPOSITAVAILABLE_SEQ" id="C9318FA9-59A1-A305-FD4F-D0301876D1D0">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>C751294F-4A6E-33E6-AC13-F3EDE343F3A8</schemaObject>
+<segment>54E8F275-86FF-984A-C9B4-383967B8492C</segment>
+<tableSpace>6BC50A06-B4AB-B68C-379F-D6CE518BBF23</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="DEPOSITAVAILABLE_SEQ" id="50D5922A-5342-7133-2B2B-C5941BD33C33">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:04:24 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<segment>54E8F275-86FF-984A-C9B4-383967B8492C</segment>
+<tableSpace>6BC50A06-B4AB-B68C-379F-D6CE518BBF23</tableSpace>
+<existingIndex>C9318FA9-59A1-A305-FD4F-D0301876D1D0</existingIndex>
+<indexSegment>54E8F275-86FF-984A-C9B4-383967B8492C</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

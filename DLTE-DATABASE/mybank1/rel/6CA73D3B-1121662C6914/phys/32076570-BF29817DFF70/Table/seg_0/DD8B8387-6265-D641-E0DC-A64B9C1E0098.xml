@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="MYBANK_APP_ACCOUNT" directorySegmentName="seg_0" id="DD8B8387-6265-D641-E0DC-A64B9C1E0098">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>AD6363F6-FAA3-A28E-A755-BF5F451802EB</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>59E9A550-3D85-69AA-1FAF-157782414606</segment>
+<tableSpace>3B220B6A-4619-92D6-4AE4-4D0A36B1AF40</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ACCOUNT_STATUS" id="0AE9BCDD-0996-724D-8234-C95FB564DED2">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ACCOUNT_TYPE" id="3861AF4A-E722-78BF-2A7E-C50EB97A1BA4">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ACCOUNT_ID" id="97593BE9-BE42-3162-7C29-8431E8FFFE8E">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CUSTOMER_ID" id="B6EE7148-A43E-408D-2AD8-26874999086A">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ACCOUNT_NUMBER" id="C2E9B540-F573-63A0-05B3-F24F5221C289">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="ACCOUNT_SEQ" id="DFDE4EC8-B2CA-2565-0853-6105357B4B3C">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>AD6363F6-FAA3-A28E-A755-BF5F451802EB</schemaObject>
+<segment>DC6857DE-1164-B5D9-F493-26D8C6F0C7E8</segment>
+<tableSpace>3B220B6A-4619-92D6-4AE4-4D0A36B1AF40</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="SYS_C007468" id="EA1D62E5-2442-BCD4-67CF-93903A97BC00">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="ACCOUNT_SEQ" id="77E6F3C0-65A3-DC28-55F1-2A0C0AF735EC">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<segment>DC6857DE-1164-B5D9-F493-26D8C6F0C7E8</segment>
+<tableSpace>3B220B6A-4619-92D6-4AE4-4D0A36B1AF40</tableSpace>
+<existingIndex>DFDE4EC8-B2CA-2565-0853-6105357B4B3C</existingIndex>
+<indexSegment>DC6857DE-1164-B5D9-F493-26D8C6F0C7E8</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="MYBANK_APP_ACCOUNT_ACCOUNT_NUMBER_UN" id="936922E3-85CE-B689-DB21-FE66E041B786">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>AD6363F6-FAA3-A28E-A755-BF5F451802EB</schemaObject>
+<segment>DC6857DE-1164-B5D9-F493-26D8C6F0C7E8</segment>
+<tableSpace>3B220B6A-4619-92D6-4AE4-4D0A36B1AF40</tableSpace>
+<indexSegment>DC6857DE-1164-B5D9-F493-26D8C6F0C7E8</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="MYBANK_APP_LOANAVAILABLE" directorySegmentName="seg_0" id="7B668AA5-4315-860F-FE0D-2B51F408396E">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>AD6363F6-FAA3-A28E-A755-BF5F451802EB</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>59E9A550-3D85-69AA-1FAF-157782414606</segment>
+<tableSpace>3B220B6A-4619-92D6-4AE4-4D0A36B1AF40</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="LOAN_NAME" id="777F70F0-ECCD-77DB-A2D3-EB0A6AA6B27B">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOAN_TYPE" id="A2E20C71-7C1E-9C01-B262-967AB0531615">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOAN_ID" id="B4F08EA6-9ACC-AC3A-5071-4E2EBEFED183">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOAN_DESCRIPTION" id="C6AADC7E-D15C-BA75-8B0D-F31E00D44A84">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOAN_ROI" id="CFD6B665-5AA1-4EF6-EB4F-BBCCD2B1880C">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="LOANAVAILABLE_SEQ" id="3BECCE58-8A46-3657-9E5A-740B532FEECC">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>AD6363F6-FAA3-A28E-A755-BF5F451802EB</schemaObject>
+<segment>DC6857DE-1164-B5D9-F493-26D8C6F0C7E8</segment>
+<tableSpace>3B220B6A-4619-92D6-4AE4-4D0A36B1AF40</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="LOANAVAILABLE_SEQ" id="F3C992AC-26FF-A696-402F-C0B424576673">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<segment>DC6857DE-1164-B5D9-F493-26D8C6F0C7E8</segment>
+<tableSpace>3B220B6A-4619-92D6-4AE4-4D0A36B1AF40</tableSpace>
+<existingIndex>3BECCE58-8A46-3657-9E5A-740B532FEECC</existingIndex>
+<indexSegment>DC6857DE-1164-B5D9-F493-26D8C6F0C7E8</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="MYBANK_APP_CUSTOMER" directorySegmentName="seg_0" id="B891DC42-0965-5393-D5AE-434B9AB35223">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>AD6363F6-FAA3-A28E-A755-BF5F451802EB</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>59E9A550-3D85-69AA-1FAF-157782414606</segment>
+<tableSpace>3B220B6A-4619-92D6-4AE4-4D0A36B1AF40</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CUSTOMER_ID" id="2A951A97-925D-E8BA-C6A8-E6765E12AF80">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PASSWORD" id="54EE64E2-E68B-3B12-638D-6D11DDD81622">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CUSTOMER_ADDRESS" id="5CCBF672-DDAC-1883-8807-AF41FC70CC54">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CUSTOMER_CONTACT" id="6D263BAD-65BB-FBBC-9A9C-200EDABA2F40">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CUSTOMER_NAME" id="6DF33825-73C9-F23C-26FB-C67C4954AA05">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USERNAME" id="AD9DE9C6-3066-8184-299B-295E0BDD2F22">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CUSTOMER_STATUS" id="FD0EBC5C-AADC-8705-A507-A214BCC2DD9A">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="MY_BANK_APP_SEQ" id="DD196206-D62F-69FC-5700-342A0DF7EFE6">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>AD6363F6-FAA3-A28E-A755-BF5F451802EB</schemaObject>
+<segment>DC6857DE-1164-B5D9-F493-26D8C6F0C7E8</segment>
+<tableSpace>3B220B6A-4619-92D6-4AE4-4D0A36B1AF40</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="MY_BANK_APP_SEQ" id="A95A89B5-DC02-0CE4-4AEE-E4E4AAC040C5">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<segment>DC6857DE-1164-B5D9-F493-26D8C6F0C7E8</segment>
+<tableSpace>3B220B6A-4619-92D6-4AE4-4D0A36B1AF40</tableSpace>
+<existingIndex>DD196206-D62F-69FC-5700-342A0DF7EFE6</existingIndex>
+<indexSegment>DC6857DE-1164-B5D9-F493-26D8C6F0C7E8</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="MYBANK_APP_CUSTOMER_USERNAME_UN" id="BAAFA3AE-A238-C5E2-C14E-9D25208A43D7">
+<createdBy>xxnlnnqa</createdBy>
+<createdTime>2024-03-31 12:07:42 UTC</createdTime>
+<ownerDesignName>mybank1</ownerDesignName>
+<schemaObject>AD6363F6-FAA3-A28E-A755-BF5F451802EB</schemaObject>
+<segment>DC6857DE-1164-B5D9-F493-26D8C6F0C7E8</segment>
+<tableSpace>3B220B6A-4619-92D6-4AE4-4D0A36B1AF40</tableSpace>
+<indexSegment>DC6857DE-1164-B5D9-F493-26D8C6F0C7E8</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev11g>
