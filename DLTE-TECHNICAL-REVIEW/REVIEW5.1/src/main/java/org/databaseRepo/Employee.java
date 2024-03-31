@@ -1,41 +1,71 @@
-package org.example.Details;
+package org.databaseRepo;
 
 public class Employee {
-    EmployeeBasicDetails employeeBasicDetails;
+    private String employeeName;
+    private String employeeId;
+    private String emailId;
+    private long phoneNumber;
     EmployeeAddress employeePermanentAddress;
     EmployeeAddress employeeTemporaryAddress;
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "employeebasicDetails=" + employeeBasicDetails +
-                ", employeePermanentAddress=" + employeePermanentAddress +
-                ", employeeTemporaryAddress=" + employeeTemporaryAddress +
-                '}';
-    }
-    public String displayEmployeeDetails() {
-        return "Employee ID: " + employeeBasicDetails.getEmployeeId() +
-                "\nName: " + employeeBasicDetails.getEmployeeName() +
-                "\nEmail: " + employeeBasicDetails.getEmailId() +
-                "\nPhone Number: " + employeeBasicDetails.getPhoneNumber() +
-                "\nPermanent Address: " + employeePermanentAddress.getAddress() +
-                "\nPermanent House Number: " + employeePermanentAddress.getHouseName() +
-                "\nPermanent City: " + employeePermanentAddress.getCity() +
-                "\nPermanent State: " + employeePermanentAddress.getState() +
-                "\nPermanent Pin Code: " + employeePermanentAddress.getPinCode() +
-                "\nTemporary Address: " + employeeTemporaryAddress.getAddress() +
-                "\nTemporary House Number: " + employeeTemporaryAddress.getHouseName() +
-                "\nTemporary City: " + employeeTemporaryAddress.getCity() +
-                "\nTemporary State: " + employeeTemporaryAddress.getState() +
-                "\nTemporary Pin Code: " + employeeTemporaryAddress.getPinCode();
+    public Employee(String employeeId,String employeeName,  String emailId, long phoneNumber, EmployeeAddress employeePermanentAddress, EmployeeAddress employeeTemporaryAddress) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.emailId = emailId;
+        this.phoneNumber = phoneNumber;
+        this.employeePermanentAddress = employeePermanentAddress;
+        this.employeeTemporaryAddress = employeeTemporaryAddress;
     }
 
-    public EmployeeBasicDetails getEmployeebasicDetails() {
-        return employeeBasicDetails;
+    public Employee(String employeeId,String employeeName,  String emailId, long phoneNumber) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.emailId = emailId;
+        this.phoneNumber = phoneNumber;
     }
 
-    public void setEmployeebasicDetails(EmployeeBasicDetails employeebasicDetails) {
-        this.employeeBasicDetails = employeebasicDetails;
+    public Employee(EmployeeAddress employeePermanentAddress, EmployeeAddress employeeTemporaryAddress) {
+        this.employeePermanentAddress = employeePermanentAddress;
+        this.employeeTemporaryAddress = employeeTemporaryAddress;
+    }
+
+    public Employee() {
+    }
+
+    public Employee(Employee employee1, EmployeeAddress permanentDetails, EmployeeAddress temporaryDetails) {
+    }
+
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public EmployeeAddress getEmployeePermanentAddress() {
@@ -54,9 +84,15 @@ public class Employee {
         this.employeeTemporaryAddress = employeeTemporaryAddress;
     }
 
-    public Employee(EmployeeBasicDetails employeebasicDetails, EmployeeAddress employeePermanentAddress, EmployeeAddress employeeTemporaryAddress) {
-        this.employeeBasicDetails = employeebasicDetails;
-        this.employeePermanentAddress = employeePermanentAddress;
-        this.employeeTemporaryAddress = employeeTemporaryAddress;
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeName='" + employeeName + '\'' +
+                ", employeeId='" + employeeId + '\'' +
+                ", emailId='" + emailId + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", employeePermanentAddress=" + employeePermanentAddress +
+                ", employeeTemporaryAddress=" + employeeTemporaryAddress +
+                '}';
     }
 }

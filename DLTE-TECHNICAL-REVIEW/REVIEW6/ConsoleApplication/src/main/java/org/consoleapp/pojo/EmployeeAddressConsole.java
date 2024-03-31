@@ -15,6 +15,7 @@ public class EmployeeAddressConsole {
         this.pin = pin;
     }
 
+
     public EmployeeAddressConsole() {
     }
 

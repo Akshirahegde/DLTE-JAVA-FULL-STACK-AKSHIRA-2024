@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea9f1332-18c7-48b4-8a3f-4800d61afa5d" name="Default Changelist" comment="">
+    <list default="true" id="d871b250-2c75-4ffa-926c-31c16997f3a2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hibernate/hibernatedemo/HibernatedemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hibernate/hibernatedemo/HibernatedemoApplicationTests.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5.1/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5.1/.idea/.name" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../DLTE-TECHNICAL-REVIEW/REVIEW5.1/.idea/compiler.xml" afterDir="false" />
@@ -108,7 +117,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="2dw87H7hGqdP1Tad9napNC3JRRs" />
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2dw8nc5dKiRICO3JvcMKOh0DoRv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -119,9 +135,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager">
+    <configuration name="HibernatedemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hibernatedemo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hibernate.hibernatedemo.HibernatedemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -140,22 +162,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ea9f1332-18c7-48b4-8a3f-4800d61afa5d" name="Default Changelist" comment="" />
-      <created>1710907610845</created>
+      <changelist id="d871b250-2c75-4ffa-926c-31c16997f3a2" name="Default Changelist" comment="" />
+      <created>1710907947081</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1710907610845</updated>
-      <workItem from="1710907614546" duration="73000" />
+      <updated>1710907947081</updated>
+      <workItem from="1710907951506" duration="838000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="233" y="0" key="#Project_Structure" timestamp="1710907670557">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state x="233" y="0" key="#Project_Structure/0.0.1280.672@0.0.1280.672" timestamp="1710907670557" />
   </component>
 </project>

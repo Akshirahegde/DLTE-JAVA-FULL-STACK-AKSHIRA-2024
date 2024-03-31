@@ -1,6 +1,8 @@
 package org.console;
 
-public class EmployeeAddressConsole {
+import org.databaseRepo.EmployeeAddress;
+
+public class EmployeeAddressConsole extends EmployeeAddress {
     private String street;
     private String houseName;
     private String state;

@@ -46,26 +46,17 @@ public class ConsoleApp {
                            callReadAll(scanner);
                             break;
                         case 2://displaying employee based on employee id
-                            try {
                                 callReadAllById(scanner);
-                            }catch(Exception e){
-//                              logger.info(resourceBundle.getString("employee.not.found"));
-//                                System.out.println("Employee not found");
-                            }
+                                break;
 
                         case 3://displaying all employees
-                            try {
-                                callDisplayAll(scanner);
-                            }catch (Exception e){
-                                System.out.println("No Employees to Display");
-                            }
+                                 callDisplayAll(scanner);
+                                 break;
 
                         case 4://displaying based on pincode
-                            try {
+
                                 callDisplayBasedOnPin(scanner);
-                            }catch(Exception e){
-                                System.out.println("No Employeees based on that pin Code");
-                            }
+                           break;
                         case 5:
                             exit(0);
                     }
@@ -185,19 +176,20 @@ public static void callReadAll(Scanner scanner){
 
         System.out.println(resourceBundle.getString("enter.temporaryaddress"));
         System.out.print(resourceBundle.getString("enter.street"));
-        String temporaryStreet = scanner.nextLine();
+        Scanner scanner1=new Scanner(System.in);
+        String temporaryStreet = scanner1.nextLine();
 
         System.out.print(resourceBundle.getString("enter.HouseName"));
-        String temporaryHouseName = scanner.nextLine();
+        String temporaryHouseName = scanner1.nextLine();
 
         System.out.print(resourceBundle.getString("enter.city"));
-        String temporaryCity = scanner.nextLine();
+        String temporaryCity = scanner1.nextLine();
 
         System.out.print(resourceBundle.getString("enter.state"));
-        String temporaryState = scanner.nextLine();
+        String temporaryState = scanner1.nextLine();
 
         System.out.print(resourceBundle.getString("enter.pincode"));
-        int temporaryPinCode = scanner.nextInt();
+        int temporaryPinCode = scanner1.nextInt();
 
         if (!validation.isValidPin(temporaryPinCode)) {
             System.out.println(resourceBundle.getString("invalid.Pin"));
@@ -231,7 +223,7 @@ public static void callReadAll(Scanner scanner){
             Employee employee = employeeInputDetails.displayBasedOnEmployeeId(employeeId);
             employeeConsoleId = translate(employee);
             System.out.println(employeeConsoleId.displayEmployeeDetails());
-        } catch (EmployeeException e) {
+        } catch (EmployeeException | NullPointerException e) {
             System.out.println(e.getMessage());
             logger.warn(e.getMessage());
         }
@@ -259,9 +251,11 @@ public static void callReadAll(Scanner scanner){
         System.out.println(resourceBundle.getString("enter.pincode"));
         int pin = scanner.nextInt();
         try {
-            Employee employee = employeeInputDetails.displayBasedOnPinCode(pin);
-            employeeConsolePin = translate(employee);
-            System.out.println(employeeConsolePin.displayEmployeeDetails());
+          List  <Employee> employee = employeeInputDetails.displayBasedOnPinCode(pin);
+          for(Employee emp:employee) {
+              employeeConsolePin = translate(emp);
+              System.out.println(employeeConsolePin.displayEmployeeDetails());
+          }
         } catch (EmployeeException e) {
             System.out.println(e.getMessage());
             logger.warn(e.getMessage());

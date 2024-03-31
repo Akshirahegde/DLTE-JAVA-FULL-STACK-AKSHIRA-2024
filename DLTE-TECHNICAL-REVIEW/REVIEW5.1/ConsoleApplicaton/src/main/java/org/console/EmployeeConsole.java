@@ -1,6 +1,8 @@
 package org.console;
 
-public class EmployeeConsole {
+import org.databaseRepo.Employee;
+
+public class EmployeeConsole extends Employee {
     private String employeeName;
     private String employeeId;
     private String emailId;
@@ -8,20 +10,25 @@ public class EmployeeConsole {
     EmployeeAddressConsole employeePermanentAddress;
     EmployeeAddressConsole employeeTemporaryAddress;
 
-    public EmployeeConsole(String employeeName, String employeeId, String emailId, long phoneNumber, EmployeeAddressConsole employeePermanentAddress, EmployeeAddressConsole employeeTemporaryAddress) {
-        this.employeeName = employeeName;
+    public EmployeeConsole( String employeeId, String employeeName,String emailId, long phoneNumber, EmployeeAddressConsole employeePermanentAddress, EmployeeAddressConsole employeeTemporaryAddress) {
         this.employeeId = employeeId;
+        this.employeeName = employeeName;
         this.emailId = emailId;
         this.phoneNumber = phoneNumber;
         this.employeePermanentAddress = employeePermanentAddress;
         this.employeeTemporaryAddress = employeeTemporaryAddress;
     }
 
-    public EmployeeConsole(String employeeName, String employeeId, String emailId, long phoneNumber) {
-        this.employeeName = employeeName;
+    public EmployeeConsole(String employeeId, String employeeName, String emailId, long phoneNumber) {
         this.employeeId = employeeId;
+        this.employeeName = employeeName;
         this.emailId = emailId;
         this.phoneNumber = phoneNumber;
+    }
+
+    public EmployeeConsole(EmployeeAddressConsole employeePermanentAddress, EmployeeAddressConsole employeeTemporaryAddress) {
+        this.employeePermanentAddress = employeePermanentAddress;
+        this.employeeTemporaryAddress = employeeTemporaryAddress;
     }
 
     public EmployeeConsole() {
@@ -88,5 +95,22 @@ public class EmployeeConsole {
                 ", employeePermanentAddress=" + employeePermanentAddress +
                 ", employeeTemporaryAddress=" + employeeTemporaryAddress +
                 '}';
+    }
+
+    public String displayEmployeeDetails() {
+        return "Employee ID: " + getEmployeeId() +
+                "\nName: " +getEmployeeName() +
+                "\nEmail: " + getEmailId() +
+                "\nPhone Number: " + getPhoneNumber() +
+                "\nPermanent Address: " + employeePermanentAddress.getStreet() +
+                "\nPermanent House Number: " + employeePermanentAddress.getHouseName() +
+                "\nPermanent City: " + employeePermanentAddress.getCity() +
+                "\nPermanent State: " + employeePermanentAddress.getState() +
+                "\nPermanent Pin Code: " + employeePermanentAddress.getPinCode() +
+                "\nTemporary Address: " + employeeTemporaryAddress.getStreet()+
+                "\nTemporary House Number: " + employeeTemporaryAddress.getHouseName() +
+                "\nTemporary City: " + employeeTemporaryAddress.getCity() +
+                "\nTemporary State: " + employeeTemporaryAddress.getState() +
+                "\nTemporary Pin Code: " + employeeTemporaryAddress.getPinCode();
     }
 }

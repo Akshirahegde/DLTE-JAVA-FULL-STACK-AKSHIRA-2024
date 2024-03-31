@@ -1,6 +1,7 @@
 package com.migratejdbc.taskmigratejdbc;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,6 @@ public class MyService {
     public Transaction apiInsert(Transaction transaction){
         int check=jdbcTemplate.update("insert into TRANSACTIONS values (?,?,?,?,?,?)",
                 new Object[]{
-                        transaction.getTransactionId(),
                         transaction.getTransactionDate(),
                         transaction.getTransactionBy(),
                         transaction.getTransactionAmount(),
@@ -26,12 +26,12 @@ public class MyService {
 
                 });
 //        {
-//            "transactionId": 1003,
+//            "transactionId": 11,
 //                "transactionDate":"2024-03-12",
-//                "transactionBy": "Amal",
-//                "transactionTo":"Hari",
+//                "transactionBy": "Ramesh",
+//                "transactionTo":"Suresh",
 //                "transactionAmount":5000,
-//                "transactionFor":"Emergency"
+//                "transactionFor":"Family"
 //        }
 
         if(check!=0)
@@ -56,12 +56,11 @@ public class MyService {
 
     //query for all transaction by sender name
     public List<Transaction> apiBySender(String senderName){
-        return jdbcTemplate.query("select * from TRANSACTIONS where TRANSACTION_REMARKS=?",
+        return jdbcTemplate.query("select * from TRANSACTIONS where TRANSACTION_BY=?",
                 new Object[]{senderName},
-                new TransactionMapper());
+               new TransactionMapper());
+              //  new BeanPropertyRowMapper<>(Transaction.class));
     }
-
-
 
     //for multiple object retrun in sender ,reciver and amount
     private class TransactionMapper implements RowMapper<Transaction> {

@@ -3,6 +3,7 @@ package org.databaserepo.database;
 import org.databaserepo.entity.Employee;
 import org.databaserepo.entity.EmployeeAddress;
 import org.databaserepo.entity.EmployeeDetails;
+import org.databaserepo.exception.EmployeeException;
 import org.databaserepo.interfaces.EmployeeInputDetails;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,40 +34,30 @@ public class DatabaseRepositoryImplementation implements EmployeeInputDetails {
 
             String employeeID=employee.getEmployeeDetails().getEmployeeId();
             try{
-                String employees = "INSERT INTO Employee (id, name) VALUES (?, ?)";
+                String employees = "INSERT INTO Employee (employeeid, employeename,  emailid ,   phonenumber) VALUES (?, ?, ?, ?)";
                 preparedStatement=connection.prepareStatement(employees);
                 preparedStatement.setString(1,employeeID);
                 preparedStatement.setString(2,employee.getEmployeeDetails().getEmployeeName());
+                preparedStatement.setString(3,employee.getEmployeeDetails().getEmailId());
+                preparedStatement.setLong(4,employee.getEmployeeDetails().getPhoneNumber());
+
                 int result=preparedStatement.executeUpdate();//------------resultBasic
 
-                String permanentaddress = "INSERT INTO EmployeeAddress (employeeId,permanentStreet, permanentHouseName,permanentCity, permanentState,permanentPin) " +
-                        "VALUES (?, ?, ?, ?, ?, ?)";//---------EmployeeAddress
-                preparedStatement=connection.prepareStatement(permanentaddress);
+                String address = "INSERT INTO Address (employeeId,permanentStreet, permanentHouseName,permanentCity, permanentState,permanentPin,temporaryStreet,temporaryHouseName,temporaryCity,temporaryState,temporaryPin) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                preparedStatement=connection.prepareStatement(address);
                 preparedStatement.setString(1,employeeID);
                 preparedStatement.setString(2,employee.getEmployeePermanentAddress().getStreet());
                 preparedStatement.setString(3,employee.getEmployeePermanentAddress().getHouseName());
                 preparedStatement.setString(4,employee.getEmployeePermanentAddress().getCity());
                 preparedStatement.setString(5,employee.getEmployeePermanentAddress().getState());
                 preparedStatement.setInt(6,employee.getEmployeePermanentAddress().getPin());
-                int resultPermanent=preparedStatement.executeUpdate();
-
-                String temporaryaddress = "INSERT INTO EmployeeTemporaryAddress(employeeId,temporaryStreet, temporaryHouseName,temporaryCity, temporaryState,temporaryPin) " +
-                        "VALUES (?, ?, ?, ?, ?, ?)";
-                preparedStatement=connection.prepareStatement(temporaryaddress);
-                preparedStatement.setString(1,employeeID);
-                preparedStatement.setString(2,employee.getEmployeeTemporaryAddress().getStreet());
-                preparedStatement.setString(3,employee.getEmployeeTemporaryAddress().getHouseName());
-                preparedStatement.setString(4,employee.getEmployeeTemporaryAddress().getCity());
-                preparedStatement.setString(5,employee.getEmployeeTemporaryAddress().getState());
-                preparedStatement.setInt(6,employee.getEmployeeTemporaryAddress().getPin());
-                int resultTemporary=preparedStatement.executeUpdate();
-
-                String information = "INSERT INTO EmployeeInformation (employeeId, email, phoneNumber) VALUES (?, ?, ?)";
-                preparedStatement=connection.prepareStatement(information);
-                preparedStatement.setString(1,employeeID);
-                preparedStatement.setString(2,employee.getEmployeeDetails().getEmailId());
-                preparedStatement.setLong(3,employee.getEmployeeDetails().getPhoneNumber() );
-                int resultInformation=preparedStatement.executeUpdate();
+                preparedStatement.setString(7,employee.getEmployeeTemporaryAddress().getStreet());
+                preparedStatement.setString(8,employee.getEmployeeTemporaryAddress().getHouseName());
+                preparedStatement.setString(9,employee.getEmployeeTemporaryAddress().getCity());
+                preparedStatement.setString(10,employee.getEmployeeTemporaryAddress().getState());
+                preparedStatement.setInt(11,employee.getEmployeeTemporaryAddress().getPin());
+                int resultAddress=preparedStatement.executeUpdate();
                 System.out.println(resourceBundle1.getString("employee.add")+" " + employeeID +" "+resourceBundle1.getString("employeeAdd.success"));
 
             }catch (SQLException sqlException) {
@@ -85,15 +76,15 @@ public class DatabaseRepositoryImplementation implements EmployeeInputDetails {
     public Employee displayBasedOnEmployeeId(String employeeID) {
         Employee employee = null;
         try {
-            String query = "SELECT * FROM employee emp INNER JOIN EmployeeAddress empPAdd ON emp.id = empPAdd.employeeId INNER JOIN EmployeeTemporaryAddress empTAdd ON emp.id = empTAdd.employeeId INNER JOIN EmployeeInformation empInfo ON emp.id = empInfo.employeeId WHERE emp.id = ?";
+            String query = "SELECT e.EmployeeId, e.EmployeeName, e.emailId, e.phoneNumber, a.permanentStreet, a.permanentHouseName, a.permanentCity, a.permanentState, a.permanentPin, a.temporaryStreet, a.temporaryHouseName, a.temporaryCity, a.temporaryState, a.temporaryPin FROM Employee e INNER JOIN Address a ON e.employeeid = a.EmployeeId WHERE e.employeeid = ?";
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1,employeeID);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 EmployeeDetails employeeDetails = new EmployeeDetails(
-                        resultSet.getString("name"),
-                        resultSet.getString("id"),
-                        resultSet.getString("email"),
+                        resultSet.getString("EmployeeId"),
+                        resultSet.getString("EmployeeName"),
+                        resultSet.getString("emailId"),
                         resultSet.getLong("phoneNumber")
                 );
 
@@ -113,28 +104,32 @@ public class DatabaseRepositoryImplementation implements EmployeeInputDetails {
                         resultSet.getInt("temporaryPin")
                 );
 
-                employee = new Employee(employeeDetails, permanentAddress, temporaryAddress);
+                employee = new Employee(employeeDetails, permanentAddress,temporaryAddress);
+            }else{
+                throw new EmployeeException(resourceBundle1.getString("no.pincode")+ employeeID);
             }
-        } catch (SQLException sqlException) {
-            sqlException.printStackTrace();
+        }  catch (SQLException| NullPointerException e) {
+            throw new EmployeeException(resourceBundle1.getString("no.pincode")+ employeeID);
         }
+
         return employee;
     }
 
     @Override
-    public Employee displayBasedOnPinCode(int pin) {
-        Employee employee = null;
+    public List<Employee> displayBasedOnPinCode(int pin) {
+
+      List<Employee> employee=new ArrayList<>();
         try {
-            String query = "SELECT * FROM employee emp INNER JOIN EmployeeInformation empinf ON emp.id=empinf.employeeId INNER JOIN EmployeeAddress empPAdd ON emp.id = empPAdd.employeeId INNER JOIN EmployeeTemporaryAddress empTAdd ON emp.id = empTAdd.employeeId WHERE empPAdd.permanentPin= ? OR empTAdd.temporaryPin = ?";
+            String query ="SELECT e.EmployeeId,e.EmployeeName,e.emailId,e.phoneNumber,a.permanentStreet,a.permanentHouseName,a.permanentState,a.permanentCity,a.permanentPin,a.temporaryStreet,a.temporaryHouseName,a.temporaryState,a.temporaryCity,a.temporaryPin FROM employee e  INNER JOIN Address a ON e.EmployeeId = a.EmployeeId WHERE a.permanentPin = ? OR a.temporaryPin = ?";
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1,pin);
             preparedStatement.setInt(2, pin);
             resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
+            while (resultSet.next()) {
                 EmployeeDetails employeeDetails = new EmployeeDetails(
-                        resultSet.getString("name"),
-                        resultSet.getString("id"),
-                        resultSet.getString("email"),
+                        resultSet.getString("EmployeeId"),
+                        resultSet.getString("EmployeeName"),
+                        resultSet.getString("emailId"),
                         resultSet.getLong("phoneNumber")
                 );
 
@@ -154,10 +149,13 @@ public class DatabaseRepositoryImplementation implements EmployeeInputDetails {
                         resultSet.getInt("temporaryPin")
                 );
 
-                employee = new Employee(employeeDetails, permanentAddress, temporaryAddress);
+                employee.add (new Employee(employeeDetails, permanentAddress,temporaryAddress));
             }
-        } catch (SQLException sqlException) {
-            sqlException.printStackTrace();
+        }  catch (SQLException e) {
+            throw new EmployeeException(resourceBundle1.getString("no.pincode")+ pin);
+        }
+        if (employee.isEmpty()) {
+            throw new EmployeeException(resourceBundle1.getString("no.pincode")+ pin);
         }
         return employee;
     }
@@ -166,15 +164,15 @@ public class DatabaseRepositoryImplementation implements EmployeeInputDetails {
     public List<Employee> read() {
         List<Employee> employees = new ArrayList<>();
         try {
-            String findAll = "SELECT * FROM employee emp INNER JOIN EmployeeAddress empPAdd ON emp.id = empPAdd.employeeId INNER JOIN EmployeeTemporaryAddress empTAdd ON emp.id = empTAdd.employeeId INNER JOIN EmployeeInformation empInfo ON emp.id = empInfo.employeeId";
+            String findAll = "SELECT e.EmployeeId,e.EmployeeName,e.emailId,e.phoneNumber,a.permanentStreet,a.permanentHouseName,a.permanentState,a.permanentCity,a.permanentPin,a.temporaryStreet,a.temporaryHouseName,a.temporaryState,a.temporaryCity,a.temporaryPin FROM employee e  INNER JOIN Address a ON e.EmployeeId = a.EmployeeId";
             preparedStatement = connection.prepareStatement(findAll);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Employee employee = null;
                 EmployeeDetails employeeDetails = new EmployeeDetails(
-                        resultSet.getString("name"),
-                        resultSet.getString("id"),
-                        resultSet.getString("email"),
+                        resultSet.getString("EmployeeId"),
+                        resultSet.getString("EmployeeName"),
+                        resultSet.getString("emailId"),
                         resultSet.getLong("phoneNumber")
                 );
                 EmployeeAddress permanentAddress = new EmployeeAddress(
@@ -184,6 +182,7 @@ public class DatabaseRepositoryImplementation implements EmployeeInputDetails {
                         resultSet.getString("permanentCity"),
                         resultSet.getInt("permanentPin")
                 );
+
                 EmployeeAddress temporaryAddress = new EmployeeAddress(
                         resultSet.getString("temporaryStreet"),
                         resultSet.getString("temporaryHouseName"),
@@ -191,8 +190,7 @@ public class DatabaseRepositoryImplementation implements EmployeeInputDetails {
                         resultSet.getString("temporaryCity"),
                         resultSet.getInt("temporaryPin")
                 );
-
-                employee = new Employee(employeeDetails, permanentAddress, temporaryAddress);
+                employee = new Employee(employeeDetails, permanentAddress,temporaryAddress);
                 employees.add(employee);
             }
         } catch (SQLException sqlException) {

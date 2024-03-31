@@ -1,4 +1,8 @@
 package org.databaseRepo.exception;
 
-public class EmployeeNotFoundException {
+public class EmployeeNotFoundException extends RuntimeException{
+    public EmployeeNotFoundException(String message) {
+        super(message);
+    }
+
 }

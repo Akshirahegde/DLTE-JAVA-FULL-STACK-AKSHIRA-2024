@@ -11,6 +11,9 @@ public class Employee {
         this.employeeTemporaryAddress = employeeTemporaryAddress;
     }
 
+    public Employee(EmployeeDetails employeeDetails, EmployeeAddress address) {
+    }
+
     public EmployeeDetails getEmployeeDetails() {
         return employeeDetails;
     }

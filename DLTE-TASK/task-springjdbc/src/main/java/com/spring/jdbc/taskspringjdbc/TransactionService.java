@@ -43,21 +43,28 @@ public class TransactionService {
     public List<Transaction> apiFindBySender(String sender) {
         return jdbcTemplate.query("select * from transaction_jdbc where transactionfrom=?",
                 new Object[]{sender},
-                new TransactionMapper());
+               new TransactionMapper());
+                //new BeanPropertyRowMapper<>(Transaction.class));
     }
 
     public List<Transaction> apiFindByReciever(String receiver) {
         return jdbcTemplate.query("select * from transaction_jdbc where transactionto=?",
                 new Object[]{receiver},
-                new TransactionMapper());
+              new BeanPropertyRowMapper<>(Transaction.class));
     }
 
     public List<Transaction> apiFindByAmount(Integer transactionamount) {
         return jdbcTemplate.query("select * from transaction_jdbc where transactionamount=?",
                 new Object[]{transactionamount},
-                new TransactionMapper());
+                new BeanPropertyRowMapper<>(Transaction.class));
     }
-
+//
+//    {"transactionId":90,
+//            "transactionTo":"Rampa",
+//            "transactionFrom":"Sampa",
+//            "transactionAmount":5000,
+//            "transactionRemarks":"Family"
+//    }
 //    public List<Transaction> apiFindByRemarks(String remark) {
 //        return jdbcTemplate.query("select * from transaction where transactionRemarks=?",
 //                new Object[]{remark},
@@ -69,11 +76,12 @@ public class TransactionService {
         @Override
         public Transaction mapRow(ResultSet rs, int rowNum) throws SQLException {
             Transaction transaction =new Transaction();
-            transaction.setTransactionId(rs.getInt("transactionId"));
-            transaction.setTransactionFrom(rs.getString("transactionFrom"));
-            transaction.setTransactionTo(rs.getString("transactionTo"));
-            transaction.setTransactionAmount(rs.getInt("transactionAmount"));
-            transaction.setTransactionRemarks(rs.getString("transactionRemarks"));
+            transaction.setTransactionId(rs.getInt("transactionid"));
+                transaction.setTransactionTo(rs.getString("transactionto"));
+
+            transaction.setTransactionFrom(rs.getString("transactionfrom"));
+            transaction.setTransactionAmount(rs.getInt("transactionamount"));
+            transaction.setTransactionRemarks(rs.getString("transactionremarks"));
             return transaction;
         }
     }

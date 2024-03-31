@@ -15,6 +15,7 @@ public class EmployeeAddress {
         this.pin = pin;
     }
 
+
     public EmployeeAddress() {
     }
 
