@@ -1,4 +1,4 @@
-package com.security.taskrestsecurity.security;
+package com.migratejdbc.taskmigratejdbc.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -28,9 +28,9 @@ public class MyBankSecurity {
             httpSecurity.formLogin();
             httpSecurity.csrf().disable();
             httpSecurity.authorizeRequests().antMatchers("/user/register").permitAll();
-            httpSecurity.authorizeRequests().antMatchers("/transactions/receiver/{receiver}").hasAuthority("customer");
-            httpSecurity.authorizeRequests().antMatchers("/transactions/sender/{sender}").hasAnyAuthority("customer");
-            httpSecurity.authorizeRequests().antMatchers("/transactions/amount/{amount}").hasAnyAuthority("customer");
+            httpSecurity.authorizeRequests().antMatchers("/jdbctransaction/receiver/{receiver}").hasAuthority("customer");
+            httpSecurity.authorizeRequests().antMatchers("/jdbctransaction/sender/{sender}").hasAnyAuthority("customer");
+            httpSecurity.authorizeRequests().antMatchers("/jdbctransaction/amount/{amount}").hasAnyAuthority("customer");
             httpSecurity.authorizeRequests().antMatchers(HttpMethod.DELETE).hasAuthority("admin");
             httpSecurity.authorizeRequests().antMatchers(HttpMethod.PUT).hasAuthority("manager,admin");
             httpSecurity.authorizeRequests().antMatchers(HttpMethod.POST).hasAnyAuthority("admin");
