@@ -80,7 +80,7 @@ public class EndPointTest {
         UpdateTransactionRequest request = new UpdateTransactionRequest();
         services.transaction.Transaction transaction = new services.transaction.Transaction();
         transaction.setTransactionId(15000L);
-        transaction.setTransactionDate(new Date("2/8/2024"));
+        transaction.setTransactionDate(new Date(2024/9/8));
         updateTransaction.setTransactionBy("Sender");
         updateTransaction.setTransactionTo("Receiver");
         updateTransaction.setTransactionAmount(1000L);
@@ -99,8 +99,8 @@ public class EndPointTest {
         Date endDate =new Date(2025/9/7);
         when(transactionService.deleteTransaction(  startDate, endDate)).thenReturn("remove");
         DeleteTransactionRequest request = new DeleteTransactionRequest();
-        Date start =new Date("2024/9/8");
-        Date end =new Date("2025/9/7");
+        Date start =(new Date(2024/6/8));
+        Date end =(new Date(2024/9/8));
         request.setStartDate(start);
         request.setEndDate(end);
         DeleteTransactionResponse response = soapPhase.deleteTransactionResponse(request);
