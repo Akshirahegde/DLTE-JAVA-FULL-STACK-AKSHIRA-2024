@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Component</title>
+    <link rel="stylesheet" href="/files/medias.css" />
+    <style>
+        body {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+            margin: 0; 
+           
+        }
+        .media{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        /* #aligns{
+            align-self: center;
+        } */
+        #img1,#img2,#img3,#img4{
+            padding: 40px;
+        }
+       
+          .media img {
+            width: 300px; 
+            height: 20vh;
+            padding: 10px; 
+           
+        }
+        .media video {
+            width: 500px;
+            height: 20vh;
+            padding: 50px; 
+         
+        }
+        figure{
+            text-align: center;
+        }
+        figcaption{
+            margin-top: 5px;
+            font-style: inherit;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <div class="media">
+            <figure>
+                <img id=img1 src="/files/card3.jpg" />
+                <figcaption><h3>LOANS</h3></figcaption>
+            </figure>
+            <figure>
+                <img id=img2 src="/files/card4.jpg" />
+                <figcaption><h3>CREDIT CARDS</h3></figcaption>
+            </figure>
+            <figure>
+                <img id=img3 src="/files/card6.jpg" />
+                <figcaption><h3>STOCKS</h3></figcaption>
+            </figure>
+            <figure>
+            <video id="img4" muted autoplay>
+                <source src="/files/cash.mp4"/>
+            </video>
+            <figcaption><h4>FINANCE</h4></figcaption>
+        </figure>
+        </div>
+    </body>
+</body>
+</html>

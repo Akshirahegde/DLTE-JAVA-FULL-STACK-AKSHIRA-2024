@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bffa8480-6543-4877-9c7a-539b6df0f951" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/Alignment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/Backgrounds.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/Grouping.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/HTMLComponents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/Media.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/files/bank.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/files/cash.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/files/creditcard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/files/finance.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/files/media.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-MEDIA-1297/Media.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-MEDIA-1297/files/bank.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-MEDIA-1297/files/cash.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-MEDIA-1297/files/creditcard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-MEDIA-1297/files/finance.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-DATABASE/DLTE-MYBANK/mybankER.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-MYBANK-PROJECT/DLTE-MYBANK/Relational_1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-MYBANK-PROJECT/DLTE-MYBANK/mybank.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FRONTEND-001/DLTE-FE-001HTMLCompponents.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FRONTEND-001/DLTE-FE-001HTMLCompponents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-DATABASE/DLTE-MYBANK/Relational_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-DATABASE/DLTE-MYBANK/mybank.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-DATABASE/DLTE-MYBANK/mybank.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-DATABASE/DLTE-ORACLE-002/mybank.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-DATABASE/DLTE-ORACLE-002/mybank.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-MYBANK-PROJECT/mybank.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-MYBANK-PROJECT/mybank.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/TaskSpringAuthority/src/main/java/com/spring/demo/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/TaskSpringAuthority/src/main/java/com/spring/demo/TransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/mybank-card.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/mybank-card.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/com/jdbc/soap/security/MyBankUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/com/jdbc/soap/security/MyBankUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/AddTransactionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/AddTransactionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/AddTransactionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/AddTransactionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/DeleteTransactionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/DeleteTransactionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/DeleteTransactionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/DeleteTransactionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/FindByAmountRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/FindByAmountRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/FindByAmountResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/FindByAmountResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/FindByReceiverRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/FindByReceiverRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/FindByReceiverResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/FindByReceiverResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/FindBySenderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/FindBySenderRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/FindBySenderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/FindBySenderResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/ObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/ServiceStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/ServiceStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/UpdateTransactionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/UpdateTransactionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/UpdateTransactionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/UpdateTransactionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/test/java/com/jdbc/soap/taskjdbcsoap/EndPointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/test/java/com/jdbc/soap/taskjdbcsoap/EndPointTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskrestsecurity/src/main/java/com/security/taskrestsecurity/security/MyBankUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskrestsecurity/src/main/java/com/security/taskrestsecurity/security/MyBankUsers.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2eVXtRnCc2U9G3MwlCSYPUCuJDr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ConsoleApplication" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bffa8480-6543-4877-9c7a-539b6df0f951" name="Default Changelist" comment="" />
+      <created>1711990933290</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711990933290</updated>
+      <workItem from="1711990934536" duration="46000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1711990977433">
+      <screen x="0" y="0" width="1280" height="672" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.672@0.0.1280.672" timestamp="1711990977433" />
+  </component>
+</project>
