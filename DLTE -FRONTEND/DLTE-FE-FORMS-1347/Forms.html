@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account Application Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    form {
+        max-width: 1000px;
+        margin:20px auto;
+        height: 40vh;
+        padding: 40px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        background-color: #c5a4a4;
+    }
+    
+    h2 {
+        text-align: center;
+    }
+    
+    label {
+        font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 30px;
+        margin: 5px 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        transform: scale(1.0); 
+    }
+    
+    input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 5px;
+    transform: scale(1.0); 
+   
+}
+input[typ="file"]{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+    
+    input[type="submit"] {
+      background-color: #3b86c3;
+        color: rgb(5, 0, 0);
+        padding: 20px 20px;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+    }
+    .signature{
+      margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #1b149f;
+    }
+    select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing:content-box;
+    font-size: 20px; 
+}
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px; /* Adjust the font size as needed */
+    appearance: none; /* Remove default styling */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    font-size: 24px; /* Adjust the icon size as needed */
+    padding: 5px; /* Adjust padding for icon position */
+}
+
+
+</style>
+</head>
+<body>
+
+<h2>Account Application Form</h2>
+
+<form action="#" >
+    <label for="accountHolder">Account Holder:</label><br>
+    <input type="text" id="accountHolder" name="accountHolder" required><br><br>
+    
+    <label>Account Type:</label><br>
+    <input type="radio" id="savings" name="accountType" value="Savings">
+    <label for="savings">Savings</label><br>
+    <input type="radio" id="current" name="accountType" value="Current">
+    <label for="current">Current</label><br><br>
+    
+    <label for="chequeType">Cheque Book Type:</label><br>
+    <select id="chequeType" name="chequeType">
+        <option value="personal">Personal</option>
+        <option value="business">Business</option>
+        <option value=""></option>
+    </select><br><br>
+    
+    <label for="dateOfApply">Date of Apply:</label><br>
+    <input type="date" id="dateOfApply" name="dateOfApply" required><br><br>
+    <label for="address">Address:</label><br>
+    <textarea id="address" name="address" rows="4" cols="50" placeholder="Enter the address"></textarea><br><br>
+    <label for="contactNumber">Contact Number:</label><br>
+    <input type="tel" id="contactNumber" name="contactNumber" pattern="[0-9]{10}" ><br><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="Enter the email" ><br><br>
+    <label for="signature">Signature:</label><br>
+    <input type="file" id="signature" name="signature" accept="image/*" ><br><br>
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">I agree to the terms and conditions</label><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
