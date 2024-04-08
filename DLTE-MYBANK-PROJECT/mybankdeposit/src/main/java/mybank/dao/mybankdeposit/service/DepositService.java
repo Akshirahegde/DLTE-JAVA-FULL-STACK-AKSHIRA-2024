@@ -48,45 +48,48 @@ public class DepositService implements DepositInterface {
 
     @Override
     public Optional<DepositAvailable> searchDepositById(long Id) throws SQLSyntaxErrorException {
-        Optional<DepositAvailable> depositid;
-        List<DepositAvailable> deposits;
+        Optional<DepositAvailable> deposit;
 
         try {
-            deposits= jdbcTemplate.query("select deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositavailable where deposit_id=?",
-                    new BeanPropertyRowMapper<>(DepositAvailable.class));
-            depositid=deposits.stream().filter(depositAvailable -> depositAvailable.getDepositId()==Id).findFirst();
+            deposit = Optional.of(jdbcTemplate.queryForObject("select deposit_id,deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositavailable where deposit_id=? ",
+                    new Object[]{Id},
+                    new BeanPropertyRowMapper<>(DepositAvailable.class)
+            ));
         }catch (DataAccessException sqlException){
+            logger.error(resourceBundle.getString("internal.error"));
             throw new SQLSyntaxErrorException();
         }
-        if (depositid==null)
+        if(deposit==null) {
+            logger.error(resourceBundle.getString("deposit.exception"));
             throw new DepositException(resourceBundle.getString("deposit.exception"));
-        return depositid;
+        }
+        else
+            return deposit;
     }
 
-    @Override
-    public DepositAvailed calculateMaturityAmount(DepositAvailed depositAvailed) {
-        return null;
-    }
+//    @Override
+//    public Optional<DepositAvailable> searchDepositById(long Id) throws SQLSyntaxErrorException {
+//
+//        List<DepositAvailable> deposits;
+//
+//        try {
+//            deposits= jdbcTemplate.query("select deposit_id,deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositavailable",
+//                    new BeanPropertyRowMapper<>(DepositAvailable.class));
+//        }catch (DataAccessException sqlException){
+//            throw new SQLSyntaxErrorException();
+//        }
+//
+//        Optional<DepositAvailable> depositid=deposits.stream().filter(depositAvailable -> depositAvailable.getDepositId()==Id).findFirst();
+//        System.out.println(depositid);
+//        if (depositid==null)
+//            throw new DepositException(resourceBundle.getString("deposit.exception"));
+//        return depositid;
+//    }
+
+
 
     @Override
     public DepositAvailed availDeposit(DepositAvailed depositAvailed) {
         return null;
     }
-
-//    @Override
-//    public Optional<DepositAvailable> searchByDepositById(long Id) {
-//        Optional<DepositAvailable> deposit;
-//        deposit=Optional.of(jdbcTemplate.queryForObject("select deposit_id,deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositvailable where deposit_id=? ",
-//                new Object[]{Id},
-//                new BeanPropertyRowMapper<>(DepositAvailable.class)
-//        ));
-//
-//        if(deposit==null)
-//            throw new DepositException("EXC-001:No Deposits Available");
-//        else
-//            return deposit;
-//
-//    }
-
-
 }

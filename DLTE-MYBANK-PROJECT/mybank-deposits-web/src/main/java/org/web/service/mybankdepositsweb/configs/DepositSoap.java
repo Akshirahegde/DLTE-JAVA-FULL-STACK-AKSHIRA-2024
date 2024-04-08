@@ -117,27 +117,6 @@ public class    DepositSoap {
 //            return depositMaturity;
 //        }
 
-    @GetMapping("/deposits/{depositId}")
-    public double  calculateDeposit(@PathVariable long depositId,@RequestParam double amount,@RequestParam double returnOfInterest,@RequestParam int tenure,HttpServletResponse response) throws DepositException{
-        try{
-            double maturityAmount=amount*(1+returnOfInterest*tenure/100);
-            return maturityAmount;
-        }catch (Exception e){
-            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            logger.error(resourceBundle.getString("calculator.error"));
-            throw new DepositException(resourceBundle.getString("calculator.error"));
-        }
-    }
-
-
-
-
-
-
-
-
-
-
 
 
 

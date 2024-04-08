@@ -12,6 +12,5 @@ public interface DepositInterface {
     List<DepositAvailable> listAllDeposits() throws SQLSyntaxErrorException;
     List<DepositAvailable> searchDepositByRoi(double roi);
     Optional<DepositAvailable> searchDepositById(long Id) throws SQLSyntaxErrorException;
-    DepositAvailed calculateMaturityAmount(DepositAvailed depositAvailed);
     DepositAvailed availDeposit(DepositAvailed depositAvailed);
 }
