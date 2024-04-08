@@ -1,0 +1,23 @@
+2024-04-07 11:19:32,186 [INFO] mybank.dao.mybankdeposit.MybankdepositApplicationTests main Starting MybankdepositApplicationTests using Java 1.8.0_292 on WPG02VB6F with PID 15120 (started by xxnlnnqa in C:\DLTE-JAVA-FULL-STACK-AKSHIRA-2024\DLTE-MYBANK-PROJECT\mybankdeposit)
+2024-04-07 11:19:32,186 [INFO] mybank.dao.mybankdeposit.MybankdepositApplicationTests main No active profile set, falling back to 1 default profile: "default"
+2024-04-07 11:19:32,715 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate main Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-04-07 11:19:32,748 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate main Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2024-04-07 11:19:33,281 [INFO] com.zaxxer.hikari.HikariDataSource main HikariPool-1 - Starting...
+2024-04-07 11:19:33,281 [WARN] com.zaxxer.hikari.util.DriverDataSource main Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2024-04-07 11:19:33,642 [INFO] com.zaxxer.hikari.pool.PoolBase main HikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2024-04-07 11:19:33,642 [INFO] com.zaxxer.hikari.HikariDataSource main HikariPool-1 - Start completed.
+2024-04-07 11:19:33,859 [INFO] mybank.dao.mybankdeposit.MybankdepositApplicationTests main Started MybankdepositApplicationTests in 1.906 seconds (JVM running for 3.519)
+2024-04-07 11:19:33,953 [ERROR] mybank.dao.mybankdeposit.service.DepositService main "EXC-001:No Deposits Available"
+2024-04-07 11:19:34,001 [INFO] com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook HikariPool-1 - Shutdown initiated...
+2024-04-07 11:19:34,016 [INFO] com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook HikariPool-1 - Shutdown completed.
+2024-04-07 11:21:48,240 [INFO] mybank.dao.mybankdeposit.MybankdepositApplicationTests main Starting MybankdepositApplicationTests using Java 1.8.0_292 on WPG02VB6F with PID 5924 (started by xxnlnnqa in C:\DLTE-JAVA-FULL-STACK-AKSHIRA-2024\DLTE-MYBANK-PROJECT\mybankdeposit)
+2024-04-07 11:21:48,256 [INFO] mybank.dao.mybankdeposit.MybankdepositApplicationTests main No active profile set, falling back to 1 default profile: "default"
+2024-04-07 11:21:48,773 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate main Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-04-07 11:21:48,789 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate main Finished Spring Data repository scanning in 6 ms. Found 0 JDBC repository interfaces.
+2024-04-07 11:21:49,324 [INFO] com.zaxxer.hikari.HikariDataSource main HikariPool-1 - Starting...
+2024-04-07 11:21:49,324 [WARN] com.zaxxer.hikari.util.DriverDataSource main Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2024-04-07 11:21:49,604 [INFO] com.zaxxer.hikari.pool.PoolBase main HikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2024-04-07 11:21:49,604 [INFO] com.zaxxer.hikari.HikariDataSource main HikariPool-1 - Start completed.
+2024-04-07 11:21:49,841 [INFO] mybank.dao.mybankdeposit.MybankdepositApplicationTests main Started MybankdepositApplicationTests in 1.843 seconds (JVM running for 3.312)
+2024-04-07 11:21:49,984 [INFO] com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook HikariPool-1 - Shutdown initiated...
+2024-04-07 11:21:49,992 [INFO] com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook HikariPool-1 - Shutdown completed.
