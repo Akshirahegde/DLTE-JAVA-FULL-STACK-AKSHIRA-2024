@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.web.service.mybankdepositsweb.configs.DepositSoap;
 import services.deposit.ServiceStatus;
@@ -18,6 +20,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+// http://localhost:8084/module/deposits/2028001/1000.0/1
+
+
 @RestController
 @RequestMapping("/module")
 public class DepositController {
@@ -26,7 +31,7 @@ public class DepositController {
     private DepositInterface depositInterface;
     Logger logger = LoggerFactory.getLogger(DepositController.class);
     ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
-
+    ServiceStatus serviceStatus = new ServiceStatus();
 
     //    @GetMapping("/deposits/{depositId}")
 //    public Optional<DepositAvailable> findById(@PathVariable ("depositId") long depositId, HttpServletResponse response) throws  SQLSyntaxErrorException {
@@ -48,9 +53,8 @@ public class DepositController {
 //        }
 //return deposit;
 //    }
-    // http://localhost:8083/module/deposits/2028001
-    ServiceStatus serviceStatus = new ServiceStatus();
 
+//-----------------------------------------------------------------------------------------------------------------------------------------------------It is working properly
 //    @GetMapping("/deposits/{depositId}/{amount}/{tenure}")
 //    public Object[] calculateDeposit(@PathVariable("depositId") long depositId, @PathVariable("amount") double amount, @PathVariable("tenure") int tenure, HttpServletResponse response) throws DepositException {
 //        Optional<DepositAvailable> deposit = null;
@@ -74,29 +78,48 @@ public class DepositController {
 //        }
 //        return new Object[]{deposit, maturityAmount};
 //    }
-@GetMapping("/deposits/{depositId}/{amount}/{tenure}")
-public Object[] calculateDeposit(@PathVariable("depositId") long depositId,
-                                 @PathVariable("amount") double amount,
-                                 @PathVariable("tenure") int tenure,
-                                 HttpServletResponse response) throws DepositException, SQLSyntaxErrorException {
-    Optional<DepositAvailable> deposit;
-    double maturityAmount = 0;
-    try {
-        deposit = depositInterface.searchDepositById(depositId);
+//------------------------------------------------------------------------------------------It is working properly
 
-        if (deposit.isPresent()) {
-            maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
-        } else {
-            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            throw new DepositException(resourceBundle.getString("deposit.id.unavailable"));
+
+
+
+
+    @GetMapping("/deposits/{depositId}/{amount}/{tenure}")
+    public ResponseEntity<Object> calculateDeposit(@PathVariable("depositId") long depositId,
+                                              @PathVariable("amount") double amount,
+                                              @PathVariable("tenure") int tenure) {
+        try {
+            Optional<DepositAvailable> deposit = depositInterface.searchDepositById(depositId);
+            if (deposit.isPresent()) {
+                double maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
+                // Wrap both the deposit details and maturity amount in a response entity
+                return ResponseEntity.ok(new Object[]{deposit.get(), maturityAmount});
+            } else {
+                // Deposit not found scenario
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(resourceBundle.getString("deposit.id.unavailable"));
+            }
+        } catch (DepositException e) {
+            // Log the error and return a user-friendly message
+            logger.error(resourceBundle.getString("deposit.error"), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(resourceBundle.getString("deposit.error"));
+        } catch (SQLSyntaxErrorException e) {
+            // Handle SQL syntax errors separately if needed
+            logger.error("SQL error encountered", e);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("SQL error encountered.");
         }
-    } catch (DepositException | SQLSyntaxErrorException e) {
-        response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-        logger.error(resourceBundle.getString("deposit.id.unavailable"));
-        throw e;
     }
-    return new Object[]{deposit, maturityAmount};
-}
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
