@@ -15,13 +15,14 @@ public class MyBankUsersService implements UserDetailsService {
 
 
     public MyBankUsers signup(MyBankUsers myBankUsers){
-        int ack = jdbcTemplate.update("insert into mybank_users values(?,?,?,?,?,?)",new Object[]{
+        int ack = jdbcTemplate.update("insert into mybank_users values(?,?,?,?,?,?,?)",new Object[]{
                 myBankUsers.getName(),
                 myBankUsers.getUsername(),
                 myBankUsers.getPassword(),
                 myBankUsers.getEmail(),
                 myBankUsers.getContact(),
-                myBankUsers.getAadhaar()
+                myBankUsers.getAadhaar(),
+                myBankUsers.getRole()
         });
         return myBankUsers;
     }

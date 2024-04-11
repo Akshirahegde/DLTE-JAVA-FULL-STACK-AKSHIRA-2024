@@ -1,8 +1,10 @@
 package com.migratejdbc.taskmigratejdbc.security;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class MyBankUsers implements UserDetails{
@@ -13,14 +15,16 @@ public class MyBankUsers implements UserDetails{
     private String email;
     private Long contact;
     private Long aadhaar;
+    private String role;
 
-    public MyBankUsers(String name, String username, String password, String email, Long contact, Long aadhaar) {
+    public MyBankUsers(String name, String username, String password, String email, Long contact, Long aadhaar,String role) {
         this.name = name;
         this.username = username;
         this.password = password;
         this.email = email;
         this.contact = contact;
         this.aadhaar = aadhaar;
+        this.role=role;
     }
 
     public String getName() {
@@ -38,22 +42,22 @@ public class MyBankUsers implements UserDetails{
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 
 
@@ -62,8 +66,11 @@ public class MyBankUsers implements UserDetails{
     }
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+    public Collection<? extends GrantedAuthority> getAuthorities()
+    {
+        Collection<SimpleGrantedAuthority> authorities=new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority(role));
+        return authorities;
     }
 
     @Override
@@ -97,5 +104,13 @@ public class MyBankUsers implements UserDetails{
 
     public void setAadhaar(Long aadhaar) {
         this.aadhaar = aadhaar;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

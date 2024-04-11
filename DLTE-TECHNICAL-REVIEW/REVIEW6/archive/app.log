@@ -1,6 +1,28 @@
-07:56:15.152 [main] WARN  org.consoleapp.console.ConsoleApp - null
-08:02:07.415 [main] WARN  org.consoleapp.console.ConsoleApp - null
-08:04:17.196 [main] WARN  org.consoleapp.console.ConsoleApp - null
-08:12:45.492 [main] WARN  org.consoleapp.console.ConsoleApp - No employees found for pin code:145
-08:16:55.264 [main] WARN  org.consoleapp.console.ConsoleApp - No employees found for pin code:16
-08:17:04.525 [main] WARN  org.consoleapp.console.ConsoleApp - No employees found for pin code:456
+08:11:25.878 [main] WARN  org.soap.client.console.ConsoleApp - The server sent HTTP status code 500: Internal Server Error
+08:11:43.806 [main] WARN  org.soap.client.console.ConsoleApp - The server sent HTTP status code 500: Internal Server Error
+08:12:58.619 [main] WARN  org.soap.client.console.ConsoleApp - The server sent HTTP status code 500: Internal Server Error
+08:15:12.231 [main] WARN  org.soap.client.console.ConsoleApp - The server sent HTTP status code 500: Internal Server Error
+08:18:06.585 [main] WARN  org.soap.client.console.ConsoleApp - The server sent HTTP status code 500: Internal Server Error
+08:28:54.006 [main] INFO  o.d.d.DatabaseRepositoryImplementation - Employee with ID  8 successfully added
+08:15:13.385 [main] WARN  org.soap.client.console.ConsoleApp - The server sent HTTP status code 500: Internal Server Error
+10:13:42.162 [main] WARN  org.soap.client.console.ConsoleApp - The server sent HTTP status code 500: Internal Server Error
+21:56:35.299 [main] WARN  org.soap.client.console.ConsoleApp - The server sent HTTP status code 500: Internal Server Error
+22:00:22.067 [main] WARN  org.soap.client.console.ConsoleApp - The server sent HTTP status code 500: Internal Server Error
+22:03:14.943 [main] WARN  org.soap.client.console.ConsoleApp - The server sent HTTP status code 500: Internal Server Error
+22:04:23.310 [main] WARN  org.soap.client.console.ConsoleApp - The server sent HTTP status code 500: Internal Server Error
+22:05:12.974 [main] WARN  org.soap.client.console.ConsoleApp - The server sent HTTP status code 500: Internal Server Error
+22:07:45.146 [main] WARN  org.soap.client.console.ConsoleApp - No employee found with ID: 2345
+22:09:47.161 [main] WARN  org.soap.client.console.ConsoleApp - No employee found with ID: 345678
+22:13:17.106 [main] WARN  org.soap.client.console.ConsoleApp - No employee found with ID: 123456
+22:14:56.732 [main] WARN  org.soap.client.console.ConsoleApp - No employee found with ID: 4567654
+22:18:17.452 [main] WARN  org.soap.client.console.ConsoleApp - No employee found with ID: 123567
+22:18:51.631 [main] WARN  org.soap.client.console.ConsoleApp - No employee found with ID: 1267981
+22:20:32.589 [main] WARN  org.soap.client.console.ConsoleApp - No employee found with ID: 234567
+22:20:59.934 [main] WARN  org.soap.client.console.ConsoleApp - No employee found with ID: 2345678
+22:21:16.627 [main] WARN  org.soap.client.console.ConsoleApp - No employee found with ID: 235890
+22:23:26.151 [main] WARN  org.soap.client.console.ConsoleApp - No employee found with ID: 1356
+22:23:26.186 [main] WARN  org.soap.client.console.ConsoleApp - An error occurred while displaying employee with ID: 1356. The server sent HTTP status code 500: Internal Server Error
+22:24:14.993 [main] WARN  org.soap.client.console.ConsoleApp - No employee found with ID: 2345
+22:24:15.025 [main] WARN  org.soap.client.console.ConsoleApp - An error occurred while displaying employee with ID: 2345. The server sent HTTP status code 500: Internal Server Error
+22:26:46.125 [main] WARN  org.soap.client.console.ConsoleApp - No employee found with ID: 23456
+22:26:46.161 [main] WARN  org.soap.client.console.ConsoleApp - An error occurred while displaying employee with ID: 23456. The server sent HTTP status code 500: Internal Server Error

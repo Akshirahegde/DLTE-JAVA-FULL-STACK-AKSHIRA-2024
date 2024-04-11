@@ -5,7 +5,7 @@ import org.databaserepo.entity.Employee;
 import java.util.List;
 
 public interface EmployeeInputDetails {
-    void create(List<Employee> employee);
+    List<Employee> create(List<Employee> employeeList);
     Employee displayBasedOnEmployeeId(String employeeID);
     List<Employee> displayBasedOnPinCode(int pin);
     List<Employee> read();

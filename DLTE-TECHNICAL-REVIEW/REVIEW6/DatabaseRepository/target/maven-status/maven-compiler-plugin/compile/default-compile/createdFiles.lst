@@ -1,4 +1,5 @@
 org\databaserepo\entity\EmployeeAddress.class
+org\databaserepo\exception\EmployeeExists.class
 org\databaserepo\entity\EmployeeDetails.class
 org\databaserepo\App.class
 org\databaserepo\exception\EmployeeException.class

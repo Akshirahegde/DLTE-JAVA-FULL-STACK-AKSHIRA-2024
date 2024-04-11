@@ -20,51 +20,54 @@ public class SoapPhase {
     @Autowired
     private TransactionService transactionService;
     @PreAuthorize("hasAnyAuthority('admin')")
-    @PayloadRoot(namespace = url, localPart = "newTransactionRequest")
+    @PayloadRoot(namespace = url, localPart = "addTransactionRequest")
     @ResponsePayload
     public AddTransactionResponse addNewTransaction(@RequestPayload AddTransactionRequest addTransactionRequest) {
-//        AddTransactionResponse addTransactionResponse = new AddTransactionResponse();
-//        ServiceStatus serviceStatus = new ServiceStatus();
-//      //  Date date=newTransactionRequest.getTransaction().getTransactionDate().toGregorianCalendar().getTime();
-//        services.transaction.Transaction actual = newTransactionRequest.getTransaction();
-//        Transaction daoTransaction = new Transaction();
-//       // daoTransaction.setTransactionDate(date);
-//        BeanUtils.copyProperties(actual,daoTransaction);
-//
-//        daoTransaction = transactionService.apiInsert(daoTransaction);
-//
-//        if (daoTransaction!=null) {
-//            serviceStatus.setStatus("SUCCESS");
-//            BeanUtils.copyProperties(daoTransaction, actual);
-//            addTransactionResponse.setTransaction(actual);
-//            serviceStatus.setMessage(actual.getTransactionId() + " inserted");
-//        } else {
-//            serviceStatus.setStatus("FAILURE");
-//            serviceStatus.setMessage(actual.getTransactionId() + " is not inserted");
-//        }
-//        addTransactionResponse.setServiceStatus(serviceStatus);
-//        return addTransactionResponse;
+        AddTransactionResponse addTransactionResponse = new AddTransactionResponse();
+        ServiceStatus serviceStatus = new ServiceStatus();
+        services.transaction.Transaction actual = addTransactionRequest.getTransaction();
+        Date date=addTransactionRequest.getTransaction().getTransactionDate().toGregorianCalendar().getTime();
+        System.out.println(actual.getTransactionId()+ " " + actual.getTransactionDate());
 
+        Transaction daoTransaction = new Transaction();
+       daoTransaction.setTransactionDate(date);
+        BeanUtils.copyProperties(actual,daoTransaction);
+        System.out.println(daoTransaction);
 
-        AddTransactionResponse addTransactionResponse=new AddTransactionResponse();
-        ServiceStatus serviceStatus=new ServiceStatus();
-        services.transaction.Transaction actual=addTransactionRequest.getTransaction();
-        Transaction transaction=new Transaction();
-        BeanUtils.copyProperties(actual,transaction);
-        transaction=transactionService.apiInsert(transaction);
+        daoTransaction = transactionService.apiInsert(daoTransaction);
 
-        if(transaction!=null){
+        if (daoTransaction!=null) {
             serviceStatus.setStatus("SUCCESS");
-            BeanUtils.copyProperties(transaction,actual);
+            BeanUtils.copyProperties(daoTransaction, actual);
             addTransactionResponse.setTransaction(actual);
-            serviceStatus.setMessage(actual.getTransactionId()+" has inserted");
-        }
-        else{
+            serviceStatus.setMessage(actual.getTransactionId() + " inserted");
+        } else {
             serviceStatus.setStatus("FAILURE");
-            serviceStatus.setMessage(actual.getTransactionId()+" hasn't inserted");
+            serviceStatus.setMessage(actual.getTransactionId() + " is not inserted");
         }
         addTransactionResponse.setServiceStatus(serviceStatus);
         return addTransactionResponse;
+
+
+//        AddTransactionResponse addTransactionResponse=new AddTransactionResponse();
+//        ServiceStatus serviceStatus=new ServiceStatus();
+//        services.transaction.Transaction actual=addTransactionRequest.getTransaction();
+//        Transaction transaction=new Transaction();
+//        BeanUtils.copyProperties(actual,transaction);
+//        transaction=transactionService.apiInsert(transaction);
+//
+//        if(transaction!=null){
+//            serviceStatus.setStatus("SUCCESS");
+//            BeanUtils.copyProperties(transaction,actual);
+//            addTransactionResponse.setTransaction(actual);
+//            serviceStatus.setMessage(actual.getTransactionId()+" has inserted");
+//        }
+//        else{
+//            serviceStatus.setStatus("FAILURE");
+//            serviceStatus.setMessage(actual.getTransactionId()+" hasn't inserted");
+//        }
+//        addTransactionResponse.setServiceStatus(serviceStatus);
+//        return addTransactionResponse;
     }
     @PreAuthorize("hasAnyAuthority('customer')")
     @PayloadRoot(namespace = url, localPart = "findBySenderRequest")

@@ -1,24 +1,16 @@
 package org.databaserepo.entity;
 
 public class EmployeeDetails {
-    private String employeeName;
     private String employeeId;
+    private String employeeName;
     private String emailId;
     private long phoneNumber;
 
-    public EmployeeDetails(String employeeName, String employeeId, String emailId, long phoneNumber) {
-        this.employeeName = employeeName;
+    public EmployeeDetails(String employeeId, String employeeName, String emailId, long phoneNumber) {
         this.employeeId = employeeId;
+        this.employeeName = employeeName;
         this.emailId = emailId;
         this.phoneNumber = phoneNumber;
-    }
-
-    public String getEmployeeName() {
-        return employeeName;
-    }
-
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
     }
 
     public String getEmployeeId() {
@@ -27,6 +19,14 @@ public class EmployeeDetails {
 
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 
     public String getEmailId() {
@@ -43,8 +43,5 @@ public class EmployeeDetails {
 
     public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public EmployeeDetails() {
     }
 }

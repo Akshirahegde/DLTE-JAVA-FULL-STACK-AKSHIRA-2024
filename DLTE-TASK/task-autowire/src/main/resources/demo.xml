@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define Car bean with lazy initialization -->
+    <bean id="student" class="com.lazybean.Student" lazy-init="true">
+        <property name="name" value="abc"/>
+        <property name="subject" value="maths"/>
+    </bean>
+
+    <bean id="studentService" class="com.lazybean.StudentService" lazy-init="true">
+        <!-- Injecting Car dependency -->
+        <property name="student" ref="student"/>
+    </bean>
+
+</beans>

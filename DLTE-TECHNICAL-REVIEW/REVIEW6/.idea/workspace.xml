@@ -2,26 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bffa8480-6543-4877-9c7a-539b6df0f951" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/Alignment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/Backgrounds.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/Grouping.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/HTMLComponents.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/Media.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/files/bank.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/files/cash.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/files/creditcard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/files/finance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/files/media.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-LIST AND BACKGROUND-1296/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-MEDIA-1297/Media.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-MEDIA-1297/files/bank.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-MEDIA-1297/files/cash.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-MEDIA-1297/files/creditcard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FE-TASK-MEDIA-1297/files/finance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE-DATABASE/DLTE-MYBANK/mybankER.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE-MYBANK-PROJECT/DLTE-MYBANK/Relational_1.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../DLTE-MYBANK-PROJECT/DLTE-MYBANK/mybank.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FRONTEND-001/DLTE-FE-001HTMLCompponents.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE -FRONTEND/DLTE-FRONTEND-001/DLTE-FE-001HTMLCompponents.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../DLTE-DATABASE/DLTE-MYBANK/Relational_1.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../DLTE-DATABASE/DLTE-MYBANK/mybank.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-DATABASE/DLTE-MYBANK/mybank.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../DLTE-DATABASE/DLTE-ORACLE-002/mybank.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-DATABASE/DLTE-ORACLE-002/mybank.sql" afterDir="false" />
@@ -47,7 +27,36 @@
       <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/UpdateTransactionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/UpdateTransactionResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/main/java/services/transaction/package-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/test/java/com/jdbc/soap/taskjdbcsoap/EndPointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskjdbcsoap/src/test/java/com/jdbc/soap/taskjdbcsoap/EndPointTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskmigratejdbc/src/main/java/com/migratejdbc/taskmigratejdbc/security/MyBankSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskmigratejdbc/src/main/java/com/migratejdbc/taskmigratejdbc/security/MyBankSecurity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskmigratejdbc/src/main/java/com/migratejdbc/taskmigratejdbc/security/MyBankUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskmigratejdbc/src/main/java/com/migratejdbc/taskmigratejdbc/security/MyBankUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskmigratejdbc/src/main/java/com/migratejdbc/taskmigratejdbc/security/MyBankUsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskmigratejdbc/src/main/java/com/migratejdbc/taskmigratejdbc/security/MyBankUsersService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../DLTE-TASK/taskrestsecurity/src/main/java/com/security/taskrestsecurity/security/MyBankUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-TASK/taskrestsecurity/src/main/java/com/security/taskrestsecurity/security/MyBankUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApplication/src/main/java/org/consoleapp/console/ConsoleApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/src/main/java/org/consoleapp/console/ConsoleApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApplication/target/classes/org/consoleapp/console/ConsoleApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/target/classes/org/consoleapp/console/ConsoleApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApplication/target/classes/org/consoleapp/interfaces/EmployeeInputConsole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatabaseRepository/src/main/java/org/databaserepo/database/DatabaseRepositoryImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseRepository/src/main/java/org/databaserepo/database/DatabaseRepositoryImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatabaseRepository/src/main/java/org/databaserepo/interfaces/EmployeeInputDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseRepository/src/main/java/org/databaserepo/interfaces/EmployeeInputDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatabaseRepository/target/DatabaseRepository-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseRepository/target/DatabaseRepository-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatabaseRepository/target/classes/org/databaserepo/database/DatabaseRepositoryImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseRepository/target/classes/org/databaserepo/database/DatabaseRepositoryImplementation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatabaseRepository/target/classes/org/databaserepo/interfaces/EmployeeInputDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseRepository/target/classes/org/databaserepo/interfaces/EmployeeInputDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapClient/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapClient/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapClient/src/main/java/org/soap/client/console/ConsoleApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapClient/src/main/java/org/soap/client/console/ConsoleApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapClient/src/main/java/org/soap/client/console/Validation.java" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapClient/src/main/java/org/soap/client/console/Validation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapClient/src/main/java/org/soap/client/pojo/EmployeeAddressConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapClient/src/main/java/org/soap/client/pojo/EmployeeAddressConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapClient/src/main/java/org/soap/client/pojo/EmployeeConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapClient/src/main/java/org/soap/client/pojo/EmployeeConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapClient/src/main/java/org/soap/client/pojo/EmployeeDetailsConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapClient/src/main/java/org/soap/client/pojo/EmployeeDetailsConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapClient/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapClient/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapClient/target/SoapClient-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapClient/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapClient/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapClient/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapClient/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapClient/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapClient/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapClient/target/surefire-reports/TEST-org.soap.client.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapClient/target/surefire-reports/TEST-org.soap.client.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapClient/target/surefire-reports/org.soap.client.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapClient/target/surefire-reports/org.soap.client.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapWebService/src/main/java/soap/service/EmployeeWebImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapWebService/src/main/java/soap/service/EmployeeWebImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoapWebService/SoapWebService/target/classes/soap/service/EmployeeWebImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/SoapWebService/SoapWebService/target/classes/soap/service/EmployeeWebImplementation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-2024-03-26.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/archive/app.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +77,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ConsoleApplication" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -93,6 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1711990933290</updated>
       <workItem from="1711990934536" duration="46000" />
+      <workItem from="1712078224602" duration="16000" />
     </task>
     <servers />
   </component>

@@ -12,6 +12,7 @@ import org.databaserepo.interfaces.EmployeeInputDetails;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 import java.util.*;
 
 import static java.lang.System.exit;
@@ -262,7 +263,100 @@ public static void callReadAll(Scanner scanner){
         }
 
     }
-}
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -281,3 +375,5 @@ public static void callReadAll(Scanner scanner){
 //          EmployeeInputDetails employeeInputDetails= new DatabaseRepositoryImplementation();
 //            Logger logger = LoggerFactory.getLogger(ConsoleApp.class);
 //            Validation validation = new Validation();
+
+

@@ -51,28 +51,53 @@ public class DepositController {
     // http://localhost:8083/module/deposits/2028001
     ServiceStatus serviceStatus = new ServiceStatus();
 
-    @GetMapping("/deposits/{depositId}/{amount}/{tenure}")
-    public Object[] calculateDeposit(@PathVariable("depositId") long depositId, @PathVariable("amount") double amount, @PathVariable("tenure") int tenure, HttpServletResponse response) throws DepositException {
-        Optional<DepositAvailable> deposit = null;
-        double maturityAmount = 0;
-        try {
-            deposit = depositInterface.searchDepositById(depositId);
+//    @GetMapping("/deposits/{depositId}/{amount}/{tenure}")
+//    public Object[] calculateDeposit(@PathVariable("depositId") long depositId, @PathVariable("amount") double amount, @PathVariable("tenure") int tenure, HttpServletResponse response) throws DepositException {
+//        Optional<DepositAvailable> deposit = null;
+//        double maturityAmount = 0;
+//        try {
+//            deposit = depositInterface.searchDepositById(depositId);
+//
+//            maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
+//
+//        } catch (SQLSyntaxErrorException e) {
+//            System.out.println(resourceBundle.getString("internal.error"));
+//            logger.error(resourceBundle.getString("internal.error"));
+//            serviceStatus.setStatus(HttpServletResponse.SC_NOT_FOUND);
+//            serviceStatus.setMessage(resourceBundle.getString("internal.error"));
+//
+//        } catch (DepositException e) {
+//            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+//            logger.error(resourceBundle.getString("deposit.id.unavailable"));
+//            throw e;
+//
+//        }
+//        return new Object[]{deposit, maturityAmount};
+//    }
+@GetMapping("/deposits/{depositId}/{amount}/{tenure}")
+public Object[] calculateDeposit(@PathVariable("depositId") long depositId,
+                                 @PathVariable("amount") double amount,
+                                 @PathVariable("tenure") int tenure,
+                                 HttpServletResponse response) throws DepositException, SQLSyntaxErrorException {
+    Optional<DepositAvailable> deposit;
+    double maturityAmount = 0;
+    try {
+        deposit = depositInterface.searchDepositById(depositId);
 
+        if (deposit.isPresent()) {
             maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
-
-        } catch (SQLSyntaxErrorException e) {
-            System.out.println(resourceBundle.getString("internal.error"));
-            logger.error(resourceBundle.getString("internal.error"));
-            serviceStatus.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            serviceStatus.setMessage(resourceBundle.getString("internal.error"));
-
-        } catch (DepositException e) {
+        } else {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            logger.error(resourceBundle.getString("deposit.id.unavailable"));
-            throw e;
-
+            throw new DepositException(resourceBundle.getString("deposit.id.unavailable"));
         }
-        return new Object[]{deposit, maturityAmount};
+    } catch (DepositException | SQLSyntaxErrorException e) {
+        response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        logger.error(resourceBundle.getString("deposit.id.unavailable"));
+        throw e;
     }
+    return new Object[]{deposit, maturityAmount};
 }
+}
+
+
 

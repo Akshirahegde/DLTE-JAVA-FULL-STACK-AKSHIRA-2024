@@ -1,1 +1,14 @@
+soap\service\EmployeeDetails.class
 org\soap\client\App.class
+org\soap\client\pojo\EmployeeConsole.class
+soap\service\ObjectFactory.class
+soap\service\GroupOfEmployee.class
+soap\service\EmployeeAddress.class
+org\soap\client\pojo\EmployeeAddressConsole.class
+org\soap\client\console\ConsoleApp.class
+org\soap\client\pojo\EmployeeDetailsConsole.class
+soap\service\EmployeeWebImplementation.class
+soap\service\package-info.class
+org\soap\client\console\Validation.class
+soap\service\EmployeeWebImplementationService.class
+soap\service\Employee.class

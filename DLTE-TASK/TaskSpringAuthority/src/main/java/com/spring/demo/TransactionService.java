@@ -53,38 +53,6 @@ public class TransactionService {
         return jdbcTemplate.query("select * from transactions_model where transaction_amount=?",new Object[]{amount},new BeanPropertyRowMapper<>(TransactionsModel.class
         ));
 
-    }
-
-    public TransactionsModel apiUpdate(TransactionsModel transactionsModel) {
-        int ack = jdbcTemplate.update("UPDATE transactions_model SET transaction_for=? WHERE transaction_id=?",
-                new Object[]{transactionsModel.getTransactionFor(), transactionsModel.getTransactionId()});
-        if(ack!=0)
-            return transactionsModel;
-        else
-            return null;
-    }
-    public String removeByDate(Date start, Date end){
-        int ack = jdbcTemplate.update("delete from transactions_model where transactiondate between ? and ?",new Object[]{start,end});
-        if(ack!=0)
-            return "removed";
-        else
-            return null;
-    }
-    private class CardMapper implements RowMapper<TransactionsModel>{
-
-        @Override
-        public TransactionsModel mapRow(ResultSet rs, int rowNum) throws SQLException {
-            TransactionsModel transactionsModel = new TransactionsModel();
-            transactionsModel.setTransactionId(rs.getLong(1));
-            transactionsModel.setTransactionDate(rs.getDate(2));
-            transactionsModel.setTransactionBy(rs.getString(3));
-            transactionsModel.setTransactionTo(rs.getString(4));
-            transactionsModel.setTransactionAmount(rs.getLong(5));
-            transactionsModel.setTransactionFor(rs.getString(6));
-            return transactionsModel;
-        }
-    }
-
 
 
 

@@ -1,4 +1,4 @@
-package org.consoleapp.console;
+package org.soap.client.console;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

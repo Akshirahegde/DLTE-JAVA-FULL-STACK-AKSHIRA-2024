@@ -209,7 +209,6 @@ CREATE TABLE mybank_app_debitcard (
     debitcard_international_limit NUMBER,
     customer_id                   NUMBER,
     account_number                    NUMBER,
-    UNIQUE ( debitcard_cvv ),
     FOREIGN KEY ( customer_id )
         REFERENCES mybank_app_customer ON DELETE CASCADE,
     FOREIGN KEY ( account_number )
@@ -221,4 +220,4 @@ CREATE SEQUENCE debitcard_seq START WITH 2021001 INCREMENT BY 1;
 
 ALTER TABLE mybank_app_debitcard ADD CONSTRAINT debitcard_seq PRIMARY KEY ( debitcard_number );
 
-
+alter table mybank_app_depositavailed drop column deposit_roi;

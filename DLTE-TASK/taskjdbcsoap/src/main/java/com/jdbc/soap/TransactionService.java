@@ -24,7 +24,8 @@ public class TransactionService {
                         transaction.getTransactionBy(),
                         transaction.getTransactionTo(),
                         transaction.getTransactionAmount(),
-                        transaction.getTransactionFor()
+                        transaction.getTransactionFor(),
+
                 });
 //        {
 //            "transactionId": 11,
@@ -92,10 +93,10 @@ public class TransactionService {
             Transaction transaction = new Transaction();
             transaction.setTransactionId(rs.getLong("transactionId"));
             transaction.setTransactionDate(rs.getDate("transactionDate"));
-            transaction.setTransactionTo(rs.getString("transactionBy"));
-            transaction.setTransactionAmount(rs.getLong("transactionTo"));
-            transaction.setTransactionFor(rs.getString("transactionAmount"));
-            transaction.setTransactionBy(rs.getString("transactionFor"));
+            transaction.setTransactionBy(rs.getString("transactionBy"));
+            transaction.setTransactionTo(rs.getString("transactionTo"));
+            transaction.setTransactionAmount(rs.getLong("transactionAmount"));
+            transaction.setTransactionFor(rs.getString("transactionFor"));
             return transaction;
         }
     }
