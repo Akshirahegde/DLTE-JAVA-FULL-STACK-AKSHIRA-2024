@@ -9,18 +9,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.MissingPathVariableException;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.NoHandlerFoundException;
 import org.web.service.mybankdepositsweb.configs.DepositSoap;
 import services.deposit.ServiceStatus;
 import services.deposit.ViewAllDepositsResponse;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.sql.SQLSyntaxErrorException;
-import java.util.List;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
-// http://localhost:8084/module/deposits/2028001/1000.0/1
+// http://localhost:8085/module/deposits/2028001/1000.0/1
 
 
 @RestController
@@ -82,31 +87,79 @@ public class DepositController {
 
 
 
+//    @ResponseStatus(HttpStatus.BAD_REQUEST)
+//    @ExceptionHandler(MethodArgumentNotValidException.class)
+//    public Map<String, String> handleValidationExceptions(
+//            MethodArgumentNotValidException ex) {
+//        Map<String, String> errors = new HashMap<>();
+//        ex.getBindingResult().getAllErrors().forEach((error) -> {
+//            String fieldName = ((FieldError) error).getField();
+//            String errorMessage = error.getDefaultMessage();
+//            errors.put(fieldName, errorMessage);
+//        });
+//        return errors;
+//    }
+//@ControllerAdvice
+//public class GlobalExceptionHandler {
+//
+//    @ExceptionHandler(NoHandlerFoundException.class)
+//    public ResponseEntity<String> handleNoHandlerFound(NoHandlerFoundException ex) {
+//        return new ResponseEntity<>("Error: URL pattern does not match or a required path variable is missing.", HttpStatus.BAD_REQUEST);
+//    }
+//
+//    @ResponseStatus(HttpStatus.BAD_REQUEST)
+//    @ExceptionHandler(MethodArgumentNotValidException.class)
+//    public Map<String, String> handleValidationExceptions(MethodArgumentNotValidException ex) {
+//        Map<String, String> errors = new HashMap<>();
+//        ex.getBindingResult().getAllErrors().forEach((error) -> {
+//            String fieldName = ((FieldError) error).getField();
+//            String errorMessage = error.getDefaultMessage();
+//            errors.put(fieldName, errorMessage);
+//        });
+//        return errors;
+//    }
+//}
+
+    @ControllerAdvice
+    public class GlobalExceptionHandler {
+
+        @ExceptionHandler(MethodArgumentNotValidException.class)
+        public ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
+            Map<String, String> errors = new HashMap<>();
+            ex.getBindingResult().getAllErrors().forEach((error) -> {
+                String fieldName = ((FieldError) error).getField();
+                String errorMessage = error.getDefaultMessage();
+                errors.put(fieldName, errorMessage);
+            });
+            return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
+        }
+
+        @ExceptionHandler(MissingPathVariableException.class)
+        public ResponseEntity<Object> handleMissingPathVariable(MissingPathVariableException ex) {
+            return new ResponseEntity<>("Error: Missing path variable - " + ex.getVariableName(), HttpStatus.BAD_REQUEST);
+        }
+    }
 
 
     @GetMapping("/deposits/{depositId}/{amount}/{tenure}")
-    public ResponseEntity<Object> calculateDeposit(@PathVariable("depositId") long depositId,
-                                              @PathVariable("amount") double amount,
-                                              @PathVariable("tenure") int tenure) {
+    public ResponseEntity<?> calculateDeposit(
+            @PathVariable("depositId") Long depositId,
+            @PathVariable("amount") Double amount,
+            @PathVariable("tenure") Integer tenure) {
+
         try {
             Optional<DepositAvailable> deposit = depositInterface.searchDepositById(depositId);
-            if (deposit.isPresent()) {
-                double maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
-                // Wrap both the deposit details and maturity amount in a response entity
-                return ResponseEntity.ok(new Object[]{deposit.get(), maturityAmount});
-            } else {
-                // Deposit not found scenario
+            if (deposit==null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(resourceBundle.getString("deposit.id.unavailable"));
             }
+            Double maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
+            serviceStatus.setStatus(HttpStatus.OK.value());
+            return ResponseEntity.ok(new Object[]{deposit.get(), maturityAmount});
         } catch (DepositException e) {
-            // Log the error and return a user-friendly message
             logger.error(resourceBundle.getString("deposit.error"), e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(resourceBundle.getString("deposit.error"));
-        } catch (SQLSyntaxErrorException e) {
-            // Handle SQL syntax errors separately if needed
-            logger.error("SQL error encountered", e);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("SQL error encountered.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(resourceBundle.getString("deposit.id.unavailable"));
         }
+        
     }
 
 

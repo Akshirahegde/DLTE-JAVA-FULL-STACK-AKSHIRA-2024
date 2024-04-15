@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLSyntaxErrorException;
 import java.util.*;
 
-//http://localhost:8083/depositrepo/deposit.wsdl
+//http://localhost:8084/depositrepo/deposit.wsdl
 
 @Endpoint
 @ComponentScan("mybank.dao.mybankdeposit")

@@ -7,7 +7,8 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 @Configuration
-public class DepositConfig {
+public class RestConfiguration {
+    //Message Source Definition
     @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
@@ -16,10 +17,11 @@ public class DepositConfig {
         return messageSource;
     }
 
+    //Bean Validator
     @Bean
     public LocalValidatorFactoryBean getValidator(MessageSource messageSource) {
         LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
         bean.setValidationMessageSource(messageSource);
         return bean;
     }
-}
+    }

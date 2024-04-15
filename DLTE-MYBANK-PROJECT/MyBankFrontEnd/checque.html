@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Cheque Book Request</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Check Book Apply</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="accountNumber">Account Number</label>
+                <input type="text" class="form-control" id="accountNumber" name="accountNumber">
+            </div>
+            <div class="form-group">
+                <label for="accountHolder">Account Holder</label>
+                <input type="text" class="form-control" id="accountHolder" name="accountHolder">
+            </div>
+    
+            <div class="form-group">
+                <label for="contactNumber">Contact Number</label>
+                <input type="tel" class="form-control" id="contactNumber" name="contactNumber">
+            </div>
+    
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+    
+            <div class="form-group">
+                <label>Account Type</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="accountType" value="Savings">
+                    <label class="form-check-label">Savings</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="accountType" value="Checking">
+                    <label class="form-check-label">Checking</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="accountType" value="Investment">
+                    <label class="form-check-label">Investment</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="accountType" value="Loan">
+                    <label class="form-check-label">Loan</label>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="chequeBookType">Cheque Book Type</label>
+                <select class="form-control" id="chequeBookType" name="chequeBookType">
+                    <option value="Single">Open cheque</option>
+                    <option value="Duplicate">Post-Dated ChequePost-Dated Cheque</option>
+                    <option value="Single">Traveller's Cheque</option>
+                    <option value="Single">Self Cheque</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="dateOfApply">Date of Apply</label>
+                <input type="date" class="form-control" id="dateOfApply" name="dateOfApply">
+            </div>
+    
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea class="form-control" id="address" name="address"></textarea>
+            </div>
+    
+            <div class="form-group">
+                <label for="signature">Signature</label>
+                <input type="file" class="form-control-file" id="signature" name="signature">
+            </div>
+    
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="termsAndConditions" name="termsAndConditions">
+                <label class="form-check-label" for="termsAndConditions">I agree to the Terms and Conditions</label>
+            </div>
+    
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
