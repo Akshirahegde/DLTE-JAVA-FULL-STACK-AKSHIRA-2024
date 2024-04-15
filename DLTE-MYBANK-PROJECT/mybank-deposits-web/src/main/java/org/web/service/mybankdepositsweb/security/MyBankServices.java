@@ -10,6 +10,19 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+//http://localhost:8085/profile/register
+//        {
+//        "customerName": "Divija",
+//        "customerAddress": "Karkala",
+//        "customerStatus": "Active",
+//        "customerContact": 8105431287,
+//        "username": "Patwardhan",
+//        "password":"divija123",
+//        "attempts":1
+//        }
+
+//http://localhost:8085/depositrepo/deposit.wsdl(login)
+
 @Service
 public class MyBankServices implements UserDetailsService {
 
@@ -30,7 +43,7 @@ return myBankCustomers;
     }
 
     public void updateStatus(MyBankCustomer myBankCustomers){
-        jdbcTemplate.update("update MYBANK_APP_CUSTOMER set customerStatus=0 where username=?",
+        jdbcTemplate.update("update MYBANK_APP_CUSTOMER set customer_status='inactive' where username=?",
                 new Object[]{myBankCustomers.getUsername()});
        logger.info("Status has changed");
     }
@@ -44,5 +57,6 @@ return myBankCustomers;
         MyBankCustomer customers = findByUsername(username);
         if(customers==null)
             throw new UsernameNotFoundException(username);
-        return customers;    }
+        return customers;
+    }
 }

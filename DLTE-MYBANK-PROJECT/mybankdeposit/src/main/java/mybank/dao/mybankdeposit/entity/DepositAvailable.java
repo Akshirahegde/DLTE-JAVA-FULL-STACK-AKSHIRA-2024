@@ -6,17 +6,17 @@ import javax.validation.constraints.NotNull;
 public class DepositAvailable {
 
     @NotNull
-    @Digits(integer=7,fraction = 0,message = "{deposit.id}")
+    @Digits(integer = 7, fraction = 0, message = "{deposit.id}")
     private Long depositId;
     @NotNull
     private String depositName;
     @NotNull
-    @Digits(integer=2,fraction = 2,message = "{deposit.roi}")
+    @Digits(integer = 2, fraction = 2, message = "{deposit.roi}")
     private Double depositRoi;
     @NotNull
     private String depositType;
     @NotNull
-    private  String depositDescription;
+    private String depositDescription;
 
     public DepositAvailable() {
     }
@@ -80,6 +80,83 @@ public class DepositAvailable {
         this.depositDescription = depositDescription;
     }
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //    public DepositAvailable(@NotNull @Digits(integer = 7, fraction = 0, message = "{deposit.id}") Long depositId, @NotNull String depositName, @NotNull @Digits(integer = 2, fraction = 2, message = "{deposit.roi}") Double depositRoi, @NotNull String depositType, @NotNull String depositDescription) {
 //        this.depositId = depositId;
 //        this.depositName = depositName;
@@ -141,4 +218,4 @@ public class DepositAvailable {
 //                ", depositDescription='" + depositDescription + '\'' +
 //                '}';
 //    }
-}
+

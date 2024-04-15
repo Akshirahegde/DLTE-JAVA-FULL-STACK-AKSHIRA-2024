@@ -14,10 +14,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.sql.CallableStatement;
-import java.sql.SQLException;
-import java.sql.SQLSyntaxErrorException;
-import java.sql.Types;
+import java.sql.*;
 import java.util.*;
 
 @Service
@@ -88,12 +85,16 @@ public class DepositService implements DepositInterface {
             depositAvailable.setDepositDescription((String) returnedDeposits.get("description"));
             return Optional.of(depositAvailable);
         } catch (DataAccessException exception) {
-            if (exception.getLocalizedMessage().equalsIgnoreCase("ORA-20002"))
+            if (exception.getLocalizedMessage().contains("ORA-20002"))
                 throw new DepositException(resourceBundle.getString("deposit.exception"));
+            if (exception.getLocalizedMessage().contains("ORA-20003"))
+                throw new DepositException(resourceBundle.getString("internal.server.error"));
         }
 
-        return null;
+       return Optional.empty();
     }
+
+
 
     @Override
     public DepositAvailed availDeposit(DepositAvailed depositAvailed) {

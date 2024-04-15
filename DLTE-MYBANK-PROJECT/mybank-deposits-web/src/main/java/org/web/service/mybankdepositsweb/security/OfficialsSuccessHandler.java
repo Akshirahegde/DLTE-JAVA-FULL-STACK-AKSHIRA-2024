@@ -22,13 +22,12 @@ public class OfficialsSuccessHandler extends SimpleUrlAuthenticationSuccessHandl
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException, IOException, ServletException {
         MyBankCustomer myBankCustomers = (MyBankCustomer) authentication.getPrincipal();
-        if (myBankCustomers.getAttempts() != 0) {
+        if (!myBankCustomers.getCustomerStatus().equalsIgnoreCase("inactive")) {
             if (myBankCustomers.getAttempts() > 1) {
                 myBankCustomers.setAttempts(1);
                 services.updateAttempts(myBankCustomers);
             }
-            super.setDefaultTargetUrl("http://localhost:8085/depositrepo/deposit.wsdl");
-            //response.sendRedirect(request.getContextPath() + "/transactions/new");
+            super.setDefaultTargetUrl("/depositrepo/deposit.wsdl");
         } else {
             logger.warn("Max attempts reached contact admin");
             super.setDefaultTargetUrl("/login");
