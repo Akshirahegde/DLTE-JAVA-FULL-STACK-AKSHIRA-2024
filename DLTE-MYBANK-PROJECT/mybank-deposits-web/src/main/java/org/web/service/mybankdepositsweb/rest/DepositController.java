@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.*;
 import services.deposit.ServiceStatus;
 
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.Positive;
+import java.sql.SQLSyntaxErrorException;
 import java.util.*;
 
 // http://localhost:8085/module/deposits/2028001/1000.0/1
@@ -67,8 +69,35 @@ public class DepositController {
             logger.error(resourceBundle.getString("deposit.error"), depositException);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(depositException.getMessage());
         }
-        
+
     }
+
+
+
+
+//    @GetMapping("/deposits/{depositId}/{amount}/{tenure}")
+//    public Object[] calculateDeposit(@PathVariable("depositId") long depositId, @PathVariable("amount") double amount, @PathVariable("tenure") int tenure, HttpServletResponse response) throws DepositException {
+//        Optional<DepositAvailable> deposit = null;
+//        double maturityAmount = 0;
+//        try {
+//            deposit = depositInterface.searchDepositById(depositId);
+//            if (deposit.isPresent()) {
+//                maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
+//            }
+//        } catch (SQLSyntaxErrorException e) {
+//            System.out.println(resourceBundle.getString("internal.error"));
+//            logger.error(resourceBundle.getString("internal.error"));
+//            serviceStatus.setStatus(HttpServletResponse.SC_NOT_FOUND);
+//            serviceStatus.setMessage(resourceBundle.getString("internal.error"));
+//
+//        } catch (DepositException e) {
+//            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+//            logger.error(resourceBundle.getString("deposit.id.unavailable"));
+//            throw e;
+//
+//        }
+//        return new Object[]{deposit, maturityAmount};
+//    }
 
 }
 

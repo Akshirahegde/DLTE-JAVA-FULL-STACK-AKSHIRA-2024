@@ -45,6 +45,28 @@ public class DepositService implements DepositInterface {
         return null;
     }
 
+//    @Override
+//    public Optional<DepositAvailable> searchDepositById(Long Id) throws SQLSyntaxErrorException {
+//        List<DepositAvailable> deposits;
+//
+//        try {
+//            deposits= jdbcTemplate.query("select deposit_id,deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositavailable",
+//                    new BeanPropertyRowMapper<>(DepositAvailable.class));
+//        }catch (DataAccessException sqlException){
+//            throw new SQLSyntaxErrorException();
+//        }
+//
+//        Optional<DepositAvailable> deposit = deposits.stream()
+//                .filter(depositAvailable -> depositAvailable.getDepositId().equals(Id))
+//                .findFirst();
+//        System.out.println(Id);
+//        if (deposit==null)
+//            throw new DepositException(resourceBundle.getString("deposit.exception"));
+//        return deposit;
+//    }
+
+
+
     @Override
     public Optional<DepositAvailable> searchDepositById(Long id) throws DepositException {
         try {
@@ -93,6 +115,7 @@ public class DepositService implements DepositInterface {
 
        return Optional.empty();
     }
+
 
 
 
