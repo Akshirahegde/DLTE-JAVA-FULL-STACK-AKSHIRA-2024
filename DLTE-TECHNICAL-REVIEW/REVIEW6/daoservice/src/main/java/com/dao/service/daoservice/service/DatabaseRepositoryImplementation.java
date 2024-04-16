@@ -40,7 +40,7 @@ public class DatabaseRepositoryImplementation implements InputEmployeeDetails {
             jdbcTemplate.update(employeesQuery, employeeID, employee.getEmployeeDetails().getEmployeeName(),
                     employee.getEmployeeDetails().getEmailId(), employee.getEmployeeDetails().getPhoneNumber());
 
-            // Inserting into Address table
+
             String insertTemporaryAddressQuery = "INSERT INTO Address(EMPLOYEEID,HOUSENAME,STREETNAME,CITYNAME,STATENAME,PIN,ISTEMPORARY) VALUES (?,?,?,?,?,?,1)";
             jdbcTemplate.update(insertTemporaryAddressQuery, employeeID, employee.getEmployeeTemporaryAddress().getStreet(),
                     employee.getEmployeeTemporaryAddress().getHouseName(), employee.getEmployeeTemporaryAddress().getCity(),
@@ -91,7 +91,7 @@ public class DatabaseRepositoryImplementation implements InputEmployeeDetails {
         } catch (EmptyResultDataAccessException e) {
             logger.warn(resourceBundle.getString("no.pin") + pin);
             throw new EmployeeNotFoundException(resourceBundle.getString("no.pin") + pin);
-        } catch (DataAccessException e) {
+        } catch (DataAccessException e) {//SQLException, HibernateException:handles more general exception
             logger.warn(resourceBundle.getString("no.pin") + pin);
             throw new EmployeeNotFoundException(resourceBundle.getString("no.pin") + pin);
         }

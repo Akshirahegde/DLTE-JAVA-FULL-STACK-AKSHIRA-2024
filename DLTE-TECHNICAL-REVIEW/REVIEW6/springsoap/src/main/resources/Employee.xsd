@@ -44,7 +44,7 @@
         </xsd:sequence>
     </xsd:complexType>
     <!-- Request element -->
-    <xsd:element name="CreateEmployeeRequest">
+    <xsd:element name="createEmployeeRequest">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element name="employee" type="tns:Employee"/>
@@ -53,17 +53,16 @@
     </xsd:element>
 
     <!-- Response element -->
-    <xsd:element name="CreateEmployeeResponse">
+    <xsd:element name="createEmployeeResponse">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="status" type="xsd:int"/>
-                <xsd:element name="message" type="xsd:string"/>
+<!--                <xsd:element name="status" type="xsd:int"/>-->
+<!--                <xsd:element name="message" type="xsd:string"/>-->
                 <xsd:element name="serviceStatus" type="tns:serviceStatus"/>
                 <xsd:element name="employee" type="tns:Employee"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
 
     <xsd:element name="filterByIdRequest">
         <xsd:complexType>

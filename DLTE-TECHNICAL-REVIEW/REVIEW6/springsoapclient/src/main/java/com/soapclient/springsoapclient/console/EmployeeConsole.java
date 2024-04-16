@@ -33,7 +33,7 @@ public class EmployeeConsole {
             System.out.println(resourceBundle.getString("emp.exit"));
             System.out.print(resourceBundle.getString("enter.choice"));
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline character
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -59,9 +59,9 @@ public class EmployeeConsole {
     }
 
     private static void createEmployee(WebServiceTemplate webServiceTemplate, Scanner scanner) {
-        boolean addMoreEmployees = true;
+        boolean add= true;
 
-        while (addMoreEmployees) {
+        while (add) {
             System.out.println(resourceBundle.getString("enter.employee"));
             System.out.print(resourceBundle.getString("enter.id"));
             String employeeId = scanner.nextLine();
@@ -71,33 +71,33 @@ public class EmployeeConsole {
             String email = scanner.nextLine();
             System.out.print(resourceBundle.getString("enter.phoneNumber"));
             Long phoneNumber = scanner.nextLong();
-            scanner.nextLine(); // Consume newline character
+            scanner.nextLine();
 
             System.out.println(resourceBundle.getString("enter.permanentDetails"));
-            System.out.print(resourceBundle.getString("enter.address"));
+            System.out.print(resourceBundle.getString("enter.street"));
             String permanentStreet = scanner.nextLine();
-            System.out.print(resourceBundle.getString("enter.houseNumber"));
+            System.out.print(resourceBundle.getString("enter.houseName"));
             String permanentHouseName = scanner.nextLine();
             System.out.print(resourceBundle.getString("enter.city"));
             String permanentCity = scanner.nextLine();
             System.out.print(resourceBundle.getString("enter.state"));
             String permanentState = scanner.nextLine();
-            System.out.print(resourceBundle.getString("enter.pinCode"));
+            System.out.print(resourceBundle.getString("enter.pin"));
             Integer permanentPin = scanner.nextInt();
-            scanner.nextLine(); // Consume newline character
+            scanner.nextLine();
 
             System.out.println(resourceBundle.getString("enter.temporaryAddress"));
-            System.out.print(resourceBundle.getString("enter.address"));
+            System.out.print(resourceBundle.getString("enter.street"));
             String temporaryStreet = scanner.nextLine();
-            System.out.print(resourceBundle.getString("enter.houseNumber"));
+            System.out.print(resourceBundle.getString("enter.houseName"));
             String temporaryHouseName = scanner.nextLine();
             System.out.print(resourceBundle.getString("enter.city"));
             String temporaryCity = scanner.nextLine();
             System.out.print(resourceBundle.getString("enter.state"));
             String temporaryState = scanner.nextLine();
-            System.out.print(resourceBundle.getString("enter.pinCode"));
+            System.out.print(resourceBundle.getString("enter.pin"));
             Integer temporaryPin = scanner.nextInt();
-            scanner.nextLine(); // Consume newline character
+            scanner.nextLine();
 
             EmployeeDetails details = new EmployeeDetails();
             details.setEmailId(email);
@@ -134,17 +134,17 @@ public class EmployeeConsole {
             System.out.println(resourceBundle.getString("create.message") + status.getMessage());
             logger.info(resourceBundle.getString("create.message"));
 
-            if (status != null && "SUCCESS".equals(status.getStatus())) {
+          //  if (status != null && "SUCCESS".equals(status.getStatus())) {
                 Employee createdEmployee = response.getEmployee();
                 displayEmployeeDetails(createdEmployee);
-            }
+          //  }
 
             System.out.print(resourceBundle.getString("add.another.employee"));
             String choice = scanner.next();
             if (!"yes".equalsIgnoreCase(choice)) {
-                addMoreEmployees = false;
+                add= false;
             }
-            scanner.nextLine(); // Consume newline character
+            scanner.nextLine();
         }
     }
 
@@ -155,6 +155,7 @@ public class EmployeeConsole {
         request.setEmployeeId(employeeId);
         FilterByIdResponse response = (FilterByIdResponse) webServiceTemplate.marshalSendAndReceive(request);
         ServiceStatus status = response.getServiceStatus();
+
       //  if (status != null && "SUCCESS".equals(status.getStatus())) {
         System.out.println(resourceBundle.getString("id.response") + status.getStatus());
         System.out.println(resourceBundle.getString("id.message") + status.getMessage());
@@ -213,15 +214,15 @@ public class EmployeeConsole {
         System.out.println("Phone Number: " + details.getPhoneNumber());
 
         System.out.println("\nPermanent Address:");
-        System.out.println("Address: " + permanentAddress.getStreet());
-        System.out.println("House Number: " + permanentAddress.getHouseName());
+        System.out.println("Street: " + permanentAddress.getStreet());
+        System.out.println("House Name: " + permanentAddress.getHouseName());
         System.out.println("City: " + permanentAddress.getCity());
         System.out.println("State: " + permanentAddress.getState());
         System.out.println("Pin Code: " + permanentAddress.getPin());
 
         System.out.println("\nTemporary Address:");
-        System.out.println("Address: " + temporaryAddress.getStreet());
-        System.out.println("House Number: " + temporaryAddress.getHouseName());
+        System.out.println("Street: " + temporaryAddress.getStreet());
+        System.out.println("House Name: " + temporaryAddress.getHouseName());
         System.out.println("City: " + temporaryAddress.getCity());
         System.out.println("State: " + temporaryAddress.getState());
         System.out.println("Pin Code: " + temporaryAddress.getPin());

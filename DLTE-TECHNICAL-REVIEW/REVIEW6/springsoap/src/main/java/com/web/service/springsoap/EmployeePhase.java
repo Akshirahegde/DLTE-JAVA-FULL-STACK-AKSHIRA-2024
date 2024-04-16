@@ -19,7 +19,7 @@ import services.employee.*;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
-import static java.util.Collections.addAll;
+
 
 //http://localhost:8082/employeerepo/employee.wsdl
 
@@ -31,6 +31,7 @@ public class EmployeePhase {
     private final String url="http://employee.services";
     @Autowired
     private com.dao.service.daoservice.interfaces.InputEmployeeDetails inputEmployeeDetails;
+
     @PayloadRoot(namespace = url,localPart = "createEmployeeRequest")
     @ResponsePayload
     public CreateEmployeeResponse createEmployee(@RequestPayload CreateEmployeeRequest createEmployeeRequest)  {
@@ -52,7 +53,7 @@ public class EmployeePhase {
             employee = inputEmployeeDetails.create(employee);
             serviceStatus.setStatus(HttpServletResponse.SC_OK);
             employeeResponse.setEmployee(actualEmployee);
-            serviceStatus.setMessage(resourceBundle.getString("employeeAdd.success"));
+            serviceStatus.setMessage(resourceBundle.getString("add.success"));
         } catch (com.dao.service.daoservice.exception.EmployeeExistsException e) {
             serviceStatus.setStatus(HttpServletResponse.SC_NO_CONTENT);
             serviceStatus.setMessage(resourceBundle.getString("employee.exist"));
@@ -142,10 +143,10 @@ public class EmployeePhase {
                 employees.add(currentEmployee);
             });
             serviceStatus.setStatus(HttpServletResponse.SC_OK);
-            serviceStatus.setMessage("Employee details fetched successfully");
+            serviceStatus.setMessage(resourceBundle.getString("employee.found"));
         } catch (EmployeeNotFoundException e) {
             serviceStatus.setStatus(HttpServletResponse.SC_NO_CONTENT);
-            serviceStatus.setMessage("Employee not found");
+            serviceStatus.setMessage(resourceBundle.getString(" not.found"));
         }
         filterByPinResponse.setServiceStatus(serviceStatus);
         filterByPinResponse.getEmployee().addAll(employees);//---------------------------------
@@ -154,9 +155,9 @@ public class EmployeePhase {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public Map<String,String> handleValidationException(MethodArgumentNotValidException ve){
+    public Map<String,String> handleValidationException(MethodArgumentNotValidException method){
         Map<String, String> errors = new HashMap<>();
-        ve.getBindingResult().getAllErrors().forEach((error) -> {
+        method.getBindingResult().getAllErrors().forEach((error) -> {//retrieves all the errors
             String fieldName = ((FieldError) error).getField();
             String errorMessage = error.getDefaultMessage();
             errors.put(fieldName, errorMessage);
