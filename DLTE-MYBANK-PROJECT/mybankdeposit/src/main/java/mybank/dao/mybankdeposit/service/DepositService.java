@@ -9,8 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.*;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -44,28 +42,6 @@ public class DepositService implements DepositInterface {
     public List<DepositAvailable> searchDepositByRoi(Double roi) {
         return null;
     }
-
-//    @Override
-//    public Optional<DepositAvailable> searchDepositById(Long Id) throws SQLSyntaxErrorException {
-//        List<DepositAvailable> deposits;
-//
-//        try {
-//            deposits= jdbcTemplate.query("select deposit_id,deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositavailable",
-//                    new BeanPropertyRowMapper<>(DepositAvailable.class));
-//        }catch (DataAccessException sqlException){
-//            throw new SQLSyntaxErrorException();
-//        }
-//
-//        Optional<DepositAvailable> deposit = deposits.stream()
-//                .filter(depositAvailable -> depositAvailable.getDepositId().equals(Id))
-//                .findFirst();
-//        System.out.println(Id);
-//        if (deposit==null)
-//            throw new DepositException(resourceBundle.getString("deposit.exception"));
-//        return deposit;
-//    }
-
-
 
     @Override
     public Optional<DepositAvailable> searchDepositById(Long id) throws DepositException {

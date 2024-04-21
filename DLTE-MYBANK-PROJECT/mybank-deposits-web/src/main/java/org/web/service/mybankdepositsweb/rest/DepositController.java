@@ -49,8 +49,8 @@ public class DepositController {
     @GetMapping("/deposits/{depositId}/{amount}/{tenure}")
     public ResponseEntity<?> calculateDeposit(
             @PathVariable("depositId") Long depositId,
-          @Positive @PathVariable("amount") Double amount,
-          @Positive  @PathVariable("tenure") Integer tenure) {
+         @PathVariable("amount") Double amount,
+          @PathVariable("tenure") Integer tenure) {
         if (amount <= 0 ) {
             logger.info("Invalid amount specified: " + amount);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Amount must be positive");

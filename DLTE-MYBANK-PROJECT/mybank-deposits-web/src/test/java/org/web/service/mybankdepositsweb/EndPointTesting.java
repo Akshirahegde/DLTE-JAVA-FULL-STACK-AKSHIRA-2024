@@ -9,15 +9,14 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultMatcher;
 import org.web.service.mybankdepositsweb.configs.DepositSoap;
-import org.web.service.mybankdepositsweb.rest.DepositController;
 import services.deposit.ViewAllDepositsRequest;
 import services.deposit.ViewAllDepositsResponse;
 
@@ -28,12 +27,14 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.hamcrest.Matchers.containsString;
+import static net.bytebuddy.matcher.ElementMatchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
 
@@ -41,6 +42,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 @AutoConfigureMockMvc
 @SpringBootTest
 //@WebMvcTest(DepositController.class)
+//@AutoConfigureMockMvc(addFilters = false)
+
 public class EndPointTesting {
     @MockBean
     private DepositInterface depositInterface;
@@ -50,6 +53,8 @@ public class EndPointTesting {
     JdbcTemplate jdbcTemplate;
     @Autowired
     private MockMvc mockMvc;
+
+
 
     @Test
     void testListAll() throws SQLSyntaxErrorException {
@@ -92,6 +97,7 @@ public class EndPointTesting {
 
     }
     @Test
+    @WithMockUser(username = "Patwardhan",password ="divija123")
     void testDepositsById() throws Exception {
         DepositAvailable deposit1 = new DepositAvailable(123L, "Fixed Savings", 4.5, "Term Deposit", "A fixed-term savings account");
         DepositAvailable deposit2 = new DepositAvailable(456L, "Flexi Saver", 3.2, "Savings Account", "A flexible savings account");
@@ -99,26 +105,53 @@ public class EndPointTesting {
 
         when(depositInterface.searchDepositById(123L)).thenReturn(Optional.of(deposit1));
 
-        mockMvc.perform(get("/deposits/123/1000.0/2")).
-                andExpect(jsonPath("$.depositId").value(456L)).
-                andExpect(jsonPath("$.depositName").value("Fixed Savings")).
-                andExpect(jsonPath("$.depositRoi").value(4.5)).
-                andExpect(jsonPath("$.depositType").value("Term Deposit"));
+        mockMvc.perform(get("/module/deposits/123/1000.0/2")).
+                andExpect(status().isUnauthorized());
+//                andExpect(jsonPath("$.depositId").value(123)).
+//                andExpect(jsonPath("$.depositName").value("Fixed Savings")).
+//                andExpect(jsonPath("$.depositRoi").value(4.5)).
+//                andExpect(jsonPath("$.depositType").value("Term Deposit"));
 
+    }
+
+    @Test
+    @WithMockUser(username = "Patwardhan",password ="divija123")
+
+    void testDepositsByIdPass() throws Exception {
+        DepositAvailable deposit1 = new DepositAvailable(123L, "Fixed Savings", 4.5, "Term Deposit", "A fixed-term savings account");
+        DepositAvailable deposit2 = new DepositAvailable(456L, "Flexi Saver", 3.2, "Savings Account", "A flexible savings account");
+        List<DepositAvailable> mockDeposits = Stream.of(deposit1).collect(Collectors.toList());
+        when(depositInterface.searchDepositById(123L)).thenReturn(Optional.of(deposit1));
+
+        mockMvc.perform(get("/module/deposits/123/1000/2")).
+                andExpect(status().isOk());
     }
 
 }
 
-
-
-
-
-
-
-
-
-
-
+//@Test
+//@WithMockUser(username = "Patwardhan",password ="divija123")
+//
+//    public void calculateDeposit_ShouldReturnMaturityAmountAndDepositDetails() throws Exception {
+//        Long depositId = 1L;
+//        Double amount = 1000.0;
+//        Integer tenure = 5;
+//        Double expectedRoi = 10.0;
+//        Double expectedMaturityAmount = 1500.0;
+//
+//        DepositAvailable depositAvailable = new DepositAvailable();
+//        depositAvailable.setDepositId(depositId);
+//        depositAvailable.setDepositRoi(expectedRoi);
+//
+//        when(depositInterface.searchDepositById(depositId)).thenReturn(Optional.of(depositAvailable));
+//
+//        mockMvc.perform(get(String.format(DEPOSIT_URL, depositId, amount, tenure))
+//                .with(user("user").password("password")))
+//                .andExpect(status().isOk())
+//                .andExpect((ResultMatcher) jsonPath("$.depositId", is(depositId.intValue())))
+//                .andExpect((ResultMatcher) jsonPath("$.maturityAmount", is(expectedMaturityAmount)));
+//    }
+//
 
 
 

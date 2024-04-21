@@ -9,7 +9,7 @@ public class WebServiceConfiguration {
     @Bean
     public Jaxb2Marshaller marshaller() {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-        marshaller.setContextPath("services.employee"); // Package where your generated classes
+        marshaller.setContextPath("services.employee");
         return marshaller;
     }
 

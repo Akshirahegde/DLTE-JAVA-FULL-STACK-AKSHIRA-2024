@@ -1,14 +1,16 @@
 package com.dao.service.daoservice.entity;
+import org.hibernate.validator.constraints.Range;
+
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 public class EmployeeAddress {
-    @NotNull(message = "{address.null}")
+    @NotNull(message = "{street.null}")
     @Pattern(regexp = "^\\d+\\s[a-zA-Z]+\\s[a-zA-Z]+", message = "{customer.street}")
     private String street;
 
-    @NotNull(message = "{address.houseNumber.null}")
+    @NotNull(message = "{address.houseName.null}")
     @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "{address.houseName.invalid}")
     private String houseName;
 
@@ -20,8 +22,9 @@ public class EmployeeAddress {
     @Pattern(regexp = "^[a-zA-Z ]+$", message = "{address.city.invalid}")
     private String city;
 
-    @NotNull(message = "{address.pinCode.null}")
-    @Digits(integer = 6, fraction = 0, message = "{address.pinCode.invalid}")
+    @NotNull(message = "{address.pin.null}")
+    @Digits(integer = 6, fraction = 0, message = "{address.pin.invalid}")
+    @Range(min=100000, max=999999,message="{address.pin.invalid}")
     private Integer pin;
 
     public EmployeeAddress(@NotNull(message = "{street.null}") @Pattern(regexp = "^\\d+\\s[a-zA-Z]+\\s[a-zA-Z]+", message = "{customer.street}") String street, @NotNull(message = "{address.houseName.null}") @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "{address.houseName.invalid}") String houseName, @NotNull(message = "{address.state.null}") @Pattern(regexp = "^[a-zA-Z ]+$", message = "{address.state.invalid}") String state, @NotNull(message = "{address.city.null}") @Pattern(regexp = "^[a-zA-Z ]+$", message = "{address.city.invalid}") String city, @NotNull(message = "{address.pin.null}") @Digits(integer = 6, fraction = 0, message = "{address.pin.invalid}") Integer pin) {

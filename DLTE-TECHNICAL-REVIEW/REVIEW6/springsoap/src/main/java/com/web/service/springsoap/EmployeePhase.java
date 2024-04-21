@@ -17,6 +17,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import services.employee.*;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.util.*;
 
 
@@ -34,7 +35,7 @@ public class EmployeePhase {
 
     @PayloadRoot(namespace = url,localPart = "createEmployeeRequest")
     @ResponsePayload
-    public CreateEmployeeResponse createEmployee(@RequestPayload CreateEmployeeRequest createEmployeeRequest)  {
+    public CreateEmployeeResponse createEmployee(@Valid @RequestPayload CreateEmployeeRequest createEmployeeRequest)  {
         CreateEmployeeResponse employeeResponse = new CreateEmployeeResponse();
 
         ServiceStatus serviceStatus = new ServiceStatus();
@@ -50,7 +51,7 @@ public class EmployeePhase {
             employee.setEmployeeDetails(daoDetail);
             employee.setEmployeePermanentAddress(daoPermanentAddress);
             employee.setEmployeeTemporaryAddress(daoTemporaryAddress);
-            employee = inputEmployeeDetails.create(employee);
+            inputEmployeeDetails.create(employee);
             serviceStatus.setStatus(HttpServletResponse.SC_OK);
             employeeResponse.setEmployee(actualEmployee);
             serviceStatus.setMessage(resourceBundle.getString("add.success"));
@@ -72,8 +73,7 @@ public class EmployeePhase {
             EmployeeDetails details = new EmployeeDetails();
             EmployeeAddress temporaryAddress=new EmployeeAddress();
             EmployeeAddress permanentAddress=new EmployeeAddress();
-            BeanUtils.copyProperties(employee.getEmployeeDetails(), details);
-            BeanUtils.copyProperties(employee.getEmployeePermanentAddress(), permanentAddress);
+            BeanUtils.copyProperties(employee.getEmployeeDetails(), details);            BeanUtils.copyProperties(employee.getEmployeePermanentAddress(), permanentAddress);
             BeanUtils.copyProperties(employee.getEmployeeTemporaryAddress(), temporaryAddress);
             actualEmployee.setEmployeeDetails(details);
             actualEmployee.setEmployeePermanentAddress(permanentAddress);
@@ -157,7 +157,7 @@ public class EmployeePhase {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Map<String,String> handleValidationException(MethodArgumentNotValidException method){
         Map<String, String> errors = new HashMap<>();
-        method.getBindingResult().getAllErrors().forEach((error) -> {//retrieves all the errors
+        method.getBindingResult().getAllErrors().forEach((error) -> {
             String fieldName = ((FieldError) error).getField();
             String errorMessage = error.getDefaultMessage();
             errors.put(fieldName, errorMessage);

@@ -87,14 +87,14 @@
 //
 //    @Test
 //    void testSearchDepositById_Failure() {
-//        Map<String, Object> fakeResults = new HashMap<>();
-//        fakeResults.put("id", BigDecimal.valueOf(1L));
-//        fakeResults.put("name", "Savings");
-//        fakeResults.put("roi", 3.5);
-//        fakeResults.put("type", "Regular");
-//        fakeResults.put("description", "Standard Savings Deposit");
+//        Map<String, Object> deposit = new HashMap<>();
+//        deposit.put("id", BigDecimal.valueOf(1L));
+//        deposit.put("name", "Savings");
+//        deposit.put("roi", 3.5);
+//        deposit.put("type", "Regular");
+//        deposit.put("description", "Standard Savings Deposit");
 //
-//        when(jdbcTemplate.call(any(CallableStatementCreator.class), any(List.class))).thenReturn(fakeResults);
+//        when(jdbcTemplate.call(any(CallableStatementCreator.class), any(List.class))).thenReturn(deposit);
 //        Optional<DepositAvailable> result = depositService.searchDepositById(1L);
 //
 //        assertTrue(result.isPresent());
