@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheque Book Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="row justify-content-center align-items-center" style="height: 100vh;">
+        <div class="col-lg-7 col-md-8 col-12">
+            <h2 class="text-center text-info-emphasis">CHEQUE BOOK APPLICATION FORM</h2>
+            <form name="application" action="#" class="rounded-5 shadow-lg p-5">
+                <div class="form group">
+                    <label>Account Holder: </label>
+                    <input type="text" class="form-control" name="accountName" placeholder="Account Holder Name" />
+                </div>
+                <div class="form group">
+                    <label>Account Number: </label>
+                    <input type="number" class="form-control" name="accountNumber" placeholder="Account Number" />
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label">Account Type:</label>
+                    <div>
+                        <input type="radio" class="form-check-input" name="accountType" value="savings" />Savings Account
+                        <input type="radio" class="form-check-input" name="accountType" value="current" />Current Account
+                    </div>
+                </div>
+                <div class="form group">
+                    <label>Cheque Book Type</label>
+                    <select class="form-select" name="chequeType">
+                        <option>Traveller’s Cheque Book:</option>
+                        <option>Payroll Cheque Book</option>
+                        <option>Business Cheque Book</option>
+                        <option>Standard Cheque Book</option>
+                    </select>
+                </div>
+                <div class="form group">
+                    <label>Date of Application:</label>
+                    <input class="form-control" type="date" name="applicationDate" placeholder="Date of Application" />
+                </div>
+                <div class="form group">
+                    <label>Address:</label>
+                    <textarea class="form-control" name="address" placeholder="Address"></textarea>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-lg-6 col-12">
+                        <label>Contact Number: </label>
+                        <input class="form-control" type="tel" name="contact" placeholder="Account Holder's contact" />
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <label>Email: </label>
+                        <input class="form-control" type="email" name="email" placeholder="Account Holder's email" />
+                    </div>
+                </div>
+                
+                <div class="file">
+                    <label>Signature:</label>
+                    <input class="form-control" type="file" name="applicantSignature" placeholder="Applicant's Signature" />
+                </div>
+                <div class="form group">
+                    <input type="checkbox" name="termsAndConditions" value="terms" \>I accept all the terms and conditions of MyBank
+                </div>
+                <div class="row justify-content-around mt-2">
+                    <input class="col-3 btn btn-outline-primary" type="submit" value="Apply">
+                    <input class="col-3 btn btn-outline-danger" type="reset" value="Cancel">
+                </div>
+            </form>
+        </div>
+</body>
+</html>
