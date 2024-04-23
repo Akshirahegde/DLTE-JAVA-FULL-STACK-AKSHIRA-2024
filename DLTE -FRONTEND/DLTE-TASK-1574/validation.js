@@ -38,6 +38,34 @@ catch(message){
     isValid=false
     nameErr.innerHTML=message
 }
+//validating the type
+try{
+    if(!(/[A-Za-z]/).test(type)){
+        throw "Requires only alphabets"
+    }
+}
+catch(message){
+    isValid=false
+    typeErr.innerHTML=message
+}
+//validating email
+try{
+    if(!(/^[A-Za-z0-9+_.-]+@[a-zA-Z]{3,}+\\.[a-z]{2,}/).test(email)){
+        throw "Required to follow the pattern"
+    }
+}catch(message){
+    isValid=false
+    emailErr.innerHTML=message
+}
 
+//validating address
+try{
+    if(!(/[0-9]{7,}/).test(address)){
+        throw "Requires pattern"
+    }
+}catch(message){
+    isValid=false
+    addressErr.innerHTML=message
+}
 return isValid
 }
