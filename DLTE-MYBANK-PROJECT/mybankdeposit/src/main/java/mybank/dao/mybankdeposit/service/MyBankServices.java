@@ -1,5 +1,6 @@
-package org.web.service.mybankdepositsweb.security;
+package mybank.dao.mybankdeposit.service;
 
+import mybank.dao.mybankdeposit.entity.MyBankCustomer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 //http://localhost:8085/profile/register
 //        {
@@ -28,7 +31,7 @@ public class MyBankServices implements UserDetailsService {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-   Logger logger= LoggerFactory.getLogger(OfficialsFailureHandler.class);
+   Logger logger= LoggerFactory.getLogger(MyBankServices.class);
 
     public MyBankCustomer signUp(MyBankCustomer myBankCustomers){
         jdbcTemplate.update("insert into MYBANK_APP_CUSTOMER values (my_bank_app_seq.nextval,?,?,?,?,?,?,?)",new Object[]{
@@ -48,11 +51,16 @@ return myBankCustomers;
        logger.info("Status has changed");
     }
     public MyBankCustomer findByUsername(String username){
-        MyBankCustomer myBankCustomers = jdbcTemplate.queryForObject("select * from MYBANK_APP_CUSTOMER where username=?",
-                new Object[]{username},new BeanPropertyRowMapper<>(MyBankCustomer.class));
+        MyBankCustomer customer=findAllUsername().stream().filter(each ->each.getUsername().equals(username)).findFirst().orElse(null);
+        return customer;
+    }
+
+    public List<MyBankCustomer> findAllUsername(){
+        List<MyBankCustomer> myBankCustomers=jdbcTemplate.query("select * from MYBANK_APP_CUSTOMER",new BeanPropertyRowMapper<>(MyBankCustomer.class));
         return myBankCustomers;
     }
     @Override
+    //spring secrity default method
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         MyBankCustomer customers = findByUsername(username);
         if(customers==null)
@@ -60,3 +68,11 @@ return myBankCustomers;
         return customers;
     }
 }
+
+
+
+
+
+//        MyBankCustomer myBankCustomers = jdbcTemplate.queryForObject("select * from MYBANK_APP_CUSTOMER where username=?",
+//                new Object[]{username},new BeanPropertyRowMapper<>(MyBankCustomer.class));
+//        return myBankCustomers;

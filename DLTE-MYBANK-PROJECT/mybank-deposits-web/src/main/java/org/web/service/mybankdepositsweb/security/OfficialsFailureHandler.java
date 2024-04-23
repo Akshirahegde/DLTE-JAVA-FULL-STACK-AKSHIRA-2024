@@ -1,5 +1,7 @@
 package org.web.service.mybankdepositsweb.security;
 
+import mybank.dao.mybankdeposit.entity.MyBankCustomer;
+import mybank.dao.mybankdeposit.service.MyBankServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

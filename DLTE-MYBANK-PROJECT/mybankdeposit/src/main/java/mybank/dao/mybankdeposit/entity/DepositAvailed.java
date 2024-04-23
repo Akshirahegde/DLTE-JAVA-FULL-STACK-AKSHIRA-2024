@@ -4,20 +4,17 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 
 public class DepositAvailed {
-    @NotNull(message = "{depositavailid.notnull}")
+
     private long depositAvailId;
-    @NotNull(message = "{amount.notnull}")
-    @Digits(integer = 6,fraction =2,message = "{deposit.amount}")
+
     private double depositAmount;
-    @NotNull(message = "{duration.notnull}")
-    @Digits(integer = 2,fraction = 0,message = "{deposit.duration}")
+
     private int depositDuration;
-    @NotNull(message = "{maturity.notnull}")
-    @Digits(integer = 2,fraction = 0,message = "{deposit.maturity}")
+
     private int depositMaturity;
-    @NotNull(message = "{depositid.notnull}")
+
     private long depositId;
-    @NotNull(message = "{customerid.notnull}")
+
     private long customerId;
 
     public DepositAvailed(long depositAvailId, double depositAmount, int depositDuration, int depositMaturity, long depositId, long customerId) {

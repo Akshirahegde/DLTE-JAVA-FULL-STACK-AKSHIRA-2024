@@ -1,7 +1,6 @@
 package org.web.service.mybankdepositsweb.configs;
 
 import mybank.dao.mybankdeposit.entity.DepositAvailable;
-import mybank.dao.mybankdeposit.entity.DepositAvailed;
 import mybank.dao.mybankdeposit.exception.DepositException;
 import mybank.dao.mybankdeposit.interfaces.DepositInterface;
 import org.slf4j.Logger;
@@ -9,9 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -23,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLSyntaxErrorException;
 import java.util.*;
 
-//http://localhost:8084/depositrepo/deposit.wsdl
+//http://localhost:8085/depositrepo/deposit.wsdl
 
 @Endpoint
 @ComponentScan("mybank.dao.mybankdeposit")
@@ -68,58 +64,11 @@ public class    DepositSoap {
             serviceStatus.setStatus(HttpServletResponse.SC_NO_CONTENT);
             serviceStatus.setMessage(resourceBundle.getString("deposit.exception"));
             viewAllDepositsResponse.setServiceStatus(serviceStatus);
-        } finally {
-            return viewAllDepositsResponse;
         }
+            return viewAllDepositsResponse;
+
 
     }
-//
-//    @PayloadRoot(namespace = url, localPart = "searchByIdRequest")
-//    @ResponsePayload
-//    @GetMapping("/searchDepositById")
-////    @RequestPayload SearchByIdRequest searchByIdRequest
-//    public SearchByIdResponse searchDepositById(@RequestParam Long Id){
-//        SearchByIdResponse searchByIdResponse=new SearchByIdResponse();
-//        ServiceStatus serviceStatus = new ServiceStatus();
-//        Optional<DepositAvailable> fromDao = null;
-//            try {
-//
-//                fromDao=depositInterface.searchDepositById(Id);
-//
-//                if (fromDao != null) {
-//                    double depositMaturity = calculateMaturityAmount(fromDao);
-//                   // searchByIdResponse.setDeposit(depositMaturity);
-//                    serviceStatus.setStatus(HttpServletResponse.SC_OK);
-//                    serviceStatus.setMessage(resourceBundle.getString("fetch.success"));
-//                } else {
-//                    serviceStatus.setStatus(HttpServletResponse.SC_NOT_FOUND);
-//                    serviceStatus.setMessage(resourceBundle.getString("deposit.not.found"));
-//                }
-//            } catch (Exception e) {
-//                serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-//                serviceStatus.setMessage(resourceBundle.getString("internal.error"));
-//                logger.error("Error occurred while searching deposit by ID", e);
-//            }
-//
-//        searchByIdResponse.setStatus(serviceStatus);
-//
-//            return searchByIdResponse;
-//        }
-//
-//
-//        public static double calculateMaturityAmount( DepositAvailed deposit,DepositAvailable deposits) {
-//            double principalAmount = deposit.getDepositAmount();
-//            double rate = deposits.getDepositRoi();
-//            int time = deposit.getDepositDuration();
-//
-//            double depositMaturity = principalAmount + (principalAmount * rate * time) / 100;
-//
-//            return depositMaturity;
-//        }
-
-
-
-
     }
 
 

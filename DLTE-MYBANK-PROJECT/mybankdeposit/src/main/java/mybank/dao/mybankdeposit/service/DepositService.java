@@ -44,6 +44,7 @@ public class DepositService implements DepositInterface {
     }
 
     @Override
+    //java 8
     public Optional<DepositAvailable> searchDepositById(Long id) throws DepositException {
         try {
             DepositAvailable depositAvailable = new DepositAvailable();

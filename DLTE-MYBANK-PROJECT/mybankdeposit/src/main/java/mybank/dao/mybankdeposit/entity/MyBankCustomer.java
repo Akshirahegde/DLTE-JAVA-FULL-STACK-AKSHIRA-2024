@@ -1,4 +1,4 @@
-package org.web.service.mybankdepositsweb.security;
+package mybank.dao.mybankdeposit.entity;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

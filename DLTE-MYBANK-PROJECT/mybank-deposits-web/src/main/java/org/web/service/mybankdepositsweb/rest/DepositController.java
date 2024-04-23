@@ -12,11 +12,6 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import services.deposit.ServiceStatus;
-
-
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.constraints.Positive;
-import java.sql.SQLSyntaxErrorException;
 import java.util.*;
 
 // http://localhost:8085/module/deposits/2028001/1000.0/1
@@ -32,20 +27,6 @@ public class DepositController {
     ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
     ServiceStatus serviceStatus = new ServiceStatus();
 
-
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public Map<String, String> handleValidationExceptions(
-            MethodArgumentNotValidException ex) {
-        Map<String, String> errors = new HashMap<>();
-        ex.getBindingResult().getAllErrors().forEach((error) -> {
-            String fieldName = ((FieldError) error).getField();
-            String errorMessage = error.getDefaultMessage();
-            errors.put(fieldName, errorMessage);
-        });
-        return errors;
-    }
-
     @GetMapping("/deposits/{depositId}/{amount}/{tenure}")
     public ResponseEntity<?> calculateDeposit(
             @PathVariable("depositId") Long depositId,
@@ -53,11 +34,11 @@ public class DepositController {
           @PathVariable("tenure") Integer tenure) {
         if (amount <= 0 ) {
             logger.info("Invalid amount specified: " + amount);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Amount must be positive");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resourceBundle.getString("amount.positive"));
         }
         if(tenure<=0 ){
             logger.info("Invalid tenure specified"+tenure);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Tenure must be positive");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resourceBundle.getString("tenure.positive"));
         }
 
         try {
@@ -71,34 +52,6 @@ public class DepositController {
         }
 
     }
-
-
-
-
-//    @GetMapping("/deposits/{depositId}/{amount}/{tenure}")
-//    public Object[] calculateDeposit(@PathVariable("depositId") long depositId, @PathVariable("amount") double amount, @PathVariable("tenure") int tenure, HttpServletResponse response) throws DepositException {
-//        Optional<DepositAvailable> deposit = null;
-//        double maturityAmount = 0;
-//        try {
-//            deposit = depositInterface.searchDepositById(depositId);
-//            if (deposit.isPresent()) {
-//                maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
-//            }
-//        } catch (SQLSyntaxErrorException e) {
-//            System.out.println(resourceBundle.getString("internal.error"));
-//            logger.error(resourceBundle.getString("internal.error"));
-//            serviceStatus.setStatus(HttpServletResponse.SC_NOT_FOUND);
-//            serviceStatus.setMessage(resourceBundle.getString("internal.error"));
-//
-//        } catch (DepositException e) {
-//            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-//            logger.error(resourceBundle.getString("deposit.id.unavailable"));
-//            throw e;
-//
-//        }
-//        return new Object[]{deposit, maturityAmount};
-//    }
-
 }
 
 

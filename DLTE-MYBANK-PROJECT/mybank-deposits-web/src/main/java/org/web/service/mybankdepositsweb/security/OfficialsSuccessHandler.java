@@ -1,5 +1,7 @@
 package org.web.service.mybankdepositsweb.security;
 
+import mybank.dao.mybankdeposit.entity.MyBankCustomer;
+import mybank.dao.mybankdeposit.service.MyBankServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 @Component
 public class OfficialsSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
@@ -18,7 +21,7 @@ public class OfficialsSuccessHandler extends SimpleUrlAuthenticationSuccessHandl
     MyBankServices services;
 
     Logger logger = LoggerFactory.getLogger(OfficialsSuccessHandler.class);
-
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("details");
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException, IOException, ServletException {
         MyBankCustomer myBankCustomers = (MyBankCustomer) authentication.getPrincipal();
@@ -29,7 +32,7 @@ public class OfficialsSuccessHandler extends SimpleUrlAuthenticationSuccessHandl
             }
             super.setDefaultTargetUrl("/depositrepo/deposit.wsdl");
         } else {
-            logger.warn("Max attempts reached contact admin");
+            logger.warn(resourceBundle.getString("attempt.end"));
             super.setDefaultTargetUrl("/login");
         }
         super.onAuthenticationSuccess(request, response, authentication);

@@ -1,5 +1,6 @@
 package org.web.service.mybankdepositsweb.security;
 
+import mybank.dao.mybankdeposit.service.MyBankServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,7 +33,7 @@ public class TransactionSecurity {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOriginPatterns(Arrays.asList("http://127.0.0.1:5503"));
+        configuration.setAllowedOriginPatterns(Arrays.asList("http://127.0.0.1:5500"));
 
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
