@@ -45,7 +45,7 @@ public class DepositService implements DepositInterface {
 
     @Override
     //java 8
-    public Optional<DepositAvailable> searchDepositById(Long id) throws DepositException {
+    public Optional<DepositAvailable> searchDepositById(Long id) throws DepositException, SQLSyntaxErrorException {
         try {
             DepositAvailable depositAvailable = new DepositAvailable();
             Optional<DepositAvailable> deposit = Optional.of(depositAvailable);
@@ -83,11 +83,12 @@ public class DepositService implements DepositInterface {
             depositAvailable.setDepositType((String) returnedDeposits.get("type"));
             depositAvailable.setDepositDescription((String) returnedDeposits.get("description"));
             return Optional.of(depositAvailable);
-        } catch (DataAccessException exception) {
+        }
+        catch (DataAccessException exception) {
             if (exception.getLocalizedMessage().contains("ORA-20002"))
                 throw new DepositException(resourceBundle.getString("deposit.exception"));
             if (exception.getLocalizedMessage().contains("ORA-20003"))
-                throw new DepositException(resourceBundle.getString("internal.server.error"));
+                throw new SQLSyntaxErrorException(resourceBundle.getString("internal.server.error"));
         }
 
        return Optional.empty();

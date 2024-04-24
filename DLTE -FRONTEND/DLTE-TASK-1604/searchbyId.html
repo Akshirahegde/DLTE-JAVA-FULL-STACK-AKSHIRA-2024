@@ -33,7 +33,7 @@
                     //Authorization
                     beforeSend: function(handler){
                         // console.log("Authorization header being set...");
-                        handler.setRequestHeader("Authorization", "Basic " + btoa("Patwardhan:divija123"))
+                        handler.setRequestHeader("Authorization", "Basic " + sessionStorage.getItem("logged"))
                     },
 
                     success:function(response){

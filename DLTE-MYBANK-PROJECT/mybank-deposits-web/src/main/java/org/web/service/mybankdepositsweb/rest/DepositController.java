@@ -1,5 +1,7 @@
 package org.web.service.mybankdepositsweb.rest;
 
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import mybank.dao.mybankdeposit.entity.DepositAvailable;
 import mybank.dao.mybankdeposit.exception.DepositException;
 import mybank.dao.mybankdeposit.interfaces.DepositInterface;
@@ -12,6 +14,8 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import services.deposit.ServiceStatus;
+
+import java.sql.SQLSyntaxErrorException;
 import java.util.*;
 
 // http://localhost:8085/module/deposits/2028001/1000.0/1
@@ -27,17 +31,23 @@ public class DepositController {
     ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
     ServiceStatus serviceStatus = new ServiceStatus();
 
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "All data fetched"),
+            @ApiResponse(responseCode = "400", description = "Invalid details passed"),
+            @ApiResponse(responseCode = "404", description = "No Deposit Found"),
+
+    })
     @GetMapping("/deposits/{depositId}/{amount}/{tenure}")
     public ResponseEntity<?> calculateDeposit(
             @PathVariable("depositId") Long depositId,
          @PathVariable("amount") Double amount,
           @PathVariable("tenure") Integer tenure) {
         if (amount <= 0 ) {
-            logger.info("Invalid amount specified: " + amount);
+            logger.info(resourceBundle.getString("invalid.amount") + amount);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resourceBundle.getString("amount.positive"));
         }
         if(tenure<=0 ){
-            logger.info("Invalid tenure specified"+tenure);
+            logger.info(resourceBundle.getString("invalid.tenure")+tenure);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resourceBundle.getString("tenure.positive"));
         }
 
@@ -46,13 +56,24 @@ public class DepositController {
             Double maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
             serviceStatus.setStatus(HttpStatus.OK.value());
             return ResponseEntity.ok(new Object[]{deposit.get(), maturityAmount});
-        } catch (DepositException depositException) {
+        }
+//        catch (DepositException depositException) {
+//            logger.error(resourceBundle.getString("deposit.error"), depositException);
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(depositException.getMessage());
+//        }
+        catch (DepositException depositException) {
             logger.error(resourceBundle.getString("deposit.error"), depositException);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(depositException.getMessage());
         }
+        catch (SQLSyntaxErrorException exception) {
+            logger.error(resourceBundle.getString("syntax.error"), exception);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(exception.getMessage());
+        }
+
+        }
 
     }
-}
+
 
 
 

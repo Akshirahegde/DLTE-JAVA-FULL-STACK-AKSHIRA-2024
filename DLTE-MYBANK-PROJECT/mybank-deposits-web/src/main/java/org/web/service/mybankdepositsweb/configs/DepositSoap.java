@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -20,7 +21,7 @@ import java.sql.SQLSyntaxErrorException;
 import java.util.*;
 
 //http://localhost:8085/depositrepo/deposit.wsdl
-
+@CrossOrigin(origins = "*")
 @Endpoint
 @ComponentScan("mybank.dao.mybankdeposit")
 public class    DepositSoap {

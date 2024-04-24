@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface DepositInterface {
     List<DepositAvailable> listAllDeposits() throws SQLSyntaxErrorException;
     List<DepositAvailable> searchDepositByRoi(Double roi);
-    Optional<DepositAvailable> searchDepositById(Long Id) ;
+    Optional<DepositAvailable> searchDepositById(Long Id) throws SQLSyntaxErrorException;
     DepositAvailed availDeposit(DepositAvailed depositAvailed);
 }
 

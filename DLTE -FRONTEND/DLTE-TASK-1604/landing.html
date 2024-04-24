@@ -28,12 +28,12 @@
                     success:function(response){
                         // alert(JSON.stringify(response))
                         sessionStorage.setItem("logged",credentials)
-                        location.assign("http://127.0.0.1:5500/dashboard.html")
+                        location.assign("http://127.0.0.1:5501/dashboard.html")
                     },
-                    error:function(error){
-                        //alert(JSON.stringify(error))
-                        location.assign("http://127.0.0.1:5500/landing.html")
-                    }
+                    // error:function(error){
+                    //     //alert(JSON.stringify(error))
+                    //     location.assign("http://127.0.0.1:5501/landing.html")
+                    // }
                 })
             })
         })

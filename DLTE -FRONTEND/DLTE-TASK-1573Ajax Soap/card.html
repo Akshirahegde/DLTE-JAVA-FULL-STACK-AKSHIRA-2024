@@ -1,205 +1,73 @@
-<!-- <!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View All Deposits</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        .card:hover{
-            transition: 0.3s;
-            transform: scale(1.1);
-        }
-    </style>
-
-
-
-
     <script>
         // Function to fetch all deposits using AJAX
-        $(document).ready(function(){
+        const listAll=()=>{
+            let soapRequest = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:deposit="http://deposit.services">
+                        <soapenv:Header/>
+                        <soapenv:Body>
+                            <deposit:viewAllDepositsRequest/>
+                        </soapenv:Body>
+                    </soapenv:Envelope>`
             $.ajax({
                 url: 'http://localhost:8085/depositrepo',
                 type: 'POST',
-                contentType: 'text/xml',
-                headers: {
-                    'Authorization': 'Basic ' + btoa('Patwardhan:divija123')
-                },
-                data: `<?xml version="1.0"?>
-                    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dep="http://deposit.services">
-                        <soapenv:Header/>
-                        <soapenv:Body>
-                            <dep:viewAllDepositsRequest/>
-                        </soapenv:Body>
-                    </soapenv:Envelope>`,
-                success: function(response) {
-                   
-                    console.log(response); 
-                
-                        $(response).find('deposits').each(function() {
-                            var depositId = $(this).find('depositId').text();
-                            var depositName = $(this).find('depositName').text();
-                            var depositRoi = $(this).find('depositRoi').text();
-                            var depositType = $(this).find('depositType').text();
-                            var depositDescription = $(this).find('depositDescription').text();
-                            
-                            // Append deposit details to the UI
-                            $('#allDeposit').append(`
-                                <div>
-                                    <h3>Deposit ID: ${depositId}</h3>
-                                    <p>Name: ${depositName}</p>
-                                    <p>ROI: ${depositRoi}</p>
-                                    <p>Type: ${depositType}</p>
-                                    <p>Description: ${depositDescription}</p>
-                                </div>
-                                <hr>
-                            `);
-                        });
-                        alert(JSON.stringify(response));
-                
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error fetching deposits:', error);
-                }
-            });
-        });
-    </script>
-    </head>
- <body>
-    <h1>List All Deposits</h1>
-    <div id="allDeposit"></div>
-        <div class="container">
-            <div class="row justify-content-around" id="viewSection">
-    
-            </div>
-        </div>
-    
-</body>
-</html> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deposits Available</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        .card:hover{
-            transition: 0.3s;
-            transform: scale(1.1);
-        }
-    </style>
-    <script>
-
-        const terminate=(number)=>{
-            let soapRequest = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dep="http://deposit.services">
-                        <soapenv:Header/>
-                        <soapenv:Body>
-                            <dep:viewAllDepositsRequest/>
-                        </soapenv:Body>
-                    </soapenv:Envelope>`
-
-             $.ajax({
-                url:"http://localhost:8085/depositrepo",
-                type:"POST",
-                dataType:"xml",
-                headers: {
-                    'Authorization': 'Basic ' + btoa('Patwardhan:divija123')
+                dataType: 'xml',
+                beforeSend: function (handler) {
+                    handler.setRequestHeader("Authorization", "Basic " + btoa("Patwardhan:divija123"));
+                    handler.setRequestHeader("SOAPAction", "viewAllDepositsRequest");
                 },
                 contentType:"text/xml;charset=utf-8",
                 data:soapRequest,
                 success:function(response){
-                    const info = $(response).find(`ns2\\:serviceStatus`).find("ns2\\:status").text()
-                    alert(info)
-                    location.assign("http://127.0.0.1:5500/card.html")
-                },
-                error:function(err){
-                    const info = $(response).find(`ns2\\:serviceStatus`).find("ns2\\:status").text()
-                    alert(info)
-                }
-            })
-        }
-
-        const callGetAllDeposits=()=>{
-            $.ajax({
-                url:"http://localhost:8085/depositrepo",
-                type:"POST",
-                headers: {
-                    'Authorization': 'Basic ' + btoa('Patwardhan:divija123')
-                },
-                success:function(response){
                     // alert(JSON.stringify(response))
-                    let viewPart = $("#viewSection")
-                    viewPart.empty()
-                    response.map((each)=>{
-                        viewPart.append(`
-                        <div class="card col-12 col-lg-3 col-md-6 p-5 rounded-5 m-4 shadow-lg bg-danger-subtle text-danger">
-                            <h1 class="card-title display-6 text-center">${each.depositId}</h1>
-                            <h5 class="card-text text-center">${each.depositName}</h5>
-                            <hr/>
-                            <div class="card-body">
-                               <p class="card-text text-center">${each.depositRoi}</p>
-                            </div>
-                            <hr/>
-                            <div class="card-body">
-                               <p class="card-text float-start">${each.depositType}</p>
-                               <p class="card-text float-end">${each.depositDescription}</p>
-                        //     </div>
-                        //     <button onclick="terminate(${each.depositId})" class="col-2 btn btn-outline-danger"><span class="bi bi-trash3"></span></button>
-                        // </div>
-                        `)
-                    })
+                    console.log(response)
+
+                    $('#depositList').empty();
+                    
+                        $(response).find('ns2\\:deposit').each(function() {
+                            console.log("Hello")
+                            var depositId = $(this).find('ns2\\:depositId').text();
+                            var depositName = $(this).find('ns2\\:depositName').text();
+                            var depositRoi = $(this).find('ns2\\:depositRoi').text();
+                            var depositType = $(this).find('ns2\\:depositType').text();
+                            var depositDescription = $(this).find('ns2\\:depositDescription').text();
+                            const depositHtml = `
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${depositName}</h5>
+                                        <p class="card-text">Type: ${depositType}</p>
+                                        <p class="card-text">Description: ${depositDescription}</p>
+                                        <p class="card-text">ROI: ${depositRoi}%</p>
+                                    </div>
+                                </div>
+                            </div>`;
+                            $('#depositList').append(depositHtml);
+                        });
+                    
                 },
-                error:function(error){
-                    //alert(JSON.stringify(error))
-                    let viewPart = $("#viewSection")
-                    viewPart.empty()
-                    viewPart.append(`
-                        <div class="alert alert-warning text-center display-2">
-                            ${error.status}
-                        </div>
-                    `)
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);
                 }
-            })
+            });
         }
         
         $(document).ready(()=>{
-            callGetAllDeposits()
-        })
-
-
+            listAll();
+        });
     </script>
 </head>
 <body>
     <div class="container">
-        <div class="row justify-content-around" id="viewSection">
-
-        </div>
+        <h1 class="text-center">Deposits</h1>
+        <div class="row justify-content-center" id="depositList"></div>
     </div>
 </body>
 </html>

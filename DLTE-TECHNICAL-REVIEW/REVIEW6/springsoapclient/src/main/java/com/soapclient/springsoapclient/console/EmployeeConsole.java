@@ -5,7 +5,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.ws.client.core.WebServiceTemplate;
-import services.employee.*;
+import soap.webservice.*;
+//import services.employee.*;
 
 import java.util.List;
 import java.util.ResourceBundle;
