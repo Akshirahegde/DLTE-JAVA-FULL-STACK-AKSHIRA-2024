@@ -1,1 +1,8 @@
 restful\service\CreateAccount.class
+servlets\CreateUser.class
+restful\service\DepositAmount.class
+servlets\AuthorizeServlet.class
+servlets\Logout.class
+servlets\UpdateTransaction.class
+restful\service\FindByUsername.class
+servlets\FindUserName.class

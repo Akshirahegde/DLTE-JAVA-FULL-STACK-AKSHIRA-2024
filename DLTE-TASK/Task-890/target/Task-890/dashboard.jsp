@@ -26,7 +26,7 @@
     if (session.getAttribute("username") != null) {
         String username = (String) session.getAttribute("username");
 %>
-<nav class="navbar navbar-expand-lg  navbar-light" style="background: linear-gradient(60deg, rgb(37, 238, 238), #f3ef3a,rgb(112, 246, 163));">
+<nav class="navbar navbar-expand-lg  navbar-light" style="background: linear-gradient(60deg, rgb(58, 238, 28), #f3ef3a,rgb(12, 246, 13));">
     <div class="container-fluid justify-content-between">
         <a class="navbar-brand" href="#">MYBANK</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
