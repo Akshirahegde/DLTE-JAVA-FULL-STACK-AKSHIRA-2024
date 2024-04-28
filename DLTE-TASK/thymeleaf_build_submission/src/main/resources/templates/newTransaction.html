@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light gray background */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff; /* White background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .message {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #d4edda; /* Success message background color */
+            color: #155724; /* Success message text color */
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue button background color */
+            color: #fff; /* Button text color */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form th:action="@{/transactions/new}" th:object="${transaction}" method="post">
+        <input type="text" th:field="*{transactionId}" placeholder="Transaction ID"/>
+        <input type="text" th:field="*{transactionFrom}" placeholder="Transaction By"/>
+        <input type="text" th:field="*{transactionTo}" placeholder="Transaction To"/>
+        <input type="text" th:field="*{transactionRemarks}" placeholder="Transaction Remarks"/>
+        <input type="text" th:field="*{transactionAmount}" placeholder="Transaction Amount"/>
+        <div th:if="${message}" th:text="${message}" class="message"></div>
+        <button type="submit">Add</button>
+    </form>
+</div>
+</body>
+</html>

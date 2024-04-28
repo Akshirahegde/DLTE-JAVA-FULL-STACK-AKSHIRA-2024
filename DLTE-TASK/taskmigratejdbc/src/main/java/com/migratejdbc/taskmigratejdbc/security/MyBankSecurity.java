@@ -30,8 +30,12 @@ public class MyBankSecurity {
             httpSecurity.authorizeRequests().antMatchers("/user/register").permitAll();
             httpSecurity.authorizeRequests().antMatchers("/jdbctransaction/new").hasAnyAuthority("admin");
 
+          //  httpSecurity.authorizeRequests().antMatchers("/jdbctransaction/receiver/{receiver}").hasAuthority("customer");
             httpSecurity.authorizeRequests().antMatchers("/jdbctransaction/receiver/{receiver}").hasAuthority("customer");
-            httpSecurity.authorizeRequests().antMatchers("/jdbctransaction/sender/{sender}").hasAnyAuthority("customer");
+
+         //   httpSecurity.authorizeRequests().antMatchers("/jdbctransaction/sender/{sender}").hasAnyAuthority("customer");
+            httpSecurity.authorizeRequests().antMatchers("/jdbctransaction/sender/{sender}").permitAll();
+
             httpSecurity.authorizeRequests().antMatchers("/jdbctransaction/amount/{amount}").hasAnyAuthority("customer");
 //            httpSecurity.authorizeRequests().antMatchers(HttpMethod.DELETE).hasAuthority("admin");
 //            httpSecurity.authorizeRequests().antMatchers(HttpMethod.PUT).hasAuthority("manager,admin");

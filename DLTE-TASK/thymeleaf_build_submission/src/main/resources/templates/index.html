@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light gray background */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff; /* White background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+        }
+
+        .message {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda; /* Success message background color */
+            color: #155724; /* Success message text color */
+            border-radius: 4px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007bff; /* Blue button background color */
+            color: #fff; /* Button text color */
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="container">
+    <a th:href="@{/transactions/new}">New Transactions</a>
+    <div th:if="${message}" th:text="${message}" class="message"></div>
+</div>
 </body>
 </html>
