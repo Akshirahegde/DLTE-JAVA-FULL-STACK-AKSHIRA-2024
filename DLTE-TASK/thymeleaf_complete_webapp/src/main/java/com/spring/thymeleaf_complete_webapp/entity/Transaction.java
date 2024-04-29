@@ -1,8 +1,7 @@
-package thyme.submission.thymeleaf_build_submission.entity;
+package com.spring.thymeleaf_complete_webapp.entity;
+
 
 import org.springframework.stereotype.Component;
-
-
 
 @Component
 public class Transaction {
