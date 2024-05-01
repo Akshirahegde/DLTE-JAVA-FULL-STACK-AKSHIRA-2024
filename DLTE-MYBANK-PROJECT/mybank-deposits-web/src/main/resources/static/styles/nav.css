@@ -1,0 +1,14 @@
+.navbar-brand b {
+    font-weight: bold;
+    font-family: 'Montserrat';
+    color: #182052;
+}
+
+.navbar-nav .nav-item h3 {
+    margin: 0;
+}
+
+.logout {
+    background-color: #182052;
+    color: white;
+}

@@ -1,0 +1,83 @@
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-color: #f2f2f2;*/
+/*    padding: 20px;*/
+/*}*/
+
+/*.container {*/
+/*    background-color: beige; !* Added beige background color *!*/
+/*    padding: 20px;*/
+/*    border-radius: 5px;*/
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
+/*    max-width: 500px;*/
+/*    margin: 0 auto;*/
+/*    margin-bottom: 20px; !* Added space between containers *!*/
+/*}*/
+
+/*h1 {*/
+/*    text-align: center;*/
+/*    color: #333;*/
+/*}*/
+
+/*form .form-group {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    margin-bottom: 15px;*/
+/*}*/
+
+/*label {*/
+/*    flex: 0 0 30%; !* Set the width of labels *!*/
+/*}*/
+
+/*input[type="text"],*/
+/*input[type="number"] {*/
+/*    flex: 0 0 70%; !* Set the width of input fields *!*/
+/*    padding: 10px;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 3px;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*button {*/
+/*    background-color: #ff6600;*/
+/*    color: #fff;*/
+/*    padding: 10px 20px;*/
+/*    border: none;*/
+/*    border-radius: 3px;*/
+/*    cursor: pointer;*/
+/*    width: 100%;*/
+/*    font-size: 16px;*/
+/*}*/
+
+/*button:hover {*/
+/*    background-color: #e65c00;*/
+/*}*/
+
+
+.container {
+    color: #183152;
+    font-size: 20px;
+    background-color: #f5497c; /* Added beige background color */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 50px; /* Added space between containers */
+}
+
+.calculator {
+    font-family: Montserrat;
+}
+
+label {
+    font-family: Poppins;
+    flex: 0 0 30%;
+
+}
+
+button{
+    background-color: #ff6600;
+    color: #fff;
+    font-family: Montserrat;
+}

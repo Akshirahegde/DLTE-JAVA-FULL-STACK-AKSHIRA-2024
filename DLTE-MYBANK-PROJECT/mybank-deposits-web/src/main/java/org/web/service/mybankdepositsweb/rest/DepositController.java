@@ -11,24 +11,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import services.deposit.ServiceStatus;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Digits;
 import java.sql.SQLSyntaxErrorException;
 import java.util.*;
+
+import static org.springframework.jdbc.support.JdbcUtils.isNumeric;
 
 // http://localhost:8085/module/deposits/2028001/1000.0/1
 
 
 @RestController
 @RequestMapping("/module")
+@Valid
 public class DepositController {
 
     @Autowired
     private DepositInterface depositInterface;
     Logger logger = LoggerFactory.getLogger(DepositController.class);
-    ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("details");
     ServiceStatus serviceStatus = new ServiceStatus();
 
     @ApiResponses(value = {
@@ -40,37 +46,37 @@ public class DepositController {
     @GetMapping("/deposits/{depositId}/{amount}/{tenure}")
     public ResponseEntity<?> calculateDeposit(
             @PathVariable("depositId") Long depositId,
-         @PathVariable("amount") Double amount,
-          @PathVariable("tenure") Integer tenure) {
-        if (amount <= 0 ) {
-            logger.info(resourceBundle.getString("invalid.amount") + amount);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resourceBundle.getString("amount.positive"));
+         @PathVariable("amount") String amounts,
+          @PathVariable("tenure")  String tenures) {
+        if (!amounts.matches("^\\d*\\.?\\d+$")) {
+            String errorMessage = resourceBundle.getString("amount.invalid");
+            logger.warn(errorMessage);
+            return ResponseEntity.badRequest().body(errorMessage);
         }
-        if(tenure<=0 ){
-            logger.info(resourceBundle.getString("invalid.tenure")+tenure);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resourceBundle.getString("tenure.positive"));
+        Double amount = Double.valueOf(amounts);
+        if (!tenures.matches("^\\d*$")) {
+            String errorMessage = resourceBundle.getString("tenure.invalid");
+            logger.warn(errorMessage);
+            return ResponseEntity.badRequest().body(errorMessage);
         }
-
+        Integer tenure = Integer.valueOf(tenures);
         try {
             Optional<DepositAvailable> deposit = depositInterface.searchDepositById(depositId);
             Double maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
             serviceStatus.setStatus(HttpStatus.OK.value());
             return ResponseEntity.ok(new Object[]{deposit.get(), maturityAmount});
         }
-//        catch (DepositException depositException) {
-//            logger.error(resourceBundle.getString("deposit.error"), depositException);
-//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(depositException.getMessage());
-//        }
         catch (DepositException depositException) {
-            logger.error(resourceBundle.getString("deposit.error"), depositException);
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(depositException.getMessage());
+            logger.error(resourceBundle.getString("deposit.error")+depositException.getMessage());
+            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("deposit.exception"));
         }
         catch (SQLSyntaxErrorException exception) {
             logger.error(resourceBundle.getString("syntax.error"), exception);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(exception.getMessage());
+            return ResponseEntity.status(HttpStatus.OK).body(exception.getMessage());
         }
 
         }
+
 
     }
 

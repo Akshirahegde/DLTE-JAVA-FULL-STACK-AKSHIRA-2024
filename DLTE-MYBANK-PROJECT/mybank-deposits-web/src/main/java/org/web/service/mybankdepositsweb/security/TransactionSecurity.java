@@ -50,9 +50,14 @@ public class TransactionSecurity {
         //AJAX CORS
         httpSecurity.cors();
         httpSecurity.httpBasic();
-        httpSecurity.formLogin().usernameParameter("username").failureHandler(officialsFailureHandler).successHandler(officialsSuccessHandler);
         httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
         httpSecurity.authorizeRequests().antMatchers("/v3/api-docs").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/userlogin/**").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/images/**").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/styles/**").permitAll();
+
+        httpSecurity.formLogin().loginPage("/userlogin/").usernameParameter("username").failureHandler(officialsFailureHandler).successHandler(officialsSuccessHandler);       // httpSecurity.authorizeRequests().antMatchers("/transaction/**").permitAll();
+
         httpSecurity.authorizeRequests().anyRequest().authenticated();
         AuthenticationManagerBuilder builder = httpSecurity.getSharedObject(AuthenticationManagerBuilder.class);
         builder.userDetailsService(services);

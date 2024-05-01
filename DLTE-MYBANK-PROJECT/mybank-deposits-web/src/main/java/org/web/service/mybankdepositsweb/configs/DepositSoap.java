@@ -25,14 +25,16 @@ import java.util.*;
 @Endpoint
 @ComponentScan("mybank.dao.mybankdeposit")
 public class    DepositSoap {
-    ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("details");
     Logger logger = LoggerFactory.getLogger(DepositSoap.class);
     private final String url = "http://deposit.services";
+    //private final String url = resourceBundle.getString("deposit.url");
 
     @Autowired
     private DepositInterface depositInterface;
 
     @PayloadRoot(namespace = url, localPart = "viewAllDepositsRequest")
+   // @PayloadRoot(namespace = "deposit.url", localPart = "viewAllDepositsRequest")
     @ResponsePayload
     public ViewAllDepositsResponse listDeposits(@RequestPayload ViewAllDepositsRequest viewAllDepositsRequest) {
         ViewAllDepositsResponse viewAllDepositsResponse = new ViewAllDepositsResponse();
@@ -56,7 +58,7 @@ public class    DepositSoap {
         } catch (SQLSyntaxErrorException e) {
             System.out.println(resourceBundle.getString("internal.error"));
             logger.error(resourceBundle.getString("internal.error"));
-            serviceStatus.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             serviceStatus.setMessage(resourceBundle.getString("internal.error"));
             viewAllDepositsResponse.setServiceStatus(serviceStatus);
         } catch (DepositException depositException) {

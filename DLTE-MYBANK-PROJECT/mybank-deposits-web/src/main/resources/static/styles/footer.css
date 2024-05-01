@@ -1,0 +1,9 @@
+.navbar-brand display-6 fw-bold{
+    font-weight: bold;
+    font-family: 'Montserrat';
+    color: white;
+}
+.text-center text-lg-start text-white{
+    background-color: #182052;
+    border-radius: 2rem 2rem 0 0;
+}

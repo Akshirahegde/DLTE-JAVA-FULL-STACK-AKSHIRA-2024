@@ -52,6 +52,8 @@ return myBankCustomers;
     }
     public MyBankCustomer findByUsername(String username){
         MyBankCustomer customer=findAllUsername().stream().filter(each ->each.getUsername().equals(username)).findFirst().orElse(null);
+        if(customer==null)
+            throw new UsernameNotFoundException(username);
         return customer;
     }
 
@@ -68,6 +70,47 @@ return myBankCustomers;
         return customers;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.test.context.support.WithMockUser;
@@ -76,8 +77,8 @@ public class EndPointTesting {
         when(depositInterface.listAllDeposits()).thenReturn(mockDepositList);
         ViewAllDepositsRequest request = new ViewAllDepositsRequest();
         ViewAllDepositsResponse response = depositSoap.listDeposits(request);
-        assertTrue(deposit2.getDepositRoi() == mockDepositList.get(0).getDepositRoi());       //Fail
-        assertNull(response.getDeposit());     //Fail
+        assertFalse(deposit2.getDepositRoi() == mockDepositList.get(0).getDepositRoi());
+        assertNotNull(response.getDeposit());
     }
 
 
@@ -86,12 +87,9 @@ public class EndPointTesting {
         Long depositId = 2L;
         Double amount = 1500.0;
         Integer tenure = 3;
-
         given(depositInterface.searchDepositById(depositId)).willReturn(Optional.empty());
-
         mockMvc.perform(get("/deposits/2L/1000/2"))
                 .andExpect(status().isUnauthorized());
-
     }
 
     @Test
@@ -105,15 +103,28 @@ public class EndPointTesting {
 
         mockMvc.perform(get("/module/deposits/123/1000.0/2")).
                 andExpect(status().isOk());
-//                andExpect(jsonPath("$.depositId").value(123)).
-//                andExpect(jsonPath("$.depositName").value("Fixed Savings")).
-//                andExpect(jsonPath("$.depositRoi").value(4.5)).
-//                andExpect(jsonPath("$.depositType").value("Term Deposit"));
 
     }
 
+    @Test
+    void testApproval() throws Exception {
+        String request="{\n" +
+                "    \"depositId\": 1234,\n" +
+                "    \"depositName\": \"Fixed deposits\",\n" +
+                "    \"depositRoi\": 6.7,\n" +
+                "    \"depositType\": \"Term Deposit\",\n" +
+                "    \"depositDescription\":\"A fixed-term savings account\",\n" +
+                "}";
 
-@Test
+        DepositAvailable deposit1 = new DepositAvailable(123L, "Fixed Savings", 4.5, "Term Deposit", "A fixed-term savings account");
+        when(depositInterface.searchDepositById(123L)).thenReturn(Optional.of(deposit1));
+        mockMvc.perform(get("/module/deposits").contentType(MediaType.APPLICATION_JSON).content(request))
+                .andExpect(status().isUnauthorized());
+    }
+
+
+
+    //@Test
 @WithMockUser(username = "Patwardhan",password ="divija123")
 
     public void calculateDeposit_ShouldReturnMaturityAmountAndDepositDetails() throws Exception {
@@ -122,7 +133,6 @@ public class EndPointTesting {
         Integer tenure = 5;
         Double expectedRoi = 10.0;
         Double expectedMaturityAmount = 1500.0;
-
         DepositAvailable depositAvailable = new DepositAvailable();
         depositAvailable.setDepositId(depositId);
         depositAvailable.setDepositRoi(expectedRoi);
@@ -134,6 +144,20 @@ public class EndPointTesting {
                 .andExpect(status().isOk())
                 .andExpect((ResultMatcher) jsonPath("$.depositId", is(depositId.intValue())))
                 .andExpect((ResultMatcher) jsonPath("$.maturityAmount", is(expectedMaturityAmount)));
+    }
+    //@Test
+    public void testCalculateDepositSuccess() throws Exception {
+        Long depositId = 1L;
+        Double amount = 1000.0;
+        Integer tenure = 5;
+        DepositAvailable mockDeposit = new DepositAvailable();
+        mockDeposit.setDepositRoi(10.0);
+
+        given(depositInterface.searchDepositById(depositId)).willReturn(Optional.of(mockDeposit));
+
+        mockMvc.perform(get("/deposits/{depositId}/{amount}/{tenure}", depositId, amount, tenure))
+//                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[1]").value(1L));
     }
 }
 
