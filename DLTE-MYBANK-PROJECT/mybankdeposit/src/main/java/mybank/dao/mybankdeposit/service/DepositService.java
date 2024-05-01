@@ -2,6 +2,7 @@ package mybank.dao.mybankdeposit.service;
 
 import mybank.dao.mybankdeposit.entity.DepositAvailable;
 import mybank.dao.mybankdeposit.entity.DepositAvailed;
+import mybank.dao.mybankdeposit.entity.MyBankCustomer;
 import mybank.dao.mybankdeposit.exception.DepositException;
 import mybank.dao.mybankdeposit.interfaces.DepositInterface;
 import org.slf4j.Logger;
@@ -97,7 +98,13 @@ public class DepositService implements DepositInterface {
 
 
 
+    public Long getDepositIdByDepositName(String depositName) {
+        Long depositId = jdbcTemplate.queryForObject(
+                "SELECT deposit_id FROM mybank_app_depositavailable WHERE deposit_name = ?",
+                new Object[]{depositName}, Long.class);
 
+        return depositId;
+    }
     @Override
     public DepositAvailed availDeposit(DepositAvailed depositAvailed) {
         return null;

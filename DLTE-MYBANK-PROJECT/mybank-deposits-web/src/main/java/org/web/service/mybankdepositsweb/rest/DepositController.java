@@ -64,7 +64,8 @@ public class DepositController {
             Optional<DepositAvailable> deposit = depositInterface.searchDepositById(depositId);
             Double maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
             serviceStatus.setStatus(HttpStatus.OK.value());
-            return ResponseEntity.ok(new Object[]{deposit.get(), maturityAmount});
+//   return ResponseEntity.ok(new Object[]{deposit.get(), maturityAmount});
+            return ResponseEntity.ok(maturityAmount);
         }
         catch (DepositException depositException) {
             logger.error(resourceBundle.getString("deposit.error")+depositException.getMessage());
@@ -76,7 +77,10 @@ public class DepositController {
         }
 
         }
-
+    @GetMapping("/deposits/id")
+    public Long getDepositIdByDepositName(@RequestParam String depositName) {
+        return depositInterface.getDepositIdByDepositName(depositName);
+    }
 
     }
 

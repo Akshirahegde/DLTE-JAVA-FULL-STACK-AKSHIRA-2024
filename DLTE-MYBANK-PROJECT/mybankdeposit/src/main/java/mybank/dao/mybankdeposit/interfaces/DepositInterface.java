@@ -14,7 +14,10 @@ public interface DepositInterface {
     List<DepositAvailable> listAllDeposits() throws SQLSyntaxErrorException;
     List<DepositAvailable> searchDepositByRoi(Double roi);
     Optional<DepositAvailable> searchDepositById(Long Id) throws SQLSyntaxErrorException, DepositException;
+//    Optional<DepositAvailable> searchDepositByName(String name ) throws SQLSyntaxErrorException, DepositException;
+
     DepositAvailed availDeposit(DepositAvailed depositAvailed);
+     Long getDepositIdByDepositName(String depositName);
 }
 
 
