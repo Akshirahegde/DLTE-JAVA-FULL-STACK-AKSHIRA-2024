@@ -10,21 +10,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.FieldError;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import services.deposit.ServiceStatus;
 
 import javax.validation.Valid;
-import javax.validation.constraints.Digits;
 import java.sql.SQLSyntaxErrorException;
 import java.util.*;
 
-import static org.springframework.jdbc.support.JdbcUtils.isNumeric;
-
 // http://localhost:8085/module/deposits/2028001/1000.0/1
-
 
 @RestController
 @RequestMapping("/module")
@@ -64,7 +57,7 @@ public class DepositController {
             Optional<DepositAvailable> deposit = depositInterface.searchDepositById(depositId);
             Double maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
             serviceStatus.setStatus(HttpStatus.OK.value());
-//   return ResponseEntity.ok(new Object[]{deposit.get(), maturityAmount});
+            //   return ResponseEntity.ok(new Object[]{deposit.get(), maturityAmount});
             return ResponseEntity.ok(maturityAmount);
         }
         catch (DepositException depositException) {

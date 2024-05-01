@@ -28,13 +28,11 @@ public class    DepositSoap {
     ResourceBundle resourceBundle = ResourceBundle.getBundle("details");
     Logger logger = LoggerFactory.getLogger(DepositSoap.class);
     private final String url = "http://deposit.services";
-    //private final String url = resourceBundle.getString("deposit.url");
 
     @Autowired
     private DepositInterface depositInterface;
 
     @PayloadRoot(namespace = url, localPart = "viewAllDepositsRequest")
-   // @PayloadRoot(namespace = "deposit.url", localPart = "viewAllDepositsRequest")
     @ResponsePayload
     public ViewAllDepositsResponse listDeposits(@RequestPayload ViewAllDepositsRequest viewAllDepositsRequest) {
         ViewAllDepositsResponse viewAllDepositsResponse = new ViewAllDepositsResponse();
