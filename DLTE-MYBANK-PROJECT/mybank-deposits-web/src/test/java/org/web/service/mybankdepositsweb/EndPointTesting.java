@@ -200,7 +200,7 @@ public void CalculateDeposit_Success() throws Exception {
     }
 
     @Test
-    public void GetDepositIdByDepositName() throws Exception {
+    public void GetDepositIdByDepositName()  {
         String depositName = "Term Deposit";
         long depositId = 1L;
         when(depositInterface.getDepositIdByDepositName(depositName)).thenReturn(depositId);
@@ -208,7 +208,7 @@ public void CalculateDeposit_Success() throws Exception {
         assertEquals(depositId, result);
     }
     @Test
-    public void GetDepositIdByDepositName_Failure() throws Exception {
+    public void GetDepositIdByDepositName_Failure()  {
         String depositName = "Term Deposit";
         long depositId = 1L;
         when(depositInterface.getDepositIdByDepositName(depositName)).thenReturn(depositId);
@@ -293,162 +293,3 @@ public void CalculateDeposit_Success() throws Exception {
     }
 }
 
-
-
-
-
-
-
-//    @Test
-//    public void testCalculateDepositNotFound() throws Exception {
-//        Long depositId = 2L;
-//        Double amount = 1500.0;
-//        Integer tenure = 3;
-//        given(depositInterface.searchDepositById(depositId)).willReturn(Optional.empty());
-//        mockMvc.perform(get("/deposits/2L/1000/2"))
-//                .andExpect(status().isUnauthorized());
-//    }
-//
-//    @Test
-//    @WithMockUser(username = "Patwardhan", password = "divija123")
-//    void testDepositsById() throws Exception {
-//        DepositAvailable deposit1 = new DepositAvailable(123L, "Fixed Savings", 4.5, "Term Deposit", "A fixed-term savings account");
-//        DepositAvailable deposit2 = new DepositAvailable(456L, "Flexi Saver", 3.2, "Savings Account", "A flexible savings account");
-//        List<DepositAvailable> mockDeposits = Stream.of(deposit1).collect(Collectors.toList());
-//
-//        when(depositInterface.searchDepositById(123L)).thenReturn(Optional.of(deposit1));
-//
-//        mockMvc.perform(get("/module/deposits/123/1000.0/2")).
-//                andExpect(status().isOk());
-//
-//    }
-//
-//    @Test
-//    void testApproval() throws Exception {
-//        String request="{\n" +
-//                "    \"depositId\": 1234,\n" +
-//                "    \"depositName\": \"Fixed deposits\",\n" +
-//                "    \"depositRoi\": 6.7,\n" +
-//                "    \"depositType\": \"Term Deposit\",\n" +
-//                "    \"depositDescription\":\"A fixed-term savings account\",\n" +
-//                "}";
-//
-//        DepositAvailable deposit1 = new DepositAvailable(123L, "Fixed Savings", 4.5, "Term Deposit", "A fixed-term savings account");
-//        when(depositInterface.searchDepositById(123L)).thenReturn(Optional.of(deposit1));
-//        mockMvc.perform(get("/module/deposits").contentType(MediaType.APPLICATION_JSON).content(request))
-//                .andExpect(status().isUnauthorized());
-//    }
-//
-//
-//
-//    //@Test
-//@WithMockUser(username = "Patwardhan",password ="divija123")
-//
-//    public void calculateDeposit_ShouldReturnMaturityAmountAndDepositDetails() throws Exception {
-//        Long depositId = 1L;
-//        Double amount = 1000.0;
-//        Integer tenure = 5;
-//        Double expectedRoi = 10.0;
-//        Double expectedMaturityAmount = 1500.0;
-//        DepositAvailable depositAvailable = new DepositAvailable();
-//        depositAvailable.setDepositId(depositId);
-//        depositAvailable.setDepositRoi(expectedRoi);
-//
-//        when(depositInterface.searchDepositById(depositId)).thenReturn(Optional.of(depositAvailable));
-//
-//        mockMvc.perform(get(String.format( "/module/deposits/{depositId}/{amount}/{tenure}",depositId, amount, tenure))
-//                .with(user("Patwardhan").password("divija123")))
-//                .andExpect(status().isOk())
-//                .andExpect((ResultMatcher) jsonPath("$.depositId", is(depositId.intValue())))
-//                .andExpect((ResultMatcher) jsonPath("$.maturityAmount", is(expectedMaturityAmount)));
-//    }
-//    //@Test
-//    public void testCalculateDepositSuccess() throws Exception {
-//        Long depositId = 1L;
-//        Double amount = 1000.0;
-//        Integer tenure = 5;
-//        DepositAvailable mockDeposit = new DepositAvailable();
-//        mockDeposit.setDepositRoi(10.0);
-//
-//        given(depositInterface.searchDepositById(depositId)).willReturn(Optional.of(mockDeposit));
-//
-//        mockMvc.perform(get("/deposits/{depositId}/{amount}/{tenure}", depositId, amount, tenure))
-////                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$[1]").value(1L));
-  //  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    @Test
-//    void testCalculateDeposit_Success() throws Exception {
-//        DepositAvailable deposit = new DepositAvailable();
-//        deposit.setDepositRoi(5.0);
-//        when(depositInterface.searchDepositById(1L)).thenReturn(Optional.of(deposit));
-//
-//        mockMvc.perform(get("/deposits/1/10000/5")
-//                .contentType(MediaType.APPLICATION_JSON))
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$[1]").value(12500.0));
-//    }
-//
-//    @Test
-//    void testCalculateDeposit_NotFound() throws Exception {
-//        when(depositInterface.searchDepositById(1L)).thenReturn(Optional.empty());
-//        when(resourceBundle.getString("deposit.id.unavailable")).thenReturn("Deposit ID not available");
-//
-//        mockMvc.perform(get("/deposits/1/10000/5")
-//                .contentType(MediaType.APPLICATION_JSON))
-//                .andExpect(status().isNotFound())
-//                .andExpect(content().string("Deposit ID not available"));
-//    }
-//
-//    @Test
-//    void testCalculateDeposit_ThrowsException() throws Exception {
-//        when(depositInterface.searchDepositById(1L)).thenThrow(new DepositException("Error fetching deposit"));
-//        when(resourceBundle.getString("deposit.id.unavailable")).thenReturn("Deposit ID not available");
-//
-//        mockMvc.perform(get("/deposits/1/10000/5")
-//                .contentType(MediaType.APPLICATION_JSON))
-//                .andExpect(status().isNotFound())
-//                .andExpect(content().string("Deposit ID not available"));
-//    }
-
-//@Test
-//    public void testCalculateDepositSuccess() throws Exception {
-//        Long depositId = 1L;
-//        Double amount = 1000.0;
-//        Integer tenure = 5;
-//        DepositAvailable mockDeposit = new DepositAvailable();
-//        mockDeposit.setDepositRoi(10.0);
-//
-//        given(depositInterface.searchDepositById(depositId)).willReturn(Optional.of(mockDeposit));
-//
-//        mockMvc.perform(get("/deposits/{depositId}/{amount}/{tenure}", depositId, amount, tenure))
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$[1]").value(1L));
-//    }

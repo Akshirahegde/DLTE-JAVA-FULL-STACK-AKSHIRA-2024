@@ -18,7 +18,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 
 @Configuration
-public class TransactionSecurity {
+public class DepositSecurity {
     @Autowired
     private MyBankServices services;
     AuthenticationManager manager;
@@ -46,19 +46,18 @@ public class TransactionSecurity {
     //level 3 security
     @Bean
     protected SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity)throws Exception{
+        httpSecurity.formLogin().loginPage("/userlogin/").usernameParameter("username").failureHandler(officialsFailureHandler).successHandler(officialsSuccessHandler);
         httpSecurity.csrf().disable();
         //AJAX CORS
         httpSecurity.cors();
         httpSecurity.httpBasic();
         httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
         httpSecurity.authorizeRequests().antMatchers("/v3/api-docs").permitAll();
-        httpSecurity.authorizeRequests().antMatchers("/userlogin/**").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/userlogin/").permitAll();
         httpSecurity.authorizeRequests().antMatchers("/images/**").permitAll();
         httpSecurity.authorizeRequests().antMatchers("/styles/**").permitAll();
-
-        httpSecurity.formLogin().loginPage("/userlogin/").usernameParameter("username").failureHandler(officialsFailureHandler).successHandler(officialsSuccessHandler);       // httpSecurity.authorizeRequests().antMatchers("/transaction/**").permitAll();
-
         httpSecurity.authorizeRequests().anyRequest().authenticated();
+        httpSecurity.logout().permitAll();
         AuthenticationManagerBuilder builder = httpSecurity.getSharedObject(AuthenticationManagerBuilder.class);
         builder.userDetailsService(services);
         manager = builder.build();

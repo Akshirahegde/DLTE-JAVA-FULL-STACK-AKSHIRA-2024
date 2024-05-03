@@ -97,7 +97,6 @@ public class DepositService implements DepositInterface {
     }
 
 
-
     public Long getDepositIdByDepositName(String depositName) {
         Long depositId = jdbcTemplate.queryForObject(
                 "SELECT deposit_id FROM mybank_app_depositavailable WHERE deposit_name = ?",

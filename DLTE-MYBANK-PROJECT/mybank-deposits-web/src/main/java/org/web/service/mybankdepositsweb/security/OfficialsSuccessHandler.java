@@ -30,7 +30,8 @@ public class OfficialsSuccessHandler extends SimpleUrlAuthenticationSuccessHandl
                 myBankCustomers.setAttempts(1);
                 services.updateAttempts(myBankCustomers);
             }
-           super.setDefaultTargetUrl("/depositrepo/deposit.wsdl");
+           //super.setDefaultTargetUrl("/depositrepo/deposit.wsdl");
+            super.setDefaultTargetUrl("/userlogin/dashboard");
        //     super.setDefaultTargetUrl("/transaction/head");
         } else {
             logger.warn(resourceBundle.getString("attempt.end"));

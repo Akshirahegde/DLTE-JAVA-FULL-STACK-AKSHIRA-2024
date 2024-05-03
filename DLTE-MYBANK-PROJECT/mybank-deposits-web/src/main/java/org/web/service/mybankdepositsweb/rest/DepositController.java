@@ -5,11 +5,15 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import mybank.dao.mybankdeposit.entity.DepositAvailable;
 import mybank.dao.mybankdeposit.exception.DepositException;
 import mybank.dao.mybankdeposit.interfaces.DepositInterface;
+import mybank.dao.mybankdeposit.service.DepositService;
+import mybank.dao.mybankdeposit.service.MyBankServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import services.deposit.ServiceStatus;
 
@@ -23,7 +27,8 @@ import java.util.*;
 @RequestMapping("/module")
 @Valid
 public class DepositController {
-
+@Autowired
+    MyBankServices myBankServices;
     @Autowired
     private DepositInterface depositInterface;
     Logger logger = LoggerFactory.getLogger(DepositController.class);
@@ -74,7 +79,17 @@ public class DepositController {
     public Long getDepositIdByDepositName(@RequestParam String depositName) {
         return depositInterface.getDepositIdByDepositName(depositName);
     }
-
+    @GetMapping("/name")
+    public String getCustomerName() {
+        String name = getUser();
+        String user = myBankServices.getCustomerName(name);
+        return user;
+    }
+    public String getUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String name = authentication.getName();
+        return name;
+    }
     }
 
 
