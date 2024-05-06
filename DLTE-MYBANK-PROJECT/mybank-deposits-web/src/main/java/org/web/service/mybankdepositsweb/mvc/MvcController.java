@@ -47,13 +47,7 @@ public class MvcController {
 
         return "calculator";
     }
-//    @GetMapping("/name")
-//    @ResponseBody
-//    public String customerName(){
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        String name = authentication.getName();
-//        return myBankServices.findByUsername(name).getCustomerName();
-//    }
+
 
     }
 

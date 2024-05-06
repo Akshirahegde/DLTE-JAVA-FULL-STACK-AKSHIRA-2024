@@ -1,8 +1,5 @@
 package mybank.dao.mybankdeposit.entity;
 
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotNull;
-
 public class DepositAvailable {
     private Long depositId;
 

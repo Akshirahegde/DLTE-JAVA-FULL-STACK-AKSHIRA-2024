@@ -61,10 +61,10 @@ return myBankCustomers;
         List<MyBankCustomer> myBankCustomers=jdbcTemplate.query("select * from MYBANK_APP_CUSTOMER",new BeanPropertyRowMapper<>(MyBankCustomer.class));
         return myBankCustomers;
     }
-//hi name
+
     public String getCustomerName(String username) {
         try {
-            String sql = "SELECT customer_name FROM MYBANK_APP_CUSTOMER  WHERE username =  ?";//during login
+            String sql = "SELECT customer_name FROM MYBANK_APP_CUSTOMER  WHERE username =  ?";
             return jdbcTemplate.queryForObject(sql, new Object[]{username}, String.class);
         } catch (Exception e) {
             e.printStackTrace();
@@ -125,7 +125,3 @@ return myBankCustomers;
 
 
 
-
-//        MyBankCustomer myBankCustomers = jdbcTemplate.queryForObject("select * from MYBANK_APP_CUSTOMER where username=?",
-//                new Object[]{username},new BeanPropertyRowMapper<>(MyBankCustomer.class));
-//        return myBankCustomers;

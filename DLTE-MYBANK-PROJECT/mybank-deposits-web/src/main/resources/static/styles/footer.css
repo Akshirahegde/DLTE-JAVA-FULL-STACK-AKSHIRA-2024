@@ -1,9 +1,38 @@
-.navbar-brand display-6 fw-bold{
-    font-weight: bold;
-    font-family: 'Montserrat';
+
+body {
     color: white;
 }
-.text-center text-lg-start text-white{
+.footer {
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
     background-color: #182052;
-    border-radius: 2rem 2rem 0 0;
+}
+.footer-content h2 {
+    color: #fff;
+}
+.footer-content h5,
+.footer-content p,
+.footer-links a {
+    color: #fff;
+}
+
+.footer hr {
+    background-color: #fff;
+}
+span{
+    font-family: "Montserrat";
+    font-size: 20px;
+    margin-top: 10px;
+}
+ul,li{
+    font-family: "Poppins";
+}
+img{
+    width:30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.row .col-md-3{
+    margin-top: 10px;
 }

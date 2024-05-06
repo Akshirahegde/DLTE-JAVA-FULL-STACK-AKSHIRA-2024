@@ -1,8 +1,6 @@
 package mybank.dao.mybankdeposit.service;
 
 import mybank.dao.mybankdeposit.entity.DepositAvailable;
-import mybank.dao.mybankdeposit.entity.DepositAvailed;
-import mybank.dao.mybankdeposit.entity.MyBankCustomer;
 import mybank.dao.mybankdeposit.exception.DepositException;
 import mybank.dao.mybankdeposit.interfaces.DepositInterface;
 import org.slf4j.Logger;
@@ -40,10 +38,7 @@ public class DepositService implements DepositInterface {
             return deposit;
     }
 
-    @Override
-    public List<DepositAvailable> searchDepositByRoi(Double roi) {
-        return null;
-    }
+
 
     @Override
     //java 8
@@ -104,10 +99,7 @@ public class DepositService implements DepositInterface {
 
         return depositId;
     }
-    @Override
-    public DepositAvailed availDeposit(DepositAvailed depositAvailed) {
-        return null;
-    }
+
 
 }
 

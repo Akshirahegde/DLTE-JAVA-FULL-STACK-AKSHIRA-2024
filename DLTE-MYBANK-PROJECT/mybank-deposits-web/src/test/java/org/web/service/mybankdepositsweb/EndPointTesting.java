@@ -8,23 +8,18 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.web.service.mybankdepositsweb.configs.DepositSoap;
@@ -43,16 +38,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static net.bytebuddy.matcher.ElementMatchers.is;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.*;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-
 
 @ExtendWith(MockitoExtension.class)
 @AutoConfigureMockMvc
@@ -64,8 +51,6 @@ public class EndPointTesting {
     private DepositInterface depositInterface;
     @InjectMocks
     DepositSoap depositSoap;
-    @Mock
-    JdbcTemplate jdbcTemplate;
     @Autowired
     private MockMvc mockMvc;
     @InjectMocks
@@ -259,7 +244,7 @@ public void CalculateDeposit_Success() throws Exception {
     }
     //----------successhandler(not working)
    // @Test
-    void onAuthenticationSuccess_ActiveCustomer_RedirectToWsdl() throws IOException, ServletException {
+    void onAuthenticationSuccess_RedirectToWsdl() throws IOException, ServletException {
         MyBankCustomer customer = new MyBankCustomer();
         customer.setCustomerStatus("active");
         customer.setAttempts(1);
@@ -279,7 +264,7 @@ public void CalculateDeposit_Success() throws Exception {
 
     @Test
     void save() {
-        // Mock data
+
         MyBankCustomer mockCustomer = new MyBankCustomer();
         mockCustomer.setUsername("User");
         mockCustomer.setPassword("Pass");

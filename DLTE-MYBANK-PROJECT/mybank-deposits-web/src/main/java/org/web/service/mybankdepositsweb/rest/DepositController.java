@@ -62,7 +62,6 @@ public class DepositController {
             Optional<DepositAvailable> deposit = depositInterface.searchDepositById(depositId);
             Double maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
             serviceStatus.setStatus(HttpStatus.OK.value());
-            //   return ResponseEntity.ok(new Object[]{deposit.get(), maturityAmount});
             return ResponseEntity.ok(maturityAmount);
         }
         catch (DepositException depositException) {
@@ -145,56 +144,6 @@ public class DepositController {
 
 
 
-
-
-
-
-
-//@ControllerAdvice
-//    public class GlobalExceptionHandler {
-//
-//        @ExceptionHandler(MethodArgumentNotValidException.class)
-//        public ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
-//            Map<String, String> errors = new HashMap<>();
-//            ex.getBindingResult().getAllErrors().forEach((error) -> {
-//                String fieldName = ((FieldError) error).getField();
-//                String errorMessage = error.getDefaultMessage();
-//                errors.put(fieldName, errorMessage);
-//            });
-//            return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
-//        }
-//
-//        @ExceptionHandler(MissingPathVariableException.class)
-//        public ResponseEntity<Object> handleMissingPathVariable(MissingPathVariableException ex) {
-//            return new ResponseEntity<>("Error: Missing path variable - " + ex.getVariableName(), HttpStatus.BAD_REQUEST);
-//        }
-//    }
-
-
-
-//    @GetMapping("/deposits/{depositId}/{amount}/{tenure}")
-//    public Object[] calculateDeposit(@PathVariable("depositId") long depositId, @PathVariable("amount") double amount, @PathVariable("tenure") int tenure, HttpServletResponse response) throws DepositException {
-//        Optional<DepositAvailable> deposit = null;
-//        double maturityAmount = 0;
-//        try {
-//            deposit = depositInterface.searchDepositById(depositId);
-//
-//            maturityAmount = amount * (1 + (deposit.get().getDepositRoi() * tenure) / 100);
-//
-//        } catch (SQLSyntaxErrorException e) {
-//            System.out.println(resourceBundle.getString("internal.error"));
-//            logger.error(resourceBundle.getString("internal.error"));
-//            serviceStatus.setStatus(HttpServletResponse.SC_NOT_FOUND);
-//            serviceStatus.setMessage(resourceBundle.getString("internal.error"));
-//
-//        } catch (DepositException e) {
-//            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-//            logger.error(resourceBundle.getString("deposit.id.unavailable"));
-//            throw e;
-//
-//        }
-//        return new Object[]{deposit, maturityAmount};
-//    }
 
 
 

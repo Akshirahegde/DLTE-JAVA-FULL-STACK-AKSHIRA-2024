@@ -1,7 +1,6 @@
 package mybank.dao.mybankdeposit.interfaces;
 
 import mybank.dao.mybankdeposit.entity.DepositAvailable;
-import mybank.dao.mybankdeposit.entity.DepositAvailed;
 import mybank.dao.mybankdeposit.exception.DepositException;
 import org.springframework.stereotype.Repository;
 
@@ -12,12 +11,8 @@ import java.util.Optional;
 @Repository
 public interface DepositInterface {
     List<DepositAvailable> listAllDeposits() throws SQLSyntaxErrorException;
-    List<DepositAvailable> searchDepositByRoi(Double roi);
     Optional<DepositAvailable> searchDepositById(Long Id) throws SQLSyntaxErrorException, DepositException;
-//    Optional<DepositAvailable> searchDepositByName(String name ) throws SQLSyntaxErrorException, DepositException;
-
-    DepositAvailed availDeposit(DepositAvailed depositAvailed);
-     Long getDepositIdByDepositName(String depositName);
+    Long getDepositIdByDepositName(String depositName);
 }
 
 
