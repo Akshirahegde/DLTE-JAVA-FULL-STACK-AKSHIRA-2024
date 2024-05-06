@@ -124,10 +124,16 @@
                         </goals>
                     </execution>
                 </executions>
+<!--                <configuration>-->
+<!--                    <schemaDirectory>src/main/resources</schemaDirectory>-->
+<!--                    <schemaFiles>deposit.xsd</schemaFiles>-->
+<!--                    <outputDirectory>src/main/java</outputDirectory>-->
+<!--                    <clearOutputDir>false</clearOutputDir>-->
+<!--                </configuration>-->
                 <configuration>
                     <schemaDirectory>src/main/resources</schemaDirectory>
                     <schemaFiles>deposit.xsd</schemaFiles>
-                    <outputDirectory>src/main/java</outputDirectory>
+                    <outputDirectory>target/generated-sources</outputDirectory>
                     <clearOutputDir>false</clearOutputDir>
                 </configuration>
             </plugin>

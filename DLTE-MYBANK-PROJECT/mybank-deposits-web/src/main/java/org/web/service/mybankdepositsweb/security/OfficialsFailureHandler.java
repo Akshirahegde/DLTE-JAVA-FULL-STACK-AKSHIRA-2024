@@ -34,7 +34,6 @@ public class OfficialsFailureHandler extends SimpleUrlAuthenticationFailureHandl
                         myBankCustomers.setAttempts(myBankCustomers.getAttempts() + 1);
                         services.updateAttempts(myBankCustomers);
                         logger.warn(resourceBundle.getString("invalid.credential"));
-                        // exception=new LockedException(resourceBundle.getString("attempt.done"));
                         exception = new LockedException((4 - myBankCustomers.getAttempts()) + " " + "attempts are left .Invalid password");
                         String err = myBankCustomers.getAttempts().toString() + " " + exception.getMessage();
                         logger.warn(err);
@@ -47,7 +46,6 @@ public class OfficialsFailureHandler extends SimpleUrlAuthenticationFailureHandl
                     }
                 } else {
                     logger.warn(resourceBundle.getString("account.suspend"));
-                    //super.setDefaultFailureUrl("/userlogin/?error=user not exists");
                 }
             }
         }catch (UsernameNotFoundException e){
@@ -56,7 +54,6 @@ public class OfficialsFailureHandler extends SimpleUrlAuthenticationFailureHandl
             exception=new LockedException("username not found");
             super.setDefaultFailureUrl("/userlogin/?error=" + exception.getMessage());
         }
-        //super.setDefaultFailureUrl("/login?error=true");
         super.onAuthenticationFailure(request, response, exception);
     }
 

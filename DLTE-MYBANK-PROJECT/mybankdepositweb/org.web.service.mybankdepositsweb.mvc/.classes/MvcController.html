@@ -1,0 +1,135 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MvcController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">org.web.service.mybankdepositsweb.mvc</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MvcController (org.web.service.mybankdepositsweb.mvc)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MvcController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    83.3%
+  </span>
+  <span class="absValue">
+    (5/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    83.3%
+  </span>
+  <span class="absValue">
+    (5/ 6)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package org.web.service.mybankdepositsweb.mvc;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import mybank.dao.mybankdeposit.service.MyBankServices;
+<i>4</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>5</i>&nbsp;import org.springframework.security.core.Authentication;
+<i>6</i>&nbsp;import org.springframework.security.core.context.SecurityContextHolder;
+<i>7</i>&nbsp;import org.springframework.stereotype.Controller;
+<i>8</i>&nbsp;import org.springframework.web.bind.annotation.GetMapping;
+<i>9</i>&nbsp;import org.springframework.web.bind.annotation.RequestMapping;
+<i>10</i>&nbsp;import org.springframework.web.bind.annotation.ResponseBody;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;@Controller
+<i>13</i>&nbsp;@RequestMapping(&quot;/userlogin&quot;)
+<b class="fc"><i>14</i>&nbsp;public class MvcController {</b>
+<i>15</i>&nbsp;    @Autowired
+<i>16</i>&nbsp;    MyBankServices myBankServices;
+<i>17</i>&nbsp;//        @GetMapping(&quot;/navbar&quot;)
+<i>18</i>&nbsp;//        public String showHeader(){
+<i>19</i>&nbsp;//
+<i>20</i>&nbsp;//            return &quot;nav&quot;;
+<i>21</i>&nbsp;//        }
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;//        @GetMapping(&quot;/footer&quot;)
+<i>24</i>&nbsp;//        public String showFooter()
+<i>25</i>&nbsp;//        {
+<i>26</i>&nbsp;//            return &quot;footer&quot;;
+<i>27</i>&nbsp;//        }
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;        @GetMapping(&quot;/&quot;)
+<i>30</i>&nbsp;        public String showLogin(){
+<i>31</i>&nbsp;
+<b class="fc"><i>32</i>&nbsp;            return &quot;index&quot;;</b>
+<i>33</i>&nbsp;         }
+<i>34</i>&nbsp;         @GetMapping(&quot;/views&quot;)
+<i>35</i>&nbsp;        public String showDeposits(){
+<i>36</i>&nbsp;
+<b class="fc"><i>37</i>&nbsp;            return &quot;view&quot;;</b>
+<i>38</i>&nbsp;        }
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;        @GetMapping(&quot;/dashboards&quot;)
+<i>41</i>&nbsp;            public String showDashboard(){
+<b class="fc"><i>42</i>&nbsp;            return &quot;dashboard&quot;;</b>
+<i>43</i>&nbsp;            }
+<i>44</i>&nbsp;        @GetMapping(&quot;/calculators&quot;)
+<i>45</i>&nbsp;             public String showcalculator(){
+<b class="fc"><i>46</i>&nbsp;             return &quot;calculator&quot;;</b>
+<i>47</i>&nbsp;    }
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;        @GetMapping(&quot;/error&quot;)
+<b class="nc"><i>50</i>&nbsp;    public String errorPage(){return &quot;error&quot;;}</b>
+<i>51</i>&nbsp;    }
+<i>52</i>&nbsp;
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-05-06 17:58</div>
+</div>
+</body>
+</html>

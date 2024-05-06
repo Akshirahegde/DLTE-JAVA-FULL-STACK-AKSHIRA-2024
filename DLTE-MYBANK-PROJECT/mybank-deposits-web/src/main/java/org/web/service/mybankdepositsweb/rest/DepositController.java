@@ -27,7 +27,7 @@ import java.util.*;
 @RequestMapping("/module")
 @Valid
 public class DepositController {
-@Autowired
+    @Autowired
     MyBankServices myBankServices;
     @Autowired
     private DepositInterface depositInterface;

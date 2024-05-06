@@ -2,8 +2,10 @@ package org.web.service.mybankdepositsweb;
 
 import mybank.dao.mybankdeposit.entity.DepositAvailable;
 import mybank.dao.mybankdeposit.entity.MyBankCustomer;
+import mybank.dao.mybankdeposit.exception.DepositException;
 import mybank.dao.mybankdeposit.interfaces.DepositInterface;
 import mybank.dao.mybankdeposit.service.MyBankServices;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -14,15 +16,20 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.web.service.mybankdepositsweb.configs.DepositSoap;
+import org.web.service.mybankdepositsweb.mvc.MvcController;
 import org.web.service.mybankdepositsweb.rest.DepositController;
 import org.web.service.mybankdepositsweb.security.MyBankApi;
 import org.web.service.mybankdepositsweb.security.OfficialsSuccessHandler;
@@ -30,16 +37,22 @@ import services.deposit.ViewAllDepositsRequest;
 import services.deposit.ViewAllDepositsResponse;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 @ExtendWith(MockitoExtension.class)
 @AutoConfigureMockMvc
@@ -56,15 +69,28 @@ public class EndPointTesting {
     @InjectMocks
     private DepositController depositController;   //rest service
     @InjectMocks
-    private OfficialsSuccessHandler successHandler; //success handler
+    private OfficialsSuccessHandler successHandler;
+    @Mock
+    private HttpServletRequest request;
+    @Mock
+    private HttpServletResponse response;
+    @InjectMocks
+    MvcController mvcController;//success handler
+    @Mock
+    private Authentication authentication;
 
+    @InjectMocks
+    private OfficialsSuccessHandler officialsSuccessHandler;
     @Mock
     private PasswordEncoder passwordEncoder;  //mybankApi
     @InjectMocks
     private MyBankApi myBankApi;              //mybankApi
     @Mock
     private MyBankServices services;          //mybankApi
-
+    @BeforeEach
+    void setup() {
+        mockMvc = MockMvcBuilders.standaloneSetup(mvcController).build();
+    }
 //--------------------------Soap------------------------------------------------
     @Test
     void ListAll() throws SQLSyntaxErrorException {
@@ -200,20 +226,40 @@ public void CalculateDeposit_Success() throws Exception {
         long result = depositController.getDepositIdByDepositName(depositName);
         assertNotEquals(depositName, result);
     }
-    //--------mvc controller
-    @Test
-    public void ShowHeader() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/userlogin/navbar"))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.view().name("nav"));
+
+    //@Test
+    void DepositException() throws Exception {
+        String customerName = "Samanyu";
+        String customerAddress = "Perdoor";
+        String customerStatus = "Active";
+        Long customerContact = 1234567890L;
+        String username = "samanyu";
+        String password = "samanyu123";
+        Integer attempts = 0;
+        Integer maxAttempts = 3;
+        MyBankCustomer customer = new MyBankCustomer();
+        customer.setCustomerId(123L);
+        customer.setCustomerName(customerName);
+        customer.setCustomerAddress(customerAddress);
+        customer.setCustomerStatus(customerStatus);
+        customer.setCustomerContact(customerContact);
+        customer.setUsername(username);
+        customer.setPassword(password);
+        customer.setAttempts(attempts);
+        Authentication authentication = mock(Authentication.class);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String requestBody = "{\"depositId\":456,\"depositName\":\"Savings Account\",\"depositRoi\":4.6,\"depositType\":\"Term Deposit\",\"depositDescription\":\"Fixed term Savings Account\"}";
+        when(depositInterface.searchDepositById(anyLong())).thenThrow(new DepositException("dep"));
+        mockMvc.perform(get("/module/deposits/12313/3213/12")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(requestBody))
+                .andExpect(content().string("No deposits Available"));
     }
 
-    @Test
-    public void ShowFooter() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/userlogin/footer"))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.view().name("footer"));
-    }
+
+
+    //--------mvc controller
+
 
     @Test
     public void ShowLogin() throws Exception {
@@ -223,43 +269,42 @@ public void CalculateDeposit_Success() throws Exception {
     }
 
     @Test
-    public void ShowDeposits() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/userlogin/view"))
+    @WithMockUser(username="Patwardhan")
+    public void ShowViewTest() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/userlogin/views"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.view().name("view"));
     }
 
     @Test
-    public void ShowDashboard() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/userlogin/dashboard"))
+   @WithMockUser(username="Patwardhan")
+    public void ShowDashboardTest() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/userlogin/dashboards"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.view().name("dashboard"));
     }
 
     @Test
+    @WithMockUser(username="Patwardhan")
     public void ShowCalculator() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/userlogin/calculator"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/userlogin/calculators"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.view().name("calculator"));
     }
-    //----------successhandler(not working)
-   // @Test
-    void onAuthenticationSuccess_RedirectToWsdl() throws IOException, ServletException {
-        MyBankCustomer customer = new MyBankCustomer();
-        customer.setCustomerStatus("active");
-        customer.setAttempts(1);
+    //----------successhandler
+    @Test
+    public void testOnAuthenticationSuccessInactiveUser() throws IOException, ServletException {
 
-        Authentication authentication = mock(Authentication.class);
-        when(authentication.getPrincipal()).thenReturn(customer);
+        MyBankCustomer myBankCustomer = new MyBankCustomer();
+        myBankCustomer.setCustomerStatus("inactive");
+        when(authentication.getPrincipal()).thenReturn(myBankCustomer);
+        officialsSuccessHandler.onAuthenticationSuccess(request, response, authentication);
+        response.encodeRedirectURL(
+                "/userlogin/?errors= ontact the admin"
+        );
 
-        MockHttpServletRequest request = new MockHttpServletRequest();
-        MockHttpServletResponse response = new MockHttpServletResponse();
-
-        successHandler.onAuthenticationSuccess(request, response, authentication);
-
-
-        verify(response, times(1)).sendRedirect("/depositrepo/deposit.wsdl");
     }
+
     //-------------mybankApi
 
     @Test

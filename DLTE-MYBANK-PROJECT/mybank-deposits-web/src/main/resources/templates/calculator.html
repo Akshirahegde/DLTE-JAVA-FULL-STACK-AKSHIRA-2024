@@ -28,9 +28,7 @@
                     url: `http://localhost:8085/module/deposits/id?depositName=${name}`,
                     type: "GET",
                     dataType: "json",
-                    beforeSend: function (handler) {
-                        handler.setRequestHeader("Authorization", "Basic " + btoa("Patwardhan:divija123"))
-                    },
+
                     success: function (response) {
                         const depositId = response;
                         calculateMaturityAmount(depositId);
@@ -70,9 +68,7 @@
                     url: `http://localhost:8085/module/deposits/${depositId}/${amount}/${tenure}`,
                     type: "GET",
                     dataType: "json",
-                    beforeSend: function (handler) {
-                        handler.setRequestHeader("Authorization", "Basic " + btoa("Patwardhan:divija123"))
-                    },
+
                     success: function (response) {
                         $("#maturityAmount").val(response);
                     },
@@ -94,7 +90,7 @@
                 <div class="form-group row">
                     <label for="depositName" class="col-sm-5 col-form-label">DEPOSIT NAME</label>
                     <div class="col-sm-7">
-                        <input type="text" class="form-control" id="depositName" placeholder="Enter deposit name">
+                        <input type="text" class="form-control" id="depositName" placeholder="Enter deposit name" readonly>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -113,7 +109,7 @@
                 <div class="form-group row">
                     <label for="tenure" class="col-sm-5 col-form-label">TENURE</label>
                     <div class="col-sm-7">
-                        <input type="number" class="form-control" id="tenure" placeholder="Enter tenure">
+                        <input type="number" class="form-control" id="tenure" placeholder="Enter tenure" >
                         <small id="tenureError" class="text-danger"></small>
                     </div>
                 </div>

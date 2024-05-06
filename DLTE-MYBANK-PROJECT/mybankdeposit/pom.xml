@@ -10,7 +10,7 @@
     </parent>
     <groupId>mybank.dao</groupId>
     <artifactId>mybankdeposit</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>mybankdeposit</name>
     <description>My Bank Deposit Module</description>
     <properties>

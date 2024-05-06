@@ -14,40 +14,39 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MvcController {
     @Autowired
     MyBankServices myBankServices;
-        @GetMapping("/navbar")
-        public String showHeader(){
+//        @GetMapping("/navbar")
+//        public String showHeader(){
+//
+//            return "nav";
+//        }
 
-            return "nav";
-        }
-
-        @GetMapping("/footer")
-        public String showFooter()
-        {
-            return "footer";
-        }
+//        @GetMapping("/footer")
+//        public String showFooter()
+//        {
+//            return "footer";
+//        }
 
         @GetMapping("/")
         public String showLogin(){
 
             return "index";
          }
-         @GetMapping("/view")
+         @GetMapping("/views")
         public String showDeposits(){
 
             return "view";
         }
 
-        @GetMapping("/dashboard")
+        @GetMapping("/dashboards")
             public String showDashboard(){
-
-                return "dashboard";
+            return "dashboard";
             }
-    @GetMapping("/calculator")
-    public String showcalculator(){
-
-        return "calculator";
+        @GetMapping("/calculators")
+             public String showcalculator(){
+             return "calculator";
     }
 
-
+        @GetMapping("/error")
+    public String errorPage(){return "error";}
     }
 

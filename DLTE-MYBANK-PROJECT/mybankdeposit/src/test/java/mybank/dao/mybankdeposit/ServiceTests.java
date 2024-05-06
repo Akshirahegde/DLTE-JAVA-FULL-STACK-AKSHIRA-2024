@@ -1,6 +1,7 @@
 package mybank.dao.mybankdeposit;
 
 import mybank.dao.mybankdeposit.entity.MyBankCustomer;
+import mybank.dao.mybankdeposit.exception.DepositException;
 import mybank.dao.mybankdeposit.service.DepositService;
 import mybank.dao.mybankdeposit.service.MyBankServices;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,11 +10,13 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -180,8 +183,15 @@ public class ServiceTests {
         String customerName = myBankServices.getCustomerName("Divija");
         assertNotEquals("Divija", customerName);
     }
+    @Test
+    public void testListAllDepositsThrowsDepositException() throws SQLSyntaxErrorException {
+        // Arrange
+        when(jdbcTemplate.query(anyString(), any(BeanPropertyRowMapper.class)))
+                .thenReturn(Collections.emptyList());
 
-
+        // Act and Assert
+        assertThrows(DepositException.class, () -> depositService.listAllDeposits());
+    }
 
 }
 

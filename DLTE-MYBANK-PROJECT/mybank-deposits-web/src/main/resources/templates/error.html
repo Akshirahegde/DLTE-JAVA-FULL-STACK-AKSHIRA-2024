@@ -59,9 +59,12 @@
 </head>
 <body>
 <div class="container">
-    <h1 th:text="${param.code}"></h1>
-    <p th:text="${param.msg}">&lt;&lt;    &gt;&gt;</p>
-    <a th:href="@{'/dashboard'}"><button >BACK TO HOME<i class="bi bi-arrow-right-circle-fill"></i></button></a>
+
+    <h1 th:if="${param.msg != null}" th:text="${param.code}"></h1>
+    <h1 th:if="${param.msg != null}" th:text="${param.msg}"></h1>
+
+    <h1 th:unless="${param.msg != null}">Page Not Found</h1>
+    <a th:href="@{'/userlogin/dashboards'}"><button >BACK TO HOME<i class="bi bi-arrow-right-circle-fill"></i></button></a>
 </div>
 </body>
 </html>
