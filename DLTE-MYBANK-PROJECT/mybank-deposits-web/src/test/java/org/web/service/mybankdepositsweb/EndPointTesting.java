@@ -5,11 +5,13 @@ import mybank.dao.mybankdeposit.entity.MyBankCustomer;
 import mybank.dao.mybankdeposit.exception.DepositException;
 import mybank.dao.mybankdeposit.interfaces.DepositInterface;
 import mybank.dao.mybankdeposit.service.MyBankServices;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -21,6 +23,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.test.context.support.WithMockUser;
@@ -117,18 +120,7 @@ public class EndPointTesting {
         assertFalse(deposit2.getDepositRoi() == mockDepositList.get(0).getDepositRoi());
         assertNotNull(response.getDeposit());
     }
-    @Test
-    public void ListDeposits_InternalServerError() throws Exception {
-        when(depositInterface.listAllDeposits()).thenThrow(new SQLSyntaxErrorException());
-        ViewAllDepositsResponse response = depositSoap.listDeposits(new ViewAllDepositsRequest());
-        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.value(), response.getServiceStatus().getStatus());
-    }
-    @Test
-    public void ListDeposits_FailedInternalServerError() throws Exception {
-        when(depositInterface.listAllDeposits()).thenThrow(new SQLSyntaxErrorException());
-        ViewAllDepositsResponse response = depositSoap.listDeposits(new ViewAllDepositsRequest());
-        assertNotEquals(HttpStatus.BAD_REQUEST.value(), response.getServiceStatus().getStatus());
-    }
+
     @Test
     public void testListDeposits_ExceptionHandled() throws Exception {
         List<DepositAvailable> mockDepositList = new ArrayList<>();
@@ -227,6 +219,20 @@ public void CalculateDeposit_Success() throws Exception {
         assertNotEquals(depositName, result);
     }
 
+    @Test
+    public void testGetCustomerName() {
+        Authentication authentication = Mockito.mock(Authentication.class);
+        Mockito.when(authentication.getName()).thenReturn("Patwardhan");
+        SecurityContext securityContext = Mockito.mock(SecurityContext.class);
+        Mockito.when(securityContext.getAuthentication()).thenReturn(authentication);
+        SecurityContextHolder.setContext(securityContext);
+
+        Mockito.when(services.getCustomerName(Mockito.anyString())).thenReturn("Patwardhan");
+
+        String result = depositController.getCustomerName();
+        Assertions.assertEquals("Patwardhan", result);
+    }
+
     //@Test
     void DepositException() throws Exception {
         String customerName = "Samanyu";
@@ -277,6 +283,14 @@ public void CalculateDeposit_Success() throws Exception {
     }
 
     @Test
+    @WithMockUser(username="Patwardhan")
+    public void ShowerrorTest() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/userlogin/errors"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.view().name("error"));
+    }
+
+    @Test
    @WithMockUser(username="Patwardhan")
     public void ShowDashboardTest() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/userlogin/dashboards"))
@@ -321,5 +335,6 @@ public void CalculateDeposit_Success() throws Exception {
         assertEquals("User", savedCustomer.getUsername());
         assertEquals("encodedPassword", savedCustomer.getPassword()); // Assuming getPassword() returns the encoded password
     }
+
 }
 

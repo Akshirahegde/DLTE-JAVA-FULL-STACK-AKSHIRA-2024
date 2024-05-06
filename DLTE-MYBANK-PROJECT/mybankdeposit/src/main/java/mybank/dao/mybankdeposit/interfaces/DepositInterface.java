@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface DepositInterface {
-    List<DepositAvailable> listAllDeposits() throws SQLSyntaxErrorException;
+    List<DepositAvailable> listAllDeposits() ;
     Optional<DepositAvailable> searchDepositById(Long Id) throws SQLSyntaxErrorException, DepositException;
     Long getDepositIdByDepositName(String depositName);
 }

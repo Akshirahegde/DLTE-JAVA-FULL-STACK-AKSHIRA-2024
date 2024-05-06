@@ -58,10 +58,10 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    81.2%
+    80%
   </span>
   <span class="absValue">
-    (26/ 32)
+    (20/ 25)
   </span>
 </td>
 </tr>
@@ -82,69 +82,69 @@
 <i>8</i>&nbsp;import org.springframework.beans.BeanUtils;
 <i>9</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
 <i>10</i>&nbsp;import org.springframework.context.annotation.ComponentScan;
-<i>11</i>&nbsp;import org.springframework.web.bind.annotation.CrossOrigin;
-<i>12</i>&nbsp;import org.springframework.ws.server.endpoint.annotation.Endpoint;
-<i>13</i>&nbsp;import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
-<i>14</i>&nbsp;import org.springframework.ws.server.endpoint.annotation.RequestPayload;
-<i>15</i>&nbsp;import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
-<i>16</i>&nbsp;import services.deposit.*;
-<i>17</i>&nbsp;
-<i>18</i>&nbsp;
-<i>19</i>&nbsp;import javax.servlet.http.HttpServletResponse;
-<i>20</i>&nbsp;import java.sql.SQLSyntaxErrorException;
-<i>21</i>&nbsp;import java.util.*;
-<i>22</i>&nbsp;
-<i>23</i>&nbsp;//http://localhost:8085/depositrepo/deposit.wsdl
-<i>24</i>&nbsp;@CrossOrigin(origins = &quot;*&quot;)
-<i>25</i>&nbsp;@Endpoint
-<i>26</i>&nbsp;@ComponentScan(&quot;mybank.dao.mybankdeposit&quot;)
-<b class="fc"><i>27</i>&nbsp;public class    DepositSoap {</b>
-<b class="fc"><i>28</i>&nbsp;    ResourceBundle resourceBundle = ResourceBundle.getBundle(&quot;details&quot;);</b>
-<b class="fc"><i>29</i>&nbsp;    Logger logger = LoggerFactory.getLogger(DepositSoap.class);</b>
-<b class="fc"><i>30</i>&nbsp;    private final String url = &quot;http://deposit.services&quot;;</b>
-<i>31</i>&nbsp;
-<i>32</i>&nbsp;    @Autowired
-<i>33</i>&nbsp;    private DepositInterface depositInterface;
-<i>34</i>&nbsp;
-<i>35</i>&nbsp;    @PayloadRoot(namespace = url, localPart = &quot;viewAllDepositsRequest&quot;)
-<i>36</i>&nbsp;    @ResponsePayload
-<i>37</i>&nbsp;    public ViewAllDepositsResponse listDeposits(@RequestPayload ViewAllDepositsRequest viewAllDepositsRequest) {
-<b class="fc"><i>38</i>&nbsp;        ViewAllDepositsResponse viewAllDepositsResponse = new ViewAllDepositsResponse();</b>
-<b class="fc"><i>39</i>&nbsp;        ServiceStatus serviceStatus = new ServiceStatus();</b>
-<b class="fc"><i>40</i>&nbsp;        List&lt;DepositAvailable&gt; fromDao = null;</b>
-<i>41</i>&nbsp;        try {
-<b class="fc"><i>42</i>&nbsp;            fromDao = depositInterface.listAllDeposits();</b>
-<b class="fc"><i>43</i>&nbsp;            List&lt;Deposit&gt; actualDeposits = new ArrayList&lt;&gt;();</b>
-<i>44</i>&nbsp;
-<b class="fc"><i>45</i>&nbsp;            fromDao.forEach(each -&gt; {</b>
-<b class="fc"><i>46</i>&nbsp;                Deposit currentDeposits = new Deposit();</b>
-<b class="fc"><i>47</i>&nbsp;                BeanUtils.copyProperties(each, currentDeposits);</b>
-<b class="fc"><i>48</i>&nbsp;                actualDeposits.add(currentDeposits);</b>
-<b class="fc"><i>49</i>&nbsp;            });</b>
-<i>50</i>&nbsp;
-<b class="fc"><i>51</i>&nbsp;            viewAllDepositsResponse.getDeposit().addAll(actualDeposits);</b>
-<b class="fc"><i>52</i>&nbsp;            serviceStatus.setMessage(resourceBundle.getString(&quot;fetch.success&quot;));</b>
-<b class="fc"><i>53</i>&nbsp;            serviceStatus.setStatus(HttpServletResponse.SC_OK);</b>
-<b class="fc"><i>54</i>&nbsp;            viewAllDepositsResponse.setServiceStatus(serviceStatus);</b>
-<i>55</i>&nbsp;
-<b class="fc"><i>56</i>&nbsp;        } catch (SQLSyntaxErrorException e) {</b>
-<b class="fc"><i>57</i>&nbsp;            System.out.println(resourceBundle.getString(&quot;internal.error&quot;));</b>
-<b class="fc"><i>58</i>&nbsp;            logger.error(resourceBundle.getString(&quot;internal.error&quot;));</b>
-<b class="fc"><i>59</i>&nbsp;            serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);</b>
-<b class="fc"><i>60</i>&nbsp;            serviceStatus.setMessage(resourceBundle.getString(&quot;internal.error&quot;));</b>
-<b class="fc"><i>61</i>&nbsp;            viewAllDepositsResponse.setServiceStatus(serviceStatus);</b>
-<b class="nc"><i>62</i>&nbsp;        } catch (DepositException depositException) {</b>
-<b class="nc"><i>63</i>&nbsp;            System.out.println(resourceBundle.getString(&quot;deposit.exception&quot;));</b>
-<b class="nc"><i>64</i>&nbsp;            logger.error(resourceBundle.getString(&quot;deposit.exception&quot;));</b>
-<b class="nc"><i>65</i>&nbsp;            serviceStatus.setStatus(HttpServletResponse.SC_NO_CONTENT);</b>
-<b class="nc"><i>66</i>&nbsp;            serviceStatus.setMessage(resourceBundle.getString(&quot;deposit.exception&quot;));</b>
-<b class="nc"><i>67</i>&nbsp;            viewAllDepositsResponse.setServiceStatus(serviceStatus);</b>
-<b class="fc"><i>68</i>&nbsp;        }</b>
-<b class="fc"><i>69</i>&nbsp;            return viewAllDepositsResponse;</b>
+<i>11</i>&nbsp;import org.springframework.http.HttpStatus;
+<i>12</i>&nbsp;import org.springframework.http.ResponseEntity;
+<i>13</i>&nbsp;import org.springframework.web.bind.annotation.CrossOrigin;
+<i>14</i>&nbsp;import org.springframework.ws.server.endpoint.annotation.Endpoint;
+<i>15</i>&nbsp;import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
+<i>16</i>&nbsp;import org.springframework.ws.server.endpoint.annotation.RequestPayload;
+<i>17</i>&nbsp;import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+<i>18</i>&nbsp;import services.deposit.*;
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;import javax.servlet.http.HttpServletResponse;
+<i>22</i>&nbsp;import java.util.*;
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;//http://localhost:8085/depositrepo/deposit.wsdl
+<i>25</i>&nbsp;@CrossOrigin(origins = &quot;*&quot;)
+<i>26</i>&nbsp;@Endpoint
+<i>27</i>&nbsp;@ComponentScan(&quot;mybank.dao.mybankdeposit&quot;)
+<b class="fc"><i>28</i>&nbsp;public class    DepositSoap {</b>
+<b class="fc"><i>29</i>&nbsp;    ResourceBundle resourceBundle = ResourceBundle.getBundle(&quot;details&quot;);</b>
+<b class="fc"><i>30</i>&nbsp;    Logger logger = LoggerFactory.getLogger(DepositSoap.class);</b>
+<b class="fc"><i>31</i>&nbsp;    private final String url = &quot;http://deposit.services&quot;;</b>
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;    @Autowired
+<i>34</i>&nbsp;    private DepositInterface depositInterface;
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    @PayloadRoot(namespace = url, localPart = &quot;viewAllDepositsRequest&quot;)
+<i>37</i>&nbsp;    @ResponsePayload
+<i>38</i>&nbsp;    public ViewAllDepositsResponse listDeposits(@RequestPayload ViewAllDepositsRequest viewAllDepositsRequest) {
+<b class="fc"><i>39</i>&nbsp;        ViewAllDepositsResponse viewAllDepositsResponse = new ViewAllDepositsResponse();</b>
+<b class="fc"><i>40</i>&nbsp;        ServiceStatus serviceStatus = new ServiceStatus();</b>
+<b class="fc"><i>41</i>&nbsp;        List&lt;DepositAvailable&gt; fromDao = null;</b>
+<i>42</i>&nbsp;        try {
+<b class="fc"><i>43</i>&nbsp;            fromDao = depositInterface.listAllDeposits();</b>
+<b class="fc"><i>44</i>&nbsp;            List&lt;Deposit&gt; actualDeposits = new ArrayList&lt;&gt;();</b>
+<i>45</i>&nbsp;
+<b class="fc"><i>46</i>&nbsp;            fromDao.forEach(each -&gt; {</b>
+<b class="fc"><i>47</i>&nbsp;                Deposit currentDeposits = new Deposit();</b>
+<b class="fc"><i>48</i>&nbsp;                BeanUtils.copyProperties(each, currentDeposits);</b>
+<b class="fc"><i>49</i>&nbsp;                actualDeposits.add(currentDeposits);</b>
+<b class="fc"><i>50</i>&nbsp;            });</b>
+<i>51</i>&nbsp;
+<b class="fc"><i>52</i>&nbsp;            viewAllDepositsResponse.getDeposit().addAll(actualDeposits);</b>
+<b class="fc"><i>53</i>&nbsp;            serviceStatus.setMessage(resourceBundle.getString(&quot;fetch.success&quot;));</b>
+<b class="fc"><i>54</i>&nbsp;            serviceStatus.setStatus(HttpServletResponse.SC_OK);</b>
+<b class="fc"><i>55</i>&nbsp;            viewAllDepositsResponse.setServiceStatus(serviceStatus);</b>
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;        }
+<b class="nc"><i>58</i>&nbsp;        catch (DepositException depositException) {</b>
+<b class="nc"><i>59</i>&nbsp;            logger.error(resourceBundle.getString(&quot;error.one&quot;)+depositException.getMessage());</b>
+<b class="nc"><i>60</i>&nbsp;            serviceStatus.setStatus(HttpServletResponse.SC_OK);</b>
+<b class="nc"><i>61</i>&nbsp;            serviceStatus.setMessage(resourceBundle.getString(&quot;error.one&quot;)+depositException.getMessage());</b>
+<b class="nc"><i>62</i>&nbsp;            viewAllDepositsResponse.setServiceStatus(serviceStatus);</b>
+<b class="fc"><i>63</i>&nbsp;        }</b>
+<b class="fc"><i>64</i>&nbsp;            return viewAllDepositsResponse;</b>
+<i>65</i>&nbsp;
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;    }
+<i>68</i>&nbsp;    }
+<i>69</i>&nbsp;
 <i>70</i>&nbsp;
 <i>71</i>&nbsp;
-<i>72</i>&nbsp;    }
-<i>73</i>&nbsp;    }
+<i>72</i>&nbsp;
+<i>73</i>&nbsp;
 <i>74</i>&nbsp;
 <i>75</i>&nbsp;
 <i>76</i>&nbsp;
@@ -296,23 +296,18 @@
 <i>222</i>&nbsp;
 <i>223</i>&nbsp;
 <i>224</i>&nbsp;
-<i>225</i>&nbsp;
-<i>226</i>&nbsp;
-<i>227</i>&nbsp;
-<i>228</i>&nbsp;
-<i>229</i>&nbsp;
-<i>230</i>&nbsp;//       Iterator&lt;DepositAvailable&gt; iterator=fromDao.iterator();
-<i>231</i>&nbsp;//       while (iterator.hasNext()){
-<i>232</i>&nbsp;//           Deposit currentDeposits= new Deposit();
-<i>233</i>&nbsp;//           BeanUtils.copyProperties(iterator.next(),currentDeposits);
-<i>234</i>&nbsp;//           actualDeposits.add(currentDeposits);
-<i>235</i>&nbsp;//       }
+<i>225</i>&nbsp;//       Iterator&lt;DepositAvailable&gt; iterator=fromDao.iterator();
+<i>226</i>&nbsp;//       while (iterator.hasNext()){
+<i>227</i>&nbsp;//           Deposit currentDeposits= new Deposit();
+<i>228</i>&nbsp;//           BeanUtils.copyProperties(iterator.next(),currentDeposits);
+<i>229</i>&nbsp;//           actualDeposits.add(currentDeposits);
+<i>230</i>&nbsp;//       }
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-05-06 17:58</div>
+    <div style="float:right;">generated on 2024-05-06 22:33</div>
 </div>
 </body>
 </html>

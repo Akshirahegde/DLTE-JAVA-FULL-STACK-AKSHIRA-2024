@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -17,7 +19,6 @@ import services.deposit.*;
 
 
 import javax.servlet.http.HttpServletResponse;
-import java.sql.SQLSyntaxErrorException;
 import java.util.*;
 
 //http://localhost:8085/depositrepo/deposit.wsdl
@@ -53,17 +54,11 @@ public class    DepositSoap {
             serviceStatus.setStatus(HttpServletResponse.SC_OK);
             viewAllDepositsResponse.setServiceStatus(serviceStatus);
 
-        } catch (SQLSyntaxErrorException e) {
-            System.out.println(resourceBundle.getString("internal.error"));
-            logger.error(resourceBundle.getString("internal.error"));
-            serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            serviceStatus.setMessage(resourceBundle.getString("internal.error"));
-            viewAllDepositsResponse.setServiceStatus(serviceStatus);
-        } catch (DepositException depositException) {
-            System.out.println(resourceBundle.getString("deposit.exception"));
-            logger.error(resourceBundle.getString("deposit.exception"));
-            serviceStatus.setStatus(HttpServletResponse.SC_NO_CONTENT);
-            serviceStatus.setMessage(resourceBundle.getString("deposit.exception"));
+        }
+        catch (DepositException depositException) {
+            logger.error(resourceBundle.getString("error.one")+depositException.getMessage());
+            serviceStatus.setStatus(HttpServletResponse.SC_OK);
+            serviceStatus.setMessage(resourceBundle.getString("error.one")+depositException.getMessage());
             viewAllDepositsResponse.setServiceStatus(serviceStatus);
         }
             return viewAllDepositsResponse;

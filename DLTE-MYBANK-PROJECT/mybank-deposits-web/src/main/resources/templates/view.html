@@ -166,7 +166,7 @@
                                                 <h5>${depositDescription}</h5>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="color: white; background-color: #ff6600">Apply</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="color: white; background-color: #ff6600" th:href="@{'/userlogin/errors?code=404&msg=Page Under Construction'}">Apply</button>
                                                 <button type="button" class="btn btn-primary" onclick="calculateReturns('${depositName}', '${depositRoi}')">Calculate returns</button>
                                             </div>
                                         </div>

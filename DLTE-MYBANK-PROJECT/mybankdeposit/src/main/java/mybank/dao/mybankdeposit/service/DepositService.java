@@ -23,14 +23,11 @@ public class DepositService implements DepositInterface {
     JdbcTemplate jdbcTemplate;
 
     @Override
-    public List<DepositAvailable> listAllDeposits() throws SQLSyntaxErrorException {
+    public List<DepositAvailable> listAllDeposits() {
         List<DepositAvailable> deposit;
-        try {
-            deposit = jdbcTemplate.query("select deposit_id,deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositavailable",
-                    new BeanPropertyRowMapper<>(DepositAvailable.class));
-        } catch (DataAccessException sqlException) {
-            throw new SQLSyntaxErrorException();
-        }
+        deposit = jdbcTemplate.query("select deposit_id,deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositavailable",
+                new BeanPropertyRowMapper<>(DepositAvailable.class));
+
         if (deposit.size() == 0) {
             logger.error(resourceBundle.getString("deposit.exception"));
             throw new DepositException(resourceBundle.getString("deposit.exception"));

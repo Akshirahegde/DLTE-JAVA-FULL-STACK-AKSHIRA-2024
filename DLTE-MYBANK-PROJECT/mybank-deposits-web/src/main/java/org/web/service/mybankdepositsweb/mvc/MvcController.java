@@ -46,7 +46,7 @@ public class MvcController {
              return "calculator";
     }
 
-        @GetMapping("/error")
+        @GetMapping("/errors")
     public String errorPage(){return "error";}
     }
 

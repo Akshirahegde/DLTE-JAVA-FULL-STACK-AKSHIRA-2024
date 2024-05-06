@@ -65,12 +65,12 @@ public class DepositController {
             return ResponseEntity.ok(maturityAmount);
         }
         catch (DepositException depositException) {
-            logger.error(resourceBundle.getString("deposit.error")+depositException.getMessage());
-            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("deposit.exception"));
+            logger.error(resourceBundle.getString("error.one")+depositException.getMessage());
+            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("error.one")+depositException.getMessage());
         }
         catch (SQLSyntaxErrorException exception) {
-            logger.error(resourceBundle.getString("syntax.error"), exception);
-            return ResponseEntity.status(HttpStatus.OK).body(exception.getMessage());
+            logger.error(resourceBundle.getString("error.two")+exception.getMessage());
+            return ResponseEntity.status(HttpStatus.OK).body(resourceBundle.getString("error.two")+exception.getMessage());
         }
 
         }
