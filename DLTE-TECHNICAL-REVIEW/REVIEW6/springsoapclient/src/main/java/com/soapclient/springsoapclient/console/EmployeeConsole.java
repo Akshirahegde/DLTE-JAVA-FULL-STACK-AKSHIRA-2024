@@ -5,7 +5,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.ws.client.core.WebServiceTemplate;
-import soap.webservice.*;
+import services.employee.*;
+//import soap.webservice.*;
 //import services.employee.*;
 
 import java.util.List;
@@ -135,10 +136,10 @@ public class EmployeeConsole {
             System.out.println(resourceBundle.getString("create.message") + status.getMessage());
             logger.info(resourceBundle.getString("create.message"));
 
-          //  if (status != null && "SUCCESS".equals(status.getStatus())) {
-                Employee createdEmployee = response.getEmployee();
-                displayEmployeeDetails(createdEmployee);
-          //  }
+            //  if (status != null && "SUCCESS".equals(status.getStatus())) {
+            Employee createdEmployee = response.getEmployee();
+            displayEmployeeDetails(createdEmployee);
+            //  }
 
             System.out.print(resourceBundle.getString("add.another.employee"));
             String choice = scanner.next();
@@ -157,13 +158,13 @@ public class EmployeeConsole {
         FilterByIdResponse response = (FilterByIdResponse) webServiceTemplate.marshalSendAndReceive(request);
         ServiceStatus status = response.getServiceStatus();
 
-      //  if (status != null && "SUCCESS".equals(status.getStatus())) {
+        //  if (status != null && "SUCCESS".equals(status.getStatus())) {
         System.out.println(resourceBundle.getString("id.response") + status.getStatus());
         System.out.println(resourceBundle.getString("id.message") + status.getMessage());
 
-            Employee filteredEmployee = response.getEmployee();
-            displayEmployeeDetails(filteredEmployee);
-      //  }
+        Employee filteredEmployee = response.getEmployee();
+        displayEmployeeDetails(filteredEmployee);
+        //  }
     }
 
 
@@ -175,10 +176,10 @@ public class EmployeeConsole {
         ServiceStatus status = response.getServiceStatus();
         System.out.println(resourceBundle.getString("filter.idResponse")+ status.getStatus());
         System.out.println(resourceBundle.getString("filter.idMessage") + status.getMessage());
-      //  if (status != null && "SUCCESS".equals(status.getStatus())) {
-            List<Employee> employees = response.getEmployee();
-            for (Employee each: employees) {
-                displayEmployeeDetails(each);
+        //  if (status != null && "SUCCESS".equals(status.getStatus())) {
+        List<Employee> employees = response.getEmployee();
+        for (Employee each: employees) {
+            displayEmployeeDetails(each);
 
             //}
         }
@@ -188,17 +189,17 @@ public class EmployeeConsole {
         System.out.print(resourceBundle.getString("enter.pinCodeFilter"));
         int pin= scanner.nextInt();
         scanner.nextLine();
-       FilterByPinRequest request = new FilterByPinRequest();
+        FilterByPinRequest request = new FilterByPinRequest();
         request.setPin(pin);
         FilterByPinResponse response = (FilterByPinResponse) webServiceTemplate.marshalSendAndReceive(request);
         ServiceStatus status = response.getServiceStatus();
         System.out.println(resourceBundle.getString("pinCode.response") + status.getStatus());
         System.out.println(resourceBundle.getString("pinCode.message") + status.getMessage());
-       // if (status != null && "SUCCESS".equals(status.getStatus())) {
-            List<Employee> employees = response.getEmployee();
-            for (Employee employee : employees) {
-                displayEmployeeDetails(employee);
-                System.out.println("---------------------------");
+        // if (status != null && "SUCCESS".equals(status.getStatus())) {
+        List<Employee> employees = response.getEmployee();
+        for (Employee employee : employees) {
+            displayEmployeeDetails(employee);
+            System.out.println("---------------------------");
             //}
         }
     }
