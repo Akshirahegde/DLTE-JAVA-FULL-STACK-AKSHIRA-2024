@@ -8,9 +8,15 @@
 <!--    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>-->
 <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
 <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"-->
+<!--          rel="stylesheet">-->
 <!--    <link th:href="@{'/styles/view.css'}" type="text/css" th:rel="stylesheet">-->
 <!--    <script>-->
-<!--        const listAll = () => {-->
+<!--        const pageSize = 3;-->
+<!--        let currentPage = 1;-->
+
+<!--        const listAll = (page) => {-->
+<!--            //specifies the page number to display-->
 <!--            let soapRequest = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:deposit="http://deposit.services">\n' +-->
 <!--                '    <soapenv:Header/>\n' +-->
 <!--                '<soapenv:Body>\n' +-->
@@ -28,7 +34,9 @@
 <!--                data: soapRequest,-->
 <!--                success: function (response) {-->
 <!--                    $('#depositList').empty();-->
-<!--                    $(response).find('ns2\\:deposit').each(function () {-->
+<!--                    let startIndex = (page - 1) * pageSize;-->
+<!--                    let endIndex = startIndex + pageSize;-->
+<!--                    $(response).find('ns2\\:deposit').slice(startIndex, endIndex).each(function () {-->
 <!--                        var depositId = $(this).find('ns2\\:depositId').text();-->
 <!--                        var depositName = $(this).find('ns2\\:depositName').text();-->
 <!--                        var depositRoi = $(this).find('ns2\\:depositRoi').text();-->
@@ -58,7 +66,7 @@
 <!--                                                <h5>${depositDescription}</h5>-->
 <!--                                            </div>-->
 <!--                                            <div class="modal-footer">-->
-<!--                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="color: white; background-color: #ff6600">Apply</button>-->
+<!--                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="redirectToErrorPage()" style="color: white; background-color: #ff6600" >Apply</button>-->
 <!--                                                <button type="button" class="btn btn-primary" onclick="calculateReturns('${depositName}', '${depositRoi}')">Calculate returns</button>-->
 <!--                                            </div>-->
 <!--                                        </div>-->
@@ -84,20 +92,46 @@
 <!--        }-->
 
 <!--        $(document).ready(() => {-->
-<!--            listAll();-->
+<!--            listAll(currentPage);-->
 <!--        });-->
+
+<!--        function changePage(direction) {-->
+<!--            if (direction === 'prev' && currentPage > 1) {-->
+<!--                currentPage&#45;&#45;;-->
+<!--            } else if (direction === 'next') {-->
+<!--                currentPage++;-->
+<!--            }-->
+<!--            listAll(currentPage);-->
+<!--        }-->
+<!--        //Error page-->
+<!--        function redirectToErrorPage() {-->
+<!--            window.location.href = '/errors?code=404&msg=Page Under Construction';-->
+<!--        }-->
 <!--    </script>-->
 <!--</head>-->
 <!--<header th:replace="nav::navbar"></header>-->
+
 <!--<body>-->
+<!--<div class="container mt-3">-->
+<!--    <div class="row">-->
+<!--        <div class="col text-left">-->
+<!--            <i class="bi bi-arrow-left-circle-fill ml-1 " style="color: #182052; font-size: 2rem;" onclick="window.history.back()"></i>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <!--<div class="container">-->
 <!--    <h1 class="text-center">Deposits Available</h1>-->
 <!--    <div class="row" id="depositList"></div>-->
+<!--    <nav aria-label="Page navigation">-->
+<!--        <ul class="pagination justify-content-center">-->
+<!--            <li class="page-item"><a class="page-link" href="#" onclick="changePage('prev')">1</a></li>-->
+<!--            <li class="page-item"><a class="page-link" href="#" onclick="changePage('next')">2</a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
 <!--</div>-->
 <!--</body>-->
 <!--<footer th:replace="footer::footer"></footer>-->
 <!--</html>-->
-
 
 
 
@@ -111,12 +145,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+          rel="stylesheet">
     <link th:href="@{'/styles/view.css'}" type="text/css" th:rel="stylesheet">
     <script>
         const pageSize = 3;
         let currentPage = 1;
 
         const listAll = (page) => {
+            //specifies the page number to display
             let soapRequest = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:deposit="http://deposit.services">\n' +
                 '    <soapenv:Header/>\n' +
                 '<soapenv:Body>\n' +
@@ -147,7 +184,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title">${depositName}</h5>
-                                        <p class="card-text">Type: ${depositType}</p>
+                                        <p class="card-text">ROI: ${depositRoi}</p>
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="color: white; background-color: #ff6600" data-bs-target="#knowmore${depositId}">
                                             Know More
                                         </button>
@@ -166,7 +203,7 @@
                                                 <h5>${depositDescription}</h5>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="color: white; background-color: #ff6600" th:href="@{'/userlogin/errors?code=404&msg=Page Under Construction'}">Apply</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="redirectToErrorPage()" style="color: white; background-color: #ff6600" >Apply</button>
                                                 <button type="button" class="btn btn-primary" onclick="calculateReturns('${depositName}', '${depositRoi}')">Calculate returns</button>
                                             </div>
                                         </div>
@@ -203,10 +240,22 @@
             }
             listAll(currentPage);
         }
+        //Error page
+        function redirectToErrorPage() {
+            window.location.href = '/errors?code=404&msg=Page Under Construction';
+        }
     </script>
 </head>
 <header th:replace="nav::navbar"></header>
+
 <body>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col text-left">
+            <i class="bi bi-arrow-left-circle-fill ml-1 " style="color: #182052; font-size: 2rem;" onclick="window.history.back()"></i>
+        </div>
+    </div>
+</div>
 <div class="container">
     <h1 class="text-center">Deposits Available</h1>
     <div class="row" id="depositList"></div>

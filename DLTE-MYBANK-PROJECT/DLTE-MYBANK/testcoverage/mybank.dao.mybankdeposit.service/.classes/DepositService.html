@@ -47,15 +47,15 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    58.1%
+    60%
   </span>
   <span class="absValue">
-    (25/ 43)
+    (24/ 40)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">DepositService$$EnhancerBySpringCGLIB$$768a725d</td>
+    <td class="name">DepositService$$EnhancerBySpringCGLIB$$d67700cc</td>
   </tr>
 <tr>
   <td class="name"><strong>total</strong></td>
@@ -69,10 +69,10 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    58.1%
+    60%
   </span>
   <span class="absValue">
-    (25/ 43)
+    (24/ 40)
   </span>
 </td>
 </tr>
@@ -107,85 +107,85 @@
 <i>23</i>&nbsp;    JdbcTemplate jdbcTemplate;
 <i>24</i>&nbsp;
 <i>25</i>&nbsp;    @Override
-<i>26</i>&nbsp;    public List&lt;DepositAvailable&gt; listAllDeposits() throws SQLSyntaxErrorException {
+<i>26</i>&nbsp;    public List&lt;DepositAvailable&gt; listAllDeposits() {
 <i>27</i>&nbsp;        List&lt;DepositAvailable&gt; deposit;
-<i>28</i>&nbsp;        try {
-<b class="fc"><i>29</i>&nbsp;            deposit = jdbcTemplate.query(&quot;select deposit_id,deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositavailable&quot;,</b>
-<i>30</i>&nbsp;                    new BeanPropertyRowMapper&lt;&gt;(DepositAvailable.class));
-<b class="nc"><i>31</i>&nbsp;        } catch (DataAccessException sqlException) {</b>
-<b class="nc"><i>32</i>&nbsp;            throw new SQLSyntaxErrorException();</b>
-<b class="fc"><i>33</i>&nbsp;        }</b>
-<b class="fc"><i>34</i>&nbsp;        if (deposit.size() == 0) {</b>
-<b class="fc"><i>35</i>&nbsp;            logger.error(resourceBundle.getString(&quot;deposit.exception&quot;));</b>
-<b class="fc"><i>36</i>&nbsp;            throw new DepositException(resourceBundle.getString(&quot;deposit.exception&quot;));</b>
-<i>37</i>&nbsp;        } else
-<b class="fc"><i>38</i>&nbsp;            return deposit;</b>
-<i>39</i>&nbsp;    }
-<i>40</i>&nbsp;
-<i>41</i>&nbsp;
-<i>42</i>&nbsp;
-<i>43</i>&nbsp;    @Override
-<i>44</i>&nbsp;    //java 8
-<i>45</i>&nbsp;    public Optional&lt;DepositAvailable&gt; searchDepositById(Long id) throws SQLSyntaxErrorException,DepositException {
-<i>46</i>&nbsp;        try {
-<b class="fc"><i>47</i>&nbsp;            DepositAvailable depositAvailable = new DepositAvailable();</b>
-<b class="fc"><i>48</i>&nbsp;            Optional&lt;DepositAvailable&gt; deposit = Optional.of(depositAvailable);</b>
-<i>49</i>&nbsp;
-<b class="fc"><i>50</i>&nbsp;            deposit.get().setDepositId(id);</b>
-<b class="fc"><i>51</i>&nbsp;            CallableStatementCreator creator = con -&gt; {</b>
-<b class="nc"><i>52</i>&nbsp;                CallableStatement statement = con.prepareCall(&quot;{call read_depositsId(?,?,?,?,?,?)}&quot;);</b>
-<b class="nc"><i>53</i>&nbsp;                statement.setLong(1, id);</b>
-<b class="nc"><i>54</i>&nbsp;                statement.registerOutParameter(2, Types.NUMERIC);</b>
-<b class="nc"><i>55</i>&nbsp;                statement.registerOutParameter(3, Types.DOUBLE);</b>
-<b class="nc"><i>56</i>&nbsp;                statement.registerOutParameter(4, Types.VARCHAR);</b>
-<b class="nc"><i>57</i>&nbsp;                statement.registerOutParameter(5, Types.VARCHAR);</b>
-<b class="nc"><i>58</i>&nbsp;                statement.registerOutParameter(6, Types.VARCHAR);</b>
-<b class="nc"><i>59</i>&nbsp;                return statement;</b>
-<i>60</i>&nbsp;            };
-<i>61</i>&nbsp;
-<b class="fc"><i>62</i>&nbsp;            List&lt;SqlParameter&gt; returned = Arrays.asList(</b>
-<i>63</i>&nbsp;                    new SqlParameter(Types.NUMERIC),
-<i>64</i>&nbsp;                    new SqlOutParameter(&quot;id&quot;, Types.NUMERIC),
-<i>65</i>&nbsp;                    new SqlOutParameter(&quot;roi&quot;, Types.DOUBLE),
-<i>66</i>&nbsp;                    new SqlOutParameter(&quot;name&quot;, Types.VARCHAR),
-<i>67</i>&nbsp;                    new SqlOutParameter(&quot;type&quot;, Types.VARCHAR),
-<i>68</i>&nbsp;                    new SqlOutParameter(&quot;description&quot;, Types.VARCHAR)
-<i>69</i>&nbsp;            );
-<i>70</i>&nbsp;
-<b class="fc"><i>71</i>&nbsp;            Map&lt;String, Object&gt; returnedDeposits = jdbcTemplate.call(creator, returned);</b>
-<b class="fc"><i>72</i>&nbsp;            System.out.println(returnedDeposits);</b>
-<b class="fc"><i>73</i>&nbsp;            BigDecimal id_out = (BigDecimal) returnedDeposits.get(&quot;id&quot;);</b>
-<b class="fc"><i>74</i>&nbsp;            if (id_out != null) {</b>
-<b class="fc"><i>75</i>&nbsp;                Long longValue = id_out.longValue();</b>
-<b class="fc"><i>76</i>&nbsp;                depositAvailable.setDepositId(longValue);</b>
-<i>77</i>&nbsp;            }
-<b class="fc"><i>78</i>&nbsp;            depositAvailable.setDepositName((String) returnedDeposits.get(&quot;name&quot;));</b>
-<b class="fc"><i>79</i>&nbsp;            depositAvailable.setDepositRoi((Double) returnedDeposits.get(&quot;roi&quot;));</b>
-<b class="fc"><i>80</i>&nbsp;            depositAvailable.setDepositType((String) returnedDeposits.get(&quot;type&quot;));</b>
-<b class="fc"><i>81</i>&nbsp;            depositAvailable.setDepositDescription((String) returnedDeposits.get(&quot;description&quot;));</b>
-<b class="fc"><i>82</i>&nbsp;            return Optional.of(depositAvailable);</b>
-<i>83</i>&nbsp;        }
-<b class="nc"><i>84</i>&nbsp;        catch (DataAccessException exception) {</b>
-<b class="nc"><i>85</i>&nbsp;            if (exception.getLocalizedMessage().contains(&quot;ORA-20002&quot;))</b>
-<b class="nc"><i>86</i>&nbsp;                throw new DepositException(resourceBundle.getString(&quot;deposit.exception&quot;));</b>
-<b class="nc"><i>87</i>&nbsp;            else if (exception.getLocalizedMessage().contains(&quot;ORA-20003&quot;))</b>
-<b class="nc"><i>88</i>&nbsp;                throw new SQLSyntaxErrorException(resourceBundle.getString(&quot;internal.server.error&quot;));</b>
-<i>89</i>&nbsp;        }
+<b class="fc"><i>28</i>&nbsp;        deposit = jdbcTemplate.query(&quot;select deposit_id,deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositavailable&quot;,</b>
+<i>29</i>&nbsp;                new BeanPropertyRowMapper&lt;&gt;(DepositAvailable.class));
+<i>30</i>&nbsp;
+<b class="fc"><i>31</i>&nbsp;        if (deposit.size() == 0) {</b>
+<b class="fc"><i>32</i>&nbsp;            logger.error(resourceBundle.getString(&quot;deposit.exception&quot;));</b>
+<b class="fc"><i>33</i>&nbsp;            throw new DepositException(resourceBundle.getString(&quot;deposit.exception&quot;));</b>
+<i>34</i>&nbsp;        } else
+<b class="fc"><i>35</i>&nbsp;            return deposit;</b>
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    @Override
+<i>41</i>&nbsp;    //java 8
+<i>42</i>&nbsp;    public Optional&lt;DepositAvailable&gt; searchDepositById(Long id) throws SQLSyntaxErrorException,DepositException {
+<i>43</i>&nbsp;        try {
+<b class="fc"><i>44</i>&nbsp;            DepositAvailable depositAvailable = new DepositAvailable();</b>
+<b class="fc"><i>45</i>&nbsp;            Optional&lt;DepositAvailable&gt; deposit = Optional.of(depositAvailable);</b>
+<i>46</i>&nbsp;
+<b class="fc"><i>47</i>&nbsp;            deposit.get().setDepositId(id);</b>
+<b class="fc"><i>48</i>&nbsp;            CallableStatementCreator creator = con -&gt; {</b>
+<b class="nc"><i>49</i>&nbsp;                CallableStatement statement = con.prepareCall(&quot;{call read_depositsId(?,?,?,?,?,?)}&quot;);</b>
+<b class="nc"><i>50</i>&nbsp;                statement.setLong(1, id);</b>
+<b class="nc"><i>51</i>&nbsp;                statement.registerOutParameter(2, Types.NUMERIC);</b>
+<b class="nc"><i>52</i>&nbsp;                statement.registerOutParameter(3, Types.DOUBLE);</b>
+<b class="nc"><i>53</i>&nbsp;                statement.registerOutParameter(4, Types.VARCHAR);</b>
+<b class="nc"><i>54</i>&nbsp;                statement.registerOutParameter(5, Types.VARCHAR);</b>
+<b class="nc"><i>55</i>&nbsp;                statement.registerOutParameter(6, Types.VARCHAR);</b>
+<b class="nc"><i>56</i>&nbsp;                return statement;</b>
+<i>57</i>&nbsp;            };
+<i>58</i>&nbsp;
+<b class="fc"><i>59</i>&nbsp;            List&lt;SqlParameter&gt; returned = Arrays.asList(</b>
+<i>60</i>&nbsp;                    new SqlParameter(Types.NUMERIC),
+<i>61</i>&nbsp;                    new SqlOutParameter(&quot;id&quot;, Types.NUMERIC),
+<i>62</i>&nbsp;                    new SqlOutParameter(&quot;roi&quot;, Types.DOUBLE),
+<i>63</i>&nbsp;                    new SqlOutParameter(&quot;name&quot;, Types.VARCHAR),
+<i>64</i>&nbsp;                    new SqlOutParameter(&quot;type&quot;, Types.VARCHAR),
+<i>65</i>&nbsp;                    new SqlOutParameter(&quot;description&quot;, Types.VARCHAR)
+<i>66</i>&nbsp;            );
+<i>67</i>&nbsp;
+<b class="fc"><i>68</i>&nbsp;            Map&lt;String, Object&gt; returnedDeposits = jdbcTemplate.call(creator, returned);</b>
+<b class="fc"><i>69</i>&nbsp;            System.out.println(returnedDeposits);</b>
+<b class="fc"><i>70</i>&nbsp;            BigDecimal id_out = (BigDecimal) returnedDeposits.get(&quot;id&quot;);</b>
+<b class="fc"><i>71</i>&nbsp;            if (id_out != null) {</b>
+<b class="fc"><i>72</i>&nbsp;                Long longValue = id_out.longValue();</b>
+<b class="fc"><i>73</i>&nbsp;                depositAvailable.setDepositId(longValue);</b>
+<i>74</i>&nbsp;            }
+<b class="fc"><i>75</i>&nbsp;            depositAvailable.setDepositName((String) returnedDeposits.get(&quot;name&quot;));</b>
+<b class="fc"><i>76</i>&nbsp;            depositAvailable.setDepositRoi((Double) returnedDeposits.get(&quot;roi&quot;));</b>
+<b class="fc"><i>77</i>&nbsp;            depositAvailable.setDepositType((String) returnedDeposits.get(&quot;type&quot;));</b>
+<b class="fc"><i>78</i>&nbsp;            depositAvailable.setDepositDescription((String) returnedDeposits.get(&quot;description&quot;));</b>
+<b class="fc"><i>79</i>&nbsp;            return Optional.of(depositAvailable);</b>
+<i>80</i>&nbsp;        }
+<b class="nc"><i>81</i>&nbsp;        catch (DataAccessException exception) {</b>
+<b class="nc"><i>82</i>&nbsp;            if (exception.getLocalizedMessage().contains(&quot;ORA-20002&quot;))</b>
+<b class="nc"><i>83</i>&nbsp;                throw new DepositException(resourceBundle.getString(&quot;deposit.exception&quot;));</b>
+<b class="nc"><i>84</i>&nbsp;            else if (exception.getLocalizedMessage().contains(&quot;ORA-20003&quot;))</b>
+<b class="nc"><i>85</i>&nbsp;                throw new SQLSyntaxErrorException(resourceBundle.getString(&quot;internal.server.error&quot;));</b>
+<i>86</i>&nbsp;        }
+<i>87</i>&nbsp;
+<b class="nc"><i>88</i>&nbsp;       return Optional.empty();</b>
+<i>89</i>&nbsp;    }
 <i>90</i>&nbsp;
-<b class="nc"><i>91</i>&nbsp;       return Optional.empty();</b>
-<i>92</i>&nbsp;    }
-<i>93</i>&nbsp;
-<i>94</i>&nbsp;
-<i>95</i>&nbsp;    public Long getDepositIdByDepositName(String depositName) {
-<b class="nc"><i>96</i>&nbsp;        Long depositId = jdbcTemplate.queryForObject(</b>
-<i>97</i>&nbsp;                &quot;SELECT deposit_id FROM mybank_app_depositavailable WHERE deposit_name = ?&quot;,
-<i>98</i>&nbsp;                new Object[]{depositName}, Long.class);
-<i>99</i>&nbsp;
-<b class="nc"><i>100</i>&nbsp;        return depositId;</b>
-<i>101</i>&nbsp;    }
+<i>91</i>&nbsp;
+<i>92</i>&nbsp;    public Long getDepositIdByDepositName(String depositName) {
+<b class="nc"><i>93</i>&nbsp;        Long depositId = jdbcTemplate.queryForObject(</b>
+<i>94</i>&nbsp;                &quot;SELECT deposit_id FROM mybank_app_depositavailable WHERE deposit_name = ?&quot;,
+<i>95</i>&nbsp;                new Object[]{depositName}, Long.class);
+<i>96</i>&nbsp;
+<b class="nc"><i>97</i>&nbsp;        return depositId;</b>
+<i>98</i>&nbsp;    }
+<i>99</i>&nbsp;    
+<i>100</i>&nbsp;}
+<i>101</i>&nbsp;
 <i>102</i>&nbsp;
 <i>103</i>&nbsp;
-<i>104</i>&nbsp;}
+<i>104</i>&nbsp;
 <i>105</i>&nbsp;
 <i>106</i>&nbsp;
 <i>107</i>&nbsp;
@@ -283,49 +283,49 @@
 <i>199</i>&nbsp;
 <i>200</i>&nbsp;
 <i>201</i>&nbsp;
-<i>202</i>&nbsp;
-<i>203</i>&nbsp;
-<i>204</i>&nbsp;
-<i>205</i>&nbsp;
-<i>206</i>&nbsp;//   @Override
-<i>207</i>&nbsp;//    public Optional&lt;DepositAvailable&gt; searchDepositById(long Id) throws SQLSyntaxErrorException {
-<i>208</i>&nbsp;//        Optional&lt;DepositAvailable&gt; deposit;
-<i>209</i>&nbsp;//
-<i>210</i>&nbsp;//        try {
-<i>211</i>&nbsp;//            deposit = Optional.of(jdbcTemplate.queryForObject(&quot;select deposit_id,deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositavailable where deposit_id=? &quot;,
-<i>212</i>&nbsp;//                    new Object[]{Id},
-<i>213</i>&nbsp;//                    new BeanPropertyRowMapper&lt;&gt;(DepositAvailable.class)
-<i>214</i>&nbsp;//            ));
-<i>215</i>&nbsp;//        }catch (DataAccessException sqlException){
-<i>216</i>&nbsp;//            logger.error(resourceBundle.getString(&quot;internal.error&quot;));
-<i>217</i>&nbsp;//            throw new SQLSyntaxErrorException();
+<i>202</i>&nbsp;//   @Override
+<i>203</i>&nbsp;//    public Optional&lt;DepositAvailable&gt; searchDepositById(long Id) throws SQLSyntaxErrorException {
+<i>204</i>&nbsp;//        Optional&lt;DepositAvailable&gt; deposit;
+<i>205</i>&nbsp;//
+<i>206</i>&nbsp;//        try {
+<i>207</i>&nbsp;//            deposit = Optional.of(jdbcTemplate.queryForObject(&quot;select deposit_id,deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositavailable where deposit_id=? &quot;,
+<i>208</i>&nbsp;//                    new Object[]{Id},
+<i>209</i>&nbsp;//                    new BeanPropertyRowMapper&lt;&gt;(DepositAvailable.class)
+<i>210</i>&nbsp;//            ));
+<i>211</i>&nbsp;//        }catch (DataAccessException sqlException){
+<i>212</i>&nbsp;//            logger.error(resourceBundle.getString(&quot;internal.error&quot;));
+<i>213</i>&nbsp;//            throw new SQLSyntaxErrorException();
+<i>214</i>&nbsp;//        }
+<i>215</i>&nbsp;//        if(deposit==null) {
+<i>216</i>&nbsp;//            logger.error(resourceBundle.getString(&quot;deposit.exception&quot;));
+<i>217</i>&nbsp;//            throw new DepositException(resourceBundle.getString(&quot;deposit.exception&quot;));
 <i>218</i>&nbsp;//        }
-<i>219</i>&nbsp;//        if(deposit==null) {
-<i>220</i>&nbsp;//            logger.error(resourceBundle.getString(&quot;deposit.exception&quot;));
-<i>221</i>&nbsp;//            throw new DepositException(resourceBundle.getString(&quot;deposit.exception&quot;));
-<i>222</i>&nbsp;//        }
-<i>223</i>&nbsp;//        else
-<i>224</i>&nbsp;//            return deposit;
-<i>225</i>&nbsp;//    }
-<i>226</i>&nbsp;
-<i>227</i>&nbsp;//    @Override
-<i>228</i>&nbsp;//    public Optional&lt;DepositAvailable&gt; searchDepositById(long Id) throws SQLSyntaxErrorException {
-<i>229</i>&nbsp;//
-<i>230</i>&nbsp;//        List&lt;DepositAvailable&gt; deposits;
-<i>231</i>&nbsp;//
-<i>232</i>&nbsp;//        try {
-<i>233</i>&nbsp;//            deposits= jdbcTemplate.query(&quot;select deposit_id,deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositavailable&quot;,
-<i>234</i>&nbsp;//                    new BeanPropertyRowMapper&lt;&gt;(DepositAvailable.class));
-<i>235</i>&nbsp;//        }catch (DataAccessException sqlException){
-<i>236</i>&nbsp;//            throw new SQLSyntaxErrorException();
-<i>237</i>&nbsp;//        }
-<i>238</i>&nbsp;//
-<i>239</i>&nbsp;//        Optional&lt;DepositAvailable&gt; depositid=deposits.stream().filter(depositAvailable -&gt; depositAvailable.getDepositId()==Id).findFirst();
-<i>240</i>&nbsp;//        System.out.println(depositid);
-<i>241</i>&nbsp;//        if (depositid==null)
-<i>242</i>&nbsp;//            throw new DepositException(resourceBundle.getString(&quot;deposit.exception&quot;));
-<i>243</i>&nbsp;//        return depositid;
-<i>244</i>&nbsp;//    }
+<i>219</i>&nbsp;//        else
+<i>220</i>&nbsp;//            return deposit;
+<i>221</i>&nbsp;//    }
+<i>222</i>&nbsp;
+<i>223</i>&nbsp;//    @Override
+<i>224</i>&nbsp;//    public Optional&lt;DepositAvailable&gt; searchDepositById(long Id) throws SQLSyntaxErrorException {
+<i>225</i>&nbsp;//
+<i>226</i>&nbsp;//        List&lt;DepositAvailable&gt; deposits;
+<i>227</i>&nbsp;//
+<i>228</i>&nbsp;//        try {
+<i>229</i>&nbsp;//            deposits= jdbcTemplate.query(&quot;select deposit_id,deposit_name,deposit_roi,deposit_type,deposit_description from mybank_app_depositavailable&quot;,
+<i>230</i>&nbsp;//                    new BeanPropertyRowMapper&lt;&gt;(DepositAvailable.class));
+<i>231</i>&nbsp;//        }catch (DataAccessException sqlException){
+<i>232</i>&nbsp;//            throw new SQLSyntaxErrorException();
+<i>233</i>&nbsp;//        }
+<i>234</i>&nbsp;//
+<i>235</i>&nbsp;//        Optional&lt;DepositAvailable&gt; depositid=deposits.stream().filter(depositAvailable -&gt; depositAvailable.getDepositId()==Id).findFirst();
+<i>236</i>&nbsp;//        System.out.println(depositid);
+<i>237</i>&nbsp;//        if (depositid==null)
+<i>238</i>&nbsp;//            throw new DepositException(resourceBundle.getString(&quot;deposit.exception&quot;));
+<i>239</i>&nbsp;//        return depositid;
+<i>240</i>&nbsp;//    }
+<i>241</i>&nbsp;
+<i>242</i>&nbsp;
+<i>243</i>&nbsp;
+<i>244</i>&nbsp;
 <i>245</i>&nbsp;
 <i>246</i>&nbsp;
 <i>247</i>&nbsp;
@@ -434,16 +434,12 @@
 <i>350</i>&nbsp;
 <i>351</i>&nbsp;
 <i>352</i>&nbsp;
-<i>353</i>&nbsp;
-<i>354</i>&nbsp;
-<i>355</i>&nbsp;
-<i>356</i>&nbsp;
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-05-06 17:57</div>
+    <div style="float:right;">generated on 2024-05-07 16:04</div>
 </div>
 </body>
 </html>

@@ -14,17 +14,6 @@ public class DepositAvailable {
     public DepositAvailable() {
     }
 
-    @Override
-    public String toString() {
-        return "DepositAvailable{" +
-                "depositId=" + depositId +
-                ", depositName='" + depositName + '\'' +
-                ", depositRoi=" + depositRoi +
-                ", depositType='" + depositType + '\'' +
-                ", depositDescription='" + depositDescription + '\'' +
-                '}';
-    }
-
     public Long getDepositId() {
         return depositId;
     }

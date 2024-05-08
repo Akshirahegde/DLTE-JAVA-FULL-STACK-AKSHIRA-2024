@@ -88,48 +88,37 @@
 <b class="fc"><i>14</i>&nbsp;public class MvcController {</b>
 <i>15</i>&nbsp;    @Autowired
 <i>16</i>&nbsp;    MyBankServices myBankServices;
-<i>17</i>&nbsp;//        @GetMapping(&quot;/navbar&quot;)
-<i>18</i>&nbsp;//        public String showHeader(){
-<i>19</i>&nbsp;//
-<i>20</i>&nbsp;//            return &quot;nav&quot;;
-<i>21</i>&nbsp;//        }
-<i>22</i>&nbsp;
-<i>23</i>&nbsp;//        @GetMapping(&quot;/footer&quot;)
-<i>24</i>&nbsp;//        public String showFooter()
-<i>25</i>&nbsp;//        {
-<i>26</i>&nbsp;//            return &quot;footer&quot;;
-<i>27</i>&nbsp;//        }
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;        @GetMapping(&quot;/&quot;)
+<i>19</i>&nbsp;        public String showLogin(){
+<i>20</i>&nbsp;
+<b class="fc"><i>21</i>&nbsp;            return &quot;index&quot;;</b>
+<i>22</i>&nbsp;         }
+<i>23</i>&nbsp;         @GetMapping(&quot;/views&quot;)
+<i>24</i>&nbsp;        public String showDeposits(){
+<i>25</i>&nbsp;
+<b class="fc"><i>26</i>&nbsp;            return &quot;view&quot;;</b>
+<i>27</i>&nbsp;        }
 <i>28</i>&nbsp;
-<i>29</i>&nbsp;        @GetMapping(&quot;/&quot;)
-<i>30</i>&nbsp;        public String showLogin(){
-<i>31</i>&nbsp;
-<b class="fc"><i>32</i>&nbsp;            return &quot;index&quot;;</b>
-<i>33</i>&nbsp;         }
-<i>34</i>&nbsp;         @GetMapping(&quot;/views&quot;)
-<i>35</i>&nbsp;        public String showDeposits(){
-<i>36</i>&nbsp;
-<b class="fc"><i>37</i>&nbsp;            return &quot;view&quot;;</b>
-<i>38</i>&nbsp;        }
-<i>39</i>&nbsp;
-<i>40</i>&nbsp;        @GetMapping(&quot;/dashboards&quot;)
-<i>41</i>&nbsp;            public String showDashboard(){
-<b class="fc"><i>42</i>&nbsp;            return &quot;dashboard&quot;;</b>
-<i>43</i>&nbsp;            }
-<i>44</i>&nbsp;        @GetMapping(&quot;/calculators&quot;)
-<i>45</i>&nbsp;             public String showcalculator(){
-<b class="fc"><i>46</i>&nbsp;             return &quot;calculator&quot;;</b>
-<i>47</i>&nbsp;    }
-<i>48</i>&nbsp;
-<i>49</i>&nbsp;        @GetMapping(&quot;/errors&quot;)
-<b class="fc"><i>50</i>&nbsp;    public String errorPage(){return &quot;error&quot;;}</b>
-<i>51</i>&nbsp;    }
-<i>52</i>&nbsp;
+<i>29</i>&nbsp;        @GetMapping(&quot;/dashboards&quot;)
+<i>30</i>&nbsp;            public String showDashboard(){
+<b class="fc"><i>31</i>&nbsp;            return &quot;dashboard&quot;;</b>
+<i>32</i>&nbsp;            }
+<i>33</i>&nbsp;        @GetMapping(&quot;/calculators&quot;)
+<i>34</i>&nbsp;             public String showcalculator(){
+<b class="fc"><i>35</i>&nbsp;             return &quot;calculator&quot;;</b>
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;        @GetMapping(&quot;/errors&quot;)
+<b class="fc"><i>39</i>&nbsp;    public String errorPage(){return &quot;error&quot;;}</b>
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-05-06 22:33</div>
+    <div style="float:right;">generated on 2024-05-07 16:07</div>
 </div>
 </body>
 </html>

@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.ResourceBundle;
 
 //http://localhost:8085/profile/register
 //        {
@@ -28,6 +29,7 @@ import java.util.List;
 
 @Service
 public class MyBankServices implements UserDetailsService {
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("details");
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -42,13 +44,13 @@ return myBankCustomers;
     public void updateAttempts(MyBankCustomer myBankCustomers){
         jdbcTemplate.update("update MYBANK_APP_CUSTOMER set attempts=? where username=?",
                 new Object[]{myBankCustomers.getAttempts(),myBankCustomers.getUsername()});
-        logger.info("Attempts are updated");
+        logger.info(resourceBundle.getString("attempt.update"));
     }
 
     public void updateStatus(MyBankCustomer myBankCustomers){
         jdbcTemplate.update("update MYBANK_APP_CUSTOMER set customer_status='inactive' where username=?",
                 new Object[]{myBankCustomers.getUsername()});
-       logger.info("Status has changed");
+       logger.info(resourceBundle.getString("status.change"));
     }
     public MyBankCustomer findByUsername(String username){
         MyBankCustomer customer=findAllUsername().stream().filter(each ->each.getUsername().equals(username)).findFirst().orElse(null);

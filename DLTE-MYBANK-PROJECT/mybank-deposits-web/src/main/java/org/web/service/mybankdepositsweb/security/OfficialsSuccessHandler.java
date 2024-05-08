@@ -33,7 +33,7 @@ public class OfficialsSuccessHandler extends SimpleUrlAuthenticationSuccessHandl
             super.setDefaultTargetUrl("/userlogin/dashboards");
         } else {
             logger.warn(resourceBundle.getString("attempt.end"));
-            super.setDefaultTargetUrl("/userlogin/?errors="+ " contact the admin");
+            super.setDefaultTargetUrl("/userlogin/?errors="+ resourceBundle.getString("contact.admin"));
         }
         super.onAuthenticationSuccess(request, response, authentication);
     }

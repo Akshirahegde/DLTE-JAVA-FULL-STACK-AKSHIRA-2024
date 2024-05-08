@@ -107,7 +107,7 @@
 <b class="nc"><i>33</i>&nbsp;            super.setDefaultTargetUrl(&quot;/userlogin/dashboards&quot;);</b>
 <i>34</i>&nbsp;        } else {
 <b class="fc"><i>35</i>&nbsp;            logger.warn(resourceBundle.getString(&quot;attempt.end&quot;));</b>
-<b class="fc"><i>36</i>&nbsp;            super.setDefaultTargetUrl(&quot;/userlogin/?errors=&quot;+ &quot; contact the admin&quot;);</b>
+<b class="fc"><i>36</i>&nbsp;            super.setDefaultTargetUrl(&quot;/userlogin/?errors=&quot;+ resourceBundle.getString(&quot;contact.admin&quot;));</b>
 <i>37</i>&nbsp;        }
 <b class="fc"><i>38</i>&nbsp;        super.onAuthenticationSuccess(request, response, authentication);</b>
 <b class="fc"><i>39</i>&nbsp;    }</b>
@@ -117,7 +117,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-05-06 22:33</div>
+    <div style="float:right;">generated on 2024-05-07 16:07</div>
 </div>
 </body>
 </html>

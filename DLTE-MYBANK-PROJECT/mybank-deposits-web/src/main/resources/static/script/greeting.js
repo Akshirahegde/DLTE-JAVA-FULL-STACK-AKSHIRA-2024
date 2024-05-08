@@ -2,7 +2,7 @@ $(document).ready(function () {
     function getUserName() {
         $.ajax({
             type: "GET",
-            url: "/module/name", // Assuming your endpoint is mapped to /web/name
+            url: "/module/name",
             dataType: 'text', // Expecting text response
             contentType:"application/json;charset=utf-8",
 

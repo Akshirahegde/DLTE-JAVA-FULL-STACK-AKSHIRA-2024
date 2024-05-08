@@ -50,18 +50,18 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    50%
+    100%
   </span>
   <span class="absValue">
-    (1/ 2)
+    (2/ 2)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    10.3%
+    40%
   </span>
   <span class="absValue">
-    (3/ 29)
+    (12/ 30)
   </span>
 </td>
 </tr>
@@ -99,16 +99,16 @@
 <b class="fc"><i>25</i>&nbsp;    ResourceBundle resourceBundle=ResourceBundle.getBundle(&quot;details&quot;);</b>
 <i>26</i>&nbsp;    @Override
 <i>27</i>&nbsp;    public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
-<b class="nc"><i>28</i>&nbsp;        String username = request.getParameter(&quot;username&quot;);</b>
+<b class="fc"><i>28</i>&nbsp;        String username = request.getParameter(&quot;username&quot;);</b>
 <i>29</i>&nbsp;        try {
-<b class="nc"><i>30</i>&nbsp;            MyBankCustomer myBankCustomers = services.findByUsername(username);</b>
+<b class="fc"><i>30</i>&nbsp;            MyBankCustomer myBankCustomers = services.findByUsername(username);</b>
 <b class="nc"><i>31</i>&nbsp;            if (myBankCustomers != null) {</b>
 <b class="nc"><i>32</i>&nbsp;                if (!myBankCustomers.getCustomerStatus().equalsIgnoreCase(&quot;inactive&quot;)) {</b>
 <b class="nc"><i>33</i>&nbsp;                    if (myBankCustomers.getAttempts() &lt; myBankCustomers.getMaxAttempts()) {</b>
 <b class="nc"><i>34</i>&nbsp;                        myBankCustomers.setAttempts(myBankCustomers.getAttempts() + 1);</b>
 <b class="nc"><i>35</i>&nbsp;                        services.updateAttempts(myBankCustomers);</b>
 <b class="nc"><i>36</i>&nbsp;                        logger.warn(resourceBundle.getString(&quot;invalid.credential&quot;));</b>
-<b class="nc"><i>37</i>&nbsp;                        exception = new LockedException((4 - myBankCustomers.getAttempts()) + &quot; &quot; + &quot;attempts are left .Invalid password&quot;);</b>
+<b class="nc"><i>37</i>&nbsp;                        exception = new LockedException((4 - myBankCustomers.getAttempts()) + &quot; &quot; + resourceBundle.getString(&quot;attempts.left&quot;));</b>
 <b class="nc"><i>38</i>&nbsp;                        String err = myBankCustomers.getAttempts().toString() + &quot; &quot; + exception.getMessage();</b>
 <b class="nc"><i>39</i>&nbsp;                        logger.warn(err);</b>
 <b class="nc"><i>40</i>&nbsp;                        super.setDefaultFailureUrl(&quot;/userlogin/?error=&quot; + exception);</b>
@@ -121,23 +121,25 @@
 <i>47</i>&nbsp;                } else {
 <b class="nc"><i>48</i>&nbsp;                    logger.warn(resourceBundle.getString(&quot;account.suspend&quot;));</b>
 <i>49</i>&nbsp;                }
-<i>50</i>&nbsp;            }
-<b class="nc"><i>51</i>&nbsp;        }catch (UsernameNotFoundException e){</b>
-<b class="nc"><i>52</i>&nbsp;            logger.info(e.toString());</b>
-<b class="nc"><i>53</i>&nbsp;            logger.warn(resourceBundle.getString(&quot;account.suspend&quot;));</b>
-<b class="nc"><i>54</i>&nbsp;            exception=new LockedException(&quot;username not found&quot;);</b>
-<b class="nc"><i>55</i>&nbsp;            super.setDefaultFailureUrl(&quot;/userlogin/?error=&quot; + exception.getMessage());</b>
-<b class="nc"><i>56</i>&nbsp;        }</b>
-<b class="nc"><i>57</i>&nbsp;        super.onAuthenticationFailure(request, response, exception);</b>
-<b class="nc"><i>58</i>&nbsp;    }</b>
-<i>59</i>&nbsp;
-<i>60</i>&nbsp;}
+<i>50</i>&nbsp;            }else {
+<b class="nc"><i>51</i>&nbsp;                super.setDefaultFailureUrl(&quot;/userlogin/?error=User not exists&quot;);</b>
+<i>52</i>&nbsp;            }
+<b class="fc"><i>53</i>&nbsp;        }catch (UsernameNotFoundException e){</b>
+<b class="fc"><i>54</i>&nbsp;            logger.info(e.toString());</b>
+<b class="fc"><i>55</i>&nbsp;            logger.warn(resourceBundle.getString(&quot;account.suspend&quot;));</b>
+<b class="fc"><i>56</i>&nbsp;            exception=new LockedException(&quot;username not found&quot;);</b>
+<b class="fc"><i>57</i>&nbsp;            super.setDefaultFailureUrl(&quot;/userlogin/?error=&quot; + exception.getMessage());</b>
+<b class="nc"><i>58</i>&nbsp;        }</b>
+<b class="fc"><i>59</i>&nbsp;        super.onAuthenticationFailure(request, response, exception);</b>
+<b class="fc"><i>60</i>&nbsp;    }</b>
+<i>61</i>&nbsp;
+<i>62</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-05-06 22:33</div>
+    <div style="float:right;">generated on 2024-05-07 16:07</div>
 </div>
 </body>
 </html>

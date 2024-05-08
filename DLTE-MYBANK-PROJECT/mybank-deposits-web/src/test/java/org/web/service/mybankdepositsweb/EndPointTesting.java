@@ -142,7 +142,7 @@ public class EndPointTesting {
         assertNotEquals(HttpStatus.NO_CONTENT.value(), response.getServiceStatus().getStatus());
     }
 
-//--------------------------------------------------------rest
+//rest
 @Test
 public void CalculateDeposit_Success() throws Exception {
 
@@ -233,38 +233,10 @@ public void CalculateDeposit_Success() throws Exception {
         Assertions.assertEquals("Patwardhan", result);
     }
 
-    //@Test
-    void DepositException() throws Exception {
-        String customerName = "Samanyu";
-        String customerAddress = "Perdoor";
-        String customerStatus = "Active";
-        Long customerContact = 1234567890L;
-        String username = "samanyu";
-        String password = "samanyu123";
-        Integer attempts = 0;
-        Integer maxAttempts = 3;
-        MyBankCustomer customer = new MyBankCustomer();
-        customer.setCustomerId(123L);
-        customer.setCustomerName(customerName);
-        customer.setCustomerAddress(customerAddress);
-        customer.setCustomerStatus(customerStatus);
-        customer.setCustomerContact(customerContact);
-        customer.setUsername(username);
-        customer.setPassword(password);
-        customer.setAttempts(attempts);
-        Authentication authentication = mock(Authentication.class);
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        String requestBody = "{\"depositId\":456,\"depositName\":\"Savings Account\",\"depositRoi\":4.6,\"depositType\":\"Term Deposit\",\"depositDescription\":\"Fixed term Savings Account\"}";
-        when(depositInterface.searchDepositById(anyLong())).thenThrow(new DepositException("dep"));
-        mockMvc.perform(get("/module/deposits/12313/3213/12")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(requestBody))
-                .andExpect(content().string("No deposits Available"));
-    }
 
 
 
-    //--------mvc controller
+    //mvc controller
 
 
     @Test

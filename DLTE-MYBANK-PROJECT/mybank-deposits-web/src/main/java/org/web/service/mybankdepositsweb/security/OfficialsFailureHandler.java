@@ -34,24 +34,26 @@ public class OfficialsFailureHandler extends SimpleUrlAuthenticationFailureHandl
                         myBankCustomers.setAttempts(myBankCustomers.getAttempts() + 1);
                         services.updateAttempts(myBankCustomers);
                         logger.warn(resourceBundle.getString("invalid.credential"));
-                        exception = new LockedException((4 - myBankCustomers.getAttempts()) + " " + "attempts are left .Invalid password");
+                        exception = new LockedException((4 - myBankCustomers.getAttempts()) + " " + resourceBundle.getString("attempts.left"));
                         String err = myBankCustomers.getAttempts().toString() + " " + exception.getMessage();
                         logger.warn(err);
                         super.setDefaultFailureUrl("/userlogin/?error=" + exception);
                     } else {
                         services.updateStatus(myBankCustomers);
                         exception = new LockedException(resourceBundle.getString("max.attempt"));
-                        logger.warn("max attempts reached account is suspended");
+                        logger.warn(resourceBundle.getString("max.attempt"));
                         super.setDefaultFailureUrl("/userlogin/?error=" + exception.getMessage());
                     }
                 } else {
                     logger.warn(resourceBundle.getString("account.suspend"));
                 }
+            }else {
+                super.setDefaultFailureUrl("/userlogin/?error=User not exists");
             }
         }catch (UsernameNotFoundException e){
             logger.info(e.toString());
             logger.warn(resourceBundle.getString("account.suspend"));
-            exception=new LockedException("username not found");
+            exception=new LockedException(resourceBundle.getString("user.not.found"));
             super.setDefaultFailureUrl("/userlogin/?error=" + exception.getMessage());
         }
         super.onAuthenticationFailure(request, response, exception);
